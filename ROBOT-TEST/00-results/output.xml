@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-06T20:46:23.872294" rpa="false" schemaversion="5">
+<suite id="s1" name="Exemple" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Test_Automatises\ROBOT-TEST\exemple.robot">
+<test id="s1-t1" name="Ouvrir La Page Robot" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-06T20:46:24.331544" level="INFO">Opening browser 'chrome' to base url 'https://robotcode.io/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-06T20:46:24.330991" elapsed="3.915465"/>
+</kw>
+<kw name="VerifyKW">
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-06T20:46:28.261696" elapsed="0.001958"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-06T20:51:28.491658" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-06T20:51:28.492170" level="FAIL">TimeoutException: Message: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7C482CF25+75717]
+	GetHandleVerifier [0x00007FF7C482CF80+75808]
+	(No symbol) [0x00007FF7C45F8F9A]
+	(No symbol) [0x00007FF7C45E64EC]
+	(No symbol) [0x00007FF7C45E61DA]
+	(No symbol) [0x00007FF7C45E3E8A]
+	(No symbol) [0x00007FF7C45E483F]
+	(No symbol) [0x00007FF7C45F33AE]
+	(No symbol) [0x00007FF7C46097E1]
+	(No symbol) [0x00007FF7C461091A]
+	(No symbol) [0x00007FF7C45E4FAD]
+	(No symbol) [0x00007FF7C46094D0]
+	(No symbol) [0x00007FF7C469F276]
+	(No symbol) [0x00007FF7C4677153]
+	(No symbol) [0x00007FF7C4640421]
+	(No symbol) [0x00007FF7C46411B3]
+	GetHandleVerifier [0x00007FF7C4B2D6FD+3223453]
+	GetHandleVerifier [0x00007FF7C4B27CA2+3200322]
+	GetHandleVerifier [0x00007FF7C4B45AD3+3322739]
+	GetHandleVerifier [0x00007FF7C48469FA+180890]
+	GetHandleVerifier [0x00007FF7C484E0FF+211359]
+	GetHandleVerifier [0x00007FF7C4835274+109332]
+	GetHandleVerifier [0x00007FF7C4835422+109762]
+	GetHandleVerifier [0x00007FF7C481BA39+4825]
+	BaseThreadInitThunk [0x00007FFA87B9259D+29]
+	RtlUserThreadStart [0x00007FFA89A8AF38+40]
+</msg>
+<arg>${content}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2025-05-06T20:46:28.263996" elapsed="300.351402">TimeoutException: Message: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7C482CF25+75717]
+	GetHandleVerifier [0x00007FF7C482CF80+75808]
+	(No symbol) [0x00007FF7C45F8F9A]
+	(No symbol) [0x00007FF7C45E64EC]
+	(No symbol) [0x00007FF7C45E61DA]
+	(No symbol) [0x00007FF7C45E3E8A]
+	(No symbol) [0x00007FF7C45E483F]
+	(No symbol) [0x00007FF7C45F33AE]
+	(No symbol) [0x00007FF7C46097E1]
+	(No symbol) [0x00007FF7C461091A]
+	(No symbol) [0x00007FF7C45E4FAD]
+	(No symbol) [0x00007FF7C46094D0]
+	(No symbol) [0x00007FF7C469F276]
+	(No symbol) [0x00007FF7C4677153]
+	(No symbol) [0x00007FF7C4640421]
+	(No symbol) [0x00007FF7C46411B3]
+	GetHandleVerifier [0x00007FF7C4B2D6FD+3223453]
+	GetHandleVerifier [0x00007FF7C4B27CA2+3200322]
+	GetHandleVerifier [0x00007FF7C4B45AD3+3322739]
+	GetHandleVerifier [0x00007FF7C48469FA+180890]
+	GetHandleVerifier [0x00007FF7C484E0FF+211359]
+	GetHandleVerifier [0x00007FF7C4835274+109332]
+	GetHandleVerifier [0x00007FF7C4835422+109762]
+	GetHandleVerifier [0x00007FF7C481BA39+4825]
+	BaseThreadInitThunk [0x00007FFA87B9259D+29]
+	RtlUserThreadStart [0x00007FFA89A8AF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-05-06T20:46:28.260982" elapsed="300.354708">TimeoutException: Message: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7C482CF25+75717]
+	GetHandleVerifier [0x00007FF7C482CF80+75808]
+	(No symbol) [0x00007FF7C45F8F9A]
+	(No symbol) [0x00007FF7C45E64EC]
+	(No symbol) [0x00007FF7C45E61DA]
+	(No symbol) [0x00007FF7C45E3E8A]
+	(No symbol) [0x00007FF7C45E483F]
+	(No symbol) [0x00007FF7C45F33AE]
+	(No symbol) [0x00007FF7C46097E1]
+	(No symbol) [0x00007FF7C461091A]
+	(No symbol) [0x00007FF7C45E4FAD]
+	(No symbol) [0x00007FF7C46094D0]
+	(No symbol) [0x00007FF7C469F276]
+	(No symbol) [0x00007FF7C4677153]
+	(No symbol) [0x00007FF7C4640421]
+	(No symbol) [0x00007FF7C46411B3]
+	GetHandleVerifier [0x00007FF7C4B2D6FD+3223453]
+	GetHandleVerifier [0x00007FF7C4B27CA2+3200322]
+	GetHandleVerifier [0x00007FF7C4B45AD3+3322739]
+	GetHandleVerifier [0x00007FF7C48469FA+180890]
+	GetHandleVerifier [0x00007FF7C484E0FF+211359]
+	GetHandleVerifier [0x00007FF7C4835274+109332]
+	GetHandleVerifier [0x00007FF7C4835422+109762]
+	GetHandleVerifier [0x00007FF7C481BA39+4825]
+	BaseThreadInitThunk [0x00007FFA87B9259D+29]
+	RtlUserThreadStart [0x00007FFA89A8AF38+40]
+</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-05-06T20:51:28.616246" elapsed="0.000054"/>
+</kw>
+<tag>Ouvrir La Page Robot</tag>
+<status status="FAIL" start="2025-05-06T20:46:24.329702" elapsed="304.287026">TimeoutException: Message: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7C482CF25+75717]
+	GetHandleVerifier [0x00007FF7C482CF80+75808]
+	(No symbol) [0x00007FF7C45F8F9A]
+	(No symbol) [0x00007FF7C45E64EC]
+	(No symbol) [0x00007FF7C45E61DA]
+	(No symbol) [0x00007FF7C45E3E8A]
+	(No symbol) [0x00007FF7C45E483F]
+	(No symbol) [0x00007FF7C45F33AE]
+	(No symbol) [0x00007FF7C46097E1]
+	(No symbol) [0x00007FF7C461091A]
+	(No symbol) [0x00007FF7C45E4FAD]
+	(No symbol) [0x00007FF7C46094D0]
+	(No symbol) [0x00007FF7C469F276]
+	(No symbol) [0x00007FF7C4677153]
+	(No symbol) [0x00007FF7C4640421]
+	(No symbol) [0x00007FF7C46411B3]
+	GetHandleVerifier [0x00007FF7C4B2D6FD+3223453]
+	GetHandleVerifier [0x00007FF7C4B27CA2+3200322]
+	GetHandleVerifier [0x00007FF7C4B45AD3+3322739]
+	GetHandleVerifier [0x00007FF7C48469FA+180890]
+	GetHandleVerifier [0x00007FF7C484E0FF+211359]
+	GetHandleVerifier [0x00007FF7C4835274+109332]
+	GetHandleVerifier [0x00007FF7C4835422+109762]
+	GetHandleVerifier [0x00007FF7C481BA39+4825]
+	BaseThreadInitThunk [0x00007FFA87B9259D+29]
+	RtlUserThreadStart [0x00007FFA89A8AF38+40]
+</status>
+</test>
+<status status="FAIL" start="2025-05-06T20:46:23.874689" elapsed="304.745424"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Ouvrir La Page Robot</stat>
+</tag>
+<suite>
+<stat name="Exemple" id="s1" pass="0" fail="1" skip="0">Exemple</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

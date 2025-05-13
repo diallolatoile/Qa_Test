@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-13T19:11:37.845249" rpa="false" schemaversion="5">
+<suite id="s1" name="TP-130525-Cas Test 1" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Test_Automatises\ROBOT-TEST\TP-130525-Cas_Test_1.robot">
+<test id="s1-t1" name="CAS_TEST_1" line="9">
+<kw name="Ouverture Navigateur">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T19:11:38.660558" level="INFO">Opening browser 'chrome' to base url 'https://robotcode.io/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T19:11:38.659839" elapsed="11.707587"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T19:11:53.368814" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T19:11:50.367864" elapsed="3.001425"/>
+</kw>
+<status status="PASS" start="2025-05-13T19:11:38.653513" elapsed="14.716520"/>
+</kw>
+<kw name="Aller a la page Get started">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T19:11:53.392585" level="INFO">Clicking element 'xpath=//*[@id="VPContent"]/div/div[1]/div/div[1]/div/div[2]/a'.</msg>
+<arg>xpath=//*[@id="VPContent"]/div/div[1]/div/div[1]/div/div[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T19:11:53.391733" elapsed="0.323498"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T19:11:56.716093" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T19:11:53.715544" elapsed="3.000739"/>
+</kw>
+<status status="PASS" start="2025-05-13T19:11:53.391014" elapsed="3.325487"/>
+</kw>
+<kw name="Verifier qu'on est bien sur la page Requirement">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-13T19:11:56.760445" level="INFO">Current page contains text 'Requirements'.</msg>
+<arg>Requirements</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-13T19:11:56.717881" elapsed="0.042723"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T19:12:06.761775" level="INFO">Slept 10 seconds.</msg>
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T19:11:56.760886" elapsed="10.001128"/>
+</kw>
+<status status="PASS" start="2025-05-13T19:11:56.717350" elapsed="10.044884"/>
+</kw>
+<kw name="Fermer le navigateur">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T19:12:07.061373" elapsed="7.241625"/>
+</kw>
+<status status="PASS" start="2025-05-13T19:12:07.060840" elapsed="7.242372"/>
+</kw>
+<status status="PASS" start="2025-05-13T19:11:38.650465" elapsed="35.656379"/>
+</test>
+<status status="PASS" start="2025-05-13T19:11:37.848903" elapsed="36.462538"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TP-130525-Cas Test 1" id="s1" pass="1" fail="0" skip="0">TP-130525-Cas Test 1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
