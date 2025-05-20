@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-20T21:06:14.502186" rpa="false" schemaversion="5">
+<suite id="s1" name="Authentication" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\QA_RobotProject\testcases\authentication.robot">
+<test id="s1-t1" name="Cas 4 - Identifiants valides" line="29">
+<kw name="Obtenir la langue du navigateur" owner="authentication">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:06:15.019162" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T21:06:15.018781" elapsed="4.815659"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:06:19.835864" level="INFO">Executing JavaScript:
+return navigator.language || navigator.userLanguage;
+Without any arguments.</msg>
+<msg time="2025-05-20T21:06:19.887361" level="INFO">${language} = fr-FR</msg>
+<var>${language}</var>
+<arg>return navigator.language || navigator.userLanguage;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T21:06:19.835029" elapsed="0.052421"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T21:06:19.890166" level="INFO">${lang_code} = fr</msg>
+<var>${lang_code}</var>
+<arg>'${language.split("-")[0]}'.lower()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T21:06:19.887754" elapsed="0.002531"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-20T21:06:19.891474" level="INFO">${LANG} = fr</msg>
+<arg>${LANG}</arg>
+<arg>${lang_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-20T21:06:19.890902" elapsed="0.000723"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T21:06:19.891948" elapsed="6.651740"/>
+</kw>
+<status status="PASS" start="2025-05-20T21:06:15.017300" elapsed="11.526623"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-20T21:06:26.545430" level="INFO">${expected_msg} = Bienvenue sur Jenkins !</msg>
+<var>${expected_msg}</var>
+<arg>${VALID_CREDENTIALS_MSG_${LANG}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-20T21:06:26.544890" elapsed="0.000623"/>
+</kw>
+<kw name="Exécuter scénario valide" owner="authentication">
+<kw name="Ouvrir le navigateur" owner="authentication">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:06:26.548515" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T21:06:26.548006" elapsed="7.294532"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-20T21:06:33.842961" elapsed="0.381967"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-20T21:06:34.225250" elapsed="0.034767"/>
+</kw>
+<status status="PASS" start="2025-05-20T21:06:26.547335" elapsed="7.712895"/>
+</kw>
+<kw name="Saisir identifiants" owner="authentication">
+<if>
+<branch type="IF" condition="'${username}' != '${EMPTY}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:06:34.263063" level="INFO">Typing text 'admin' into text field 'id=j_username'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:06:34.261909" elapsed="0.600773"/>
+</kw>
+<status status="PASS" start="2025-05-20T21:06:34.261436" elapsed="0.601414"/>
+</branch>
+<status status="PASS" start="2025-05-20T21:06:34.261370" elapsed="0.601609"/>
+</if>
+<if>
+<branch type="IF" condition="'${password}' != '${EMPTY}'">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:06:34.864165" level="INFO">Typing password into text field 'id=j_password'.</msg>
+<msg time="2025-05-20T21:06:34.956998" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:06:34.863707" elapsed="0.390338"/>
+</kw>
+<status status="PASS" start="2025-05-20T21:06:34.863167" elapsed="0.391049"/>
+</branch>
+<status status="PASS" start="2025-05-20T21:06:34.863113" elapsed="0.391234"/>
+</if>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T21:06:34.260740" elapsed="0.993778"/>
+</kw>
+<kw name="Cliquer sur connexion" owner="authentication">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:06:35.256170" level="INFO">Clicking button 'xpath=//button[@class='jenkins-button jenkins-button--primary' and @name='Submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:06:35.255727" elapsed="3.687637"/>
+</kw>
+<status status="PASS" start="2025-05-20T21:06:35.254874" elapsed="3.688744"/>
+</kw>
+<kw name="Vérifier message de réussite" owner="authentication">
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-20T21:06:38.944833" elapsed="0.012854"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:06:39.051008" level="INFO">Current page contains text 'Bienvenue sur Jenkins !'.</msg>
+<arg>${expected_msg}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-20T21:06:38.958017" elapsed="0.093147"/>
+</kw>
+<arg>${expected_msg}</arg>
+<status status="PASS" start="2025-05-20T21:06:38.944027" elapsed="0.107324"/>
+</kw>
+<kw name="Fermer le navigateur" owner="authentication">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T21:06:39.052177" elapsed="4.257900"/>
+</kw>
+<status status="PASS" start="2025-05-20T21:06:39.051687" elapsed="4.258659"/>
+</kw>
+<arg>admin</arg>
+<arg>@P@$$Jenkins2025</arg>
+<arg>${expected_msg}</arg>
+<status status="PASS" start="2025-05-20T21:06:26.546403" elapsed="16.764101"/>
+</kw>
+<tag>authentification</tag>
+<tag>sanity</tag>
+<status status="PASS" start="2025-05-20T21:06:15.015489" elapsed="28.297078"/>
+</test>
+<status status="PASS" start="2025-05-20T21:06:14.505456" elapsed="28.812128"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">authentification</stat>
+<stat pass="1" fail="0" skip="0">sanity</stat>
+</tag>
+<suite>
+<stat name="Authentication" id="s1" pass="1" fail="0" skip="0">Authentication</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -19,6 +19,15 @@ Exécuter scénario
     Vérifier message d'échec    ${expected_msg}
     Fermer le navigateur
 
+Exécuter scénario valide
+    [Arguments]    ${username}    ${password}    ${expected_msg}
+    Ouvrir le navigateur
+    Saisir identifiants    ${username}    ${password}
+    Cliquer sur connexion
+    Vérifier message de réussite    ${expected_msg}
+    Fermer le navigateur
+
+
 Ouvrir le navigateur
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
@@ -40,6 +49,12 @@ Vérifier message d'échec
     [Arguments]    ${expected_msg}
     Wait Until Element Is Visible    ${expected_msg}    timeout=5
     Element Should Be Visible        ${expected_msg}
+
+Vérifier message de réussite
+    [Arguments]    ${expected_msg}
+    Set Browser Implicit Wait  5
+    Page Should Contain    ${expected_msg}
+
 
 Fermer le navigateur
     Close Browser
