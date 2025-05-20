@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-20T20:20:40.220747" rpa="false" schemaversion="5">
+<suite id="s1" name="Authentication" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\QA_RobotProject\testcases\authentication.robot">
+<test id="s1-t1" name="Cas 1 - Identifiants incorrects" line="5">
+<kw name="Obtenir la langue du navigateur" owner="authentication">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:20:40.767798" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T20:20:40.766751" elapsed="3.927900"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:20:44.696114" level="INFO">Executing JavaScript:
+return navigator.language || navigator.userLanguage;
+Without any arguments.</msg>
+<msg time="2025-05-20T20:20:44.727093" level="INFO">${language} = fr-FR</msg>
+<var>${language}</var>
+<arg>return navigator.language || navigator.userLanguage;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:20:44.695044" elapsed="0.032147"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T20:20:44.729248" level="INFO">${lang_code} = fr</msg>
+<var>${lang_code}</var>
+<arg>'${language.split("-")[0]}'.lower()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T20:20:44.727584" elapsed="0.001755"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-20T20:20:44.730297" level="INFO">${LANG} = fr</msg>
+<arg>${LANG}</arg>
+<arg>${lang_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-20T20:20:44.729800" elapsed="0.000605"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T20:20:44.730667" elapsed="3.199891"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:20:40.764186" elapsed="7.166657"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-20T20:20:47.932275" level="INFO">${expected_msg} = xpath=//div[contains(@class,'app-sign-in-register__error') and contains(text(), "Nom d'utilisateur ou mot de passe incorrect")]</msg>
+<var>${expected_msg}</var>
+<arg>${INVALID_CREDENTIALS_MSG_${LANG}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-20T20:20:47.931770" elapsed="0.000578"/>
+</kw>
+<kw name="Exécuter scénario" owner="authentication">
+<kw name="Ouvrir le navigateur" owner="authentication">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:20:47.935126" level="INFO">Opening browser 'chrome' to base url 'http://18.201.83.167:8080/jenkins'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T20:20:47.934665" elapsed="5.180399"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-20T20:20:53.115378" elapsed="0.481397"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-20T20:20:53.597100" elapsed="0.027040"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:20:47.934161" elapsed="5.690198"/>
+</kw>
+<kw name="Saisir identifiants" owner="authentication">
+<if>
+<branch type="IF" condition="'${username}' != '${EMPTY}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:20:53.627483" level="INFO">Typing text 'admin' into text field 'id=j_username'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:20:53.626543" elapsed="0.326245"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:20:53.625990" elapsed="0.326976"/>
+</branch>
+<status status="PASS" start="2025-05-20T20:20:53.625890" elapsed="0.327216"/>
+</if>
+<if>
+<branch type="IF" condition="'${password}' != '${EMPTY}'">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:20:53.955104" level="INFO">Typing password into text field 'id=j_password'.</msg>
+<msg time="2025-05-20T20:20:54.053057" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:20:53.954469" elapsed="0.413997"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:20:53.953589" elapsed="0.415084"/>
+</branch>
+<status status="PASS" start="2025-05-20T20:20:53.953287" elapsed="0.415499"/>
+</if>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T20:20:53.624901" elapsed="0.744012"/>
+</kw>
+<kw name="Cliquer sur connexion" owner="authentication">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:20:54.371106" level="INFO">Clicking button 'xpath=//button[@class='jenkins-button jenkins-button--primary' and @name='Submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:20:54.369718" elapsed="0.827159"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:20:54.369225" elapsed="0.827909"/>
+</kw>
+<kw name="Vérifier message d'échec" owner="authentication">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${expected_msg}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T20:20:55.199479" elapsed="0.163344"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:20:55.411219" level="INFO">Element 'xpath=//div[contains(@class,'app-sign-in-register__error') and contains(text(), "Nom d'utilisateur ou mot de passe incorrect")]' is displayed.</msg>
+<arg>${expected_msg}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T20:20:55.363231" elapsed="0.048157"/>
+</kw>
+<arg>${expected_msg}</arg>
+<status status="PASS" start="2025-05-20T20:20:55.197634" elapsed="0.213963"/>
+</kw>
+<kw name="Fermer le navigateur" owner="authentication">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T20:20:55.412460" elapsed="3.739150"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:20:55.411887" elapsed="3.740080"/>
+</kw>
+<arg>admin</arg>
+<arg>mauvais_mot_de_passe</arg>
+<arg>${expected_msg}</arg>
+<status status="PASS" start="2025-05-20T20:20:47.933325" elapsed="11.218783"/>
+</kw>
+<tag>authentification</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-05-20T20:20:40.761372" elapsed="18.392702"/>
+</test>
+<test id="s1-t2" name="Cas 4 - Identifiants valides" line="23">
+<kw name="Obtenir la langue du navigateur" owner="authentication">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:20:59.172883" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T20:20:59.172492" elapsed="3.639733"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:21:02.813389" level="INFO">Executing JavaScript:
+return navigator.language || navigator.userLanguage;
+Without any arguments.</msg>
+<msg time="2025-05-20T20:21:02.926214" level="INFO">${language} = fr-FR</msg>
+<var>${language}</var>
+<arg>return navigator.language || navigator.userLanguage;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:21:02.812590" elapsed="0.113715"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T20:21:02.928488" level="INFO">${lang_code} = fr</msg>
+<var>${lang_code}</var>
+<arg>'${language.split("-")[0]}'.lower()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T20:21:02.926859" elapsed="0.001715"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-20T20:21:02.929486" level="INFO">${LANG} = fr</msg>
+<arg>${LANG}</arg>
+<arg>${lang_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-20T20:21:02.928907" elapsed="0.000709"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T20:21:02.929893" elapsed="3.558582"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:20:59.171911" elapsed="7.316799"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-20T20:21:06.490961" level="INFO">${expected_msg} = xpath=//div[contains(@class,'app-sign-in-register__error') and contains(text(), "Nom d'utilisateur ou mot de passe incorrect")]</msg>
+<var>${expected_msg}</var>
+<arg>${BLOCKED_ACCOUNT_MSG_${LANG}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-20T20:21:06.490410" elapsed="0.000639"/>
+</kw>
+<kw name="Exécuter scénario" owner="authentication">
+<kw name="Ouvrir le navigateur" owner="authentication">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:21:06.493843" level="INFO">Opening browser 'chrome' to base url 'http://18.201.83.167:8080/jenkins'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T20:21:06.493391" elapsed="4.108328"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-20T20:21:10.602250" elapsed="0.387798"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-20T20:21:10.990507" elapsed="0.002550"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:21:06.492782" elapsed="4.500471"/>
+</kw>
+<kw name="Saisir identifiants" owner="authentication">
+<if>
+<branch type="IF" condition="'${username}' != '${EMPTY}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:21:10.995472" level="INFO">Typing text 'admin' into text field 'id=j_username'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:21:10.994987" elapsed="0.395354"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:21:10.994492" elapsed="0.395995"/>
+</branch>
+<status status="PASS" start="2025-05-20T20:21:10.994435" elapsed="0.396156"/>
+</if>
+<if>
+<branch type="IF" condition="'${password}' != '${EMPTY}'">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:21:11.391710" level="INFO">Typing password into text field 'id=j_password'.</msg>
+<msg time="2025-05-20T20:21:11.612890" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:21:11.391235" elapsed="0.506958"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:21:11.390740" elapsed="0.507750"/>
+</branch>
+<status status="PASS" start="2025-05-20T20:21:11.390695" elapsed="0.507929"/>
+</if>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T20:21:10.993774" elapsed="0.905008"/>
+</kw>
+<kw name="Cliquer sur connexion" owner="authentication">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:21:11.900103" level="INFO">Clicking button 'xpath=//button[@class='jenkins-button jenkins-button--primary' and @name='Submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:21:11.899700" elapsed="0.824312"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:21:11.899141" elapsed="0.825089"/>
+</kw>
+<kw name="Vérifier message d'échec" owner="authentication">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${expected_msg}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T20:21:12.725370" elapsed="0.139069"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:21:12.927505" level="INFO">Element 'xpath=//div[contains(@class,'app-sign-in-register__error') and contains(text(), "Nom d'utilisateur ou mot de passe incorrect")]' is displayed.</msg>
+<arg>${expected_msg}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T20:21:12.864796" elapsed="0.062891"/>
+</kw>
+<arg>${expected_msg}</arg>
+<status status="PASS" start="2025-05-20T20:21:12.724566" elapsed="0.203357"/>
+</kw>
+<kw name="Fermer le navigateur" owner="authentication">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T20:21:12.928911" elapsed="2.794260"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:21:12.928239" elapsed="2.795168"/>
+</kw>
+<arg>admin</arg>
+<arg>correct_pass</arg>
+<arg>${expected_msg}</arg>
+<status status="PASS" start="2025-05-20T20:21:06.491940" elapsed="9.232632"/>
+</kw>
+<tag>authentification</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-05-20T20:20:59.170762" elapsed="16.591060"/>
+</test>
+<status status="PASS" start="2025-05-20T20:20:40.223906" elapsed="35.549080"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">authentification</stat>
+<stat pass="2" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Authentication" id="s1" pass="2" fail="0" skip="0">Authentication</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
