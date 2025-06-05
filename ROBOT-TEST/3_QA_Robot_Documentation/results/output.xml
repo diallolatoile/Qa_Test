@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-03T21:07:07.326518" rpa="false" schemaversion="5">
+<suite id="s1" name="Selenium Practice" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\3_QA_Robot_Documentation\testcases\selenium_practice.robot">
+<test id="s1-t1" name="Test Remplissage Et Soumission Du Formulaire" line="5">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-03T21:07:07.736788" level="INFO">${expected_msg} = Submitted Successfully</msg>
+<var>${expected_msg}</var>
+<arg>${VALID_MSG_${LANG}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-03T21:07:07.736397" elapsed="0.000442"/>
+</kw>
+<kw name="Exécuter scénario" owner="selenium_practice">
+<kw name="Ouvrir le navigateur" owner="selenium_practice">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-03T21:07:07.739010" level="INFO">Opening browser 'Chrome' to base url 'https://selenium-practice.netlify.app'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-03T21:07:07.738718" elapsed="8.472635"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-03T21:07:16.212766" elapsed="0.492878"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-06-03T21:07:16.713827" elapsed="0.017998"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-03T21:07:16.735763" level="INFO">Executing JavaScript:
+return navigator.language || navigator.userLanguage;
+Without any arguments.</msg>
+<msg time="2025-06-03T21:07:16.790279" level="INFO">${language} = fr-FR</msg>
+<var>${language}</var>
+<arg>return navigator.language || navigator.userLanguage;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-03T21:07:16.733105" elapsed="0.057427"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-03T21:07:16.796903" level="INFO">${lang_code} = fr</msg>
+<var>${lang_code}</var>
+<arg>'${language.split("-")[0]}'.lower()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-03T21:07:16.791581" elapsed="0.005597"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-06-03T21:07:16.799739" level="INFO">${LANG} = fr</msg>
+<arg>${LANG}</arg>
+<arg>${lang_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-06-03T21:07:16.798158" elapsed="0.001945"/>
+</kw>
+<status status="PASS" start="2025-06-03T21:07:07.738363" elapsed="9.062369"/>
+</kw>
+<kw name="Remplir le formulaire" owner="selenium_practice">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-03T21:07:16.806106" level="INFO">Typing text 'Mamadou Bobo DIALLO' into text field 'id=name'.</msg>
+<msg time="2025-06-03T21:07:22.445617" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-03T21:07:22.446474" level="FAIL">Element with locator 'id=name' not found.</msg>
+<arg>${NAME_FIELD}</arg>
+<arg>Mamadou Bobo DIALLO</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2025-06-03T21:07:16.803615" elapsed="5.663648">Element with locator 'id=name' not found.</status>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>${SELECT_DROPDOWN}</arg>
+<arg>item2</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2025-06-03T21:07:22.468192" elapsed="0.000203"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${CHECKBOX_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-03T21:07:22.469125" elapsed="0.000191"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${CHECKBOX_3}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-03T21:07:22.469962" elapsed="0.000177"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${DATE_PICKER}</arg>
+<arg>${DATE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-03T21:07:22.470686" elapsed="0.000663"/>
+</kw>
+<status status="FAIL" start="2025-06-03T21:07:16.801855" elapsed="5.670411">Element with locator 'id=name' not found.</status>
+</kw>
+<kw name="Soumettre le formulaire" owner="selenium_practice">
+<status status="NOT RUN" start="2025-06-03T21:07:22.473187" elapsed="0.000218"/>
+</kw>
+<kw name="Vérifier message de réussite" owner="selenium_practice">
+<arg>${expected_msg}</arg>
+<status status="NOT RUN" start="2025-06-03T21:07:22.474163" elapsed="0.000203"/>
+</kw>
+<kw name="Fermer le navigateur" owner="selenium_practice">
+<status status="NOT RUN" start="2025-06-03T21:07:22.475187" elapsed="0.000241"/>
+</kw>
+<arg>${expected_msg}</arg>
+<status status="FAIL" start="2025-06-03T21:07:07.737826" elapsed="14.738194">Element with locator 'id=name' not found.</status>
+</kw>
+<tag>sanity</tag>
+<tag>selenium_practice</tag>
+<status status="FAIL" start="2025-06-03T21:07:07.734597" elapsed="15.086961">Element with locator 'id=name' not found.</status>
+</test>
+<status status="FAIL" start="2025-06-03T21:07:07.329363" elapsed="17.675958"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">sanity</stat>
+<stat pass="0" fail="1" skip="0">selenium_practice</stat>
+</tag>
+<suite>
+<stat name="Selenium Practice" id="s1" pass="0" fail="1" skip="0">Selenium Practice</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

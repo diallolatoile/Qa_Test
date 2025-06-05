@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-27T22:45:52.985887" rpa="false" schemaversion="5">
+<suite id="s1" name="Fakestore Api Tests" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\Labo_Test_APIs\testcases\fakestore_api_tests.robot">
+<kw name="Create Session To FakeStore" owner="fakestore_keywords" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${BASE_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.151081" elapsed="0.001098"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:55.153325" level="INFO">Creating Session using : alias=fakestore, url=https://fakestoreapi.com, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>fakestore</arg>
+<arg>${BASE_URL}</arg>
+<arg>headers=${HEADERS}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-05-27T22:45:55.152595" elapsed="0.001637"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:55.149332" elapsed="0.005129"/>
+</kw>
+<test id="s1-t1" name="TC01 - Get List Of All Products" line="46">
+<kw name="Get All Products" owner="fakestore_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:55.572047" level="INFO">GET Request : url=https://fakestoreapi.com/products 
+ path_url=/products 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-05-27T22:45:55.572745" level="INFO">GET Response : url=https://fakestoreapi.com/products 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:55 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"297c-h+n6NsR3M51S6528jZo3BluzvtU"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=W4QTFQppbjYunU9skyBk%2BsXI8PAdlhMLms6qXV83f55sKim384AOKtzAlED8xJkn%2Fb3Hqzy5F8TlqnTSX13x3oAwvSbyt%2Fmelfm%2FcxpXg%2BA%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690ba06c89e097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}},{"id":2,"title":"Mens Casual Premium Slim Fit T-Shirts ","price":22.3,"description":"Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight &amp; soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.","category":"men's clothing","image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg","rating":{"rate":4.1,"count":259}},{"id":3,"title":"Mens Cotton Jacket","price":55.99,"description":"great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.","category":"men's clothing","image":"https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg","rating":{"rate":4.7,"count":500}},{"id":4,"title":"Mens Casual Slim Fit","price":15.99,"description":"The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.","category":"men's clothing","image":"https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg","rating":{"rate":2.1,"count":430}},{"id":5,"title":"John Hardy Women's Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet","price":695,"description":"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.","category":"jewelery","image":"https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":4.6,"count":400}},{"id":6,"title":"Solid Gold Petite Micropave ","price":168,"description":"Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.","category":"jewelery","image":"https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3.9,"count":70}},{"id":7,"title":"White Gold Plated Princess","price":9.99,"description":"Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...","category":"jewelery","image":"https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3,"count":400}},{"id":8,"title":"Pierced Owl Rose Gold Plated Stainless Steel Double","price":10.99,"description":"Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel","category":"jewelery","image":"https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":1.9,"count":100}},{"id":9,"title":"WD 2TB Elements Portable External Hard Drive - USB 3.0 ","price":64,"description":"USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system","category":"electronics","image":"https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg","rating":{"rate":3.3,"count":203}},{"id":10,"title":"SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s","price":109,"description":"Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)","category":"electronics","image":"https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg","rating":{"rate":2.9,"count":470}},{"id":11,"title":"Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5","price":109,"description":"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking &amp; Correction) to provide the optimized performance and enhanced reliability.","category":"electronics","image":"https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg","rating":{"rate":4.8,"count":319}},{"id":12,"title":"WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive","price":114,"description":"Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty","category":"electronics","image":"https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg","rating":{"rate":4.8,"count":400}},{"id":13,"title":"Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin","price":599,"description":"21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz","category":"electronics","image":"https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg","rating":{"rate":2.9,"count":250}},{"id":14,"title":"Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ","price":999.99,"description":"49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag","category":"electronics","image":"https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg","rating":{"rate":2.2,"count":140}},{"id":15,"title":"BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats","price":56.99,"description":"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates","category":"women's clothing","image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg","rating":{"rate":2.6,"count":235}},{"id":16,"title":"Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket","price":29.95,"description":"100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON","category":"women's clothing","image":"https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg","rating":{"rate":2.9,"count":340}},{"id":17,"title":"Rain Jacket Women Windbreaker Striped Climbing Raincoats","price":39.99,"description":"Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.","category":"women's clothing","image":"https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg","rating":{"rate":3.8,"count":679}},{"id":18,"title":"MBJ Women's Solid Short Sleeve Boat Neck V ","price":9.85,"description":"95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem","category":"women's clothing","image":"https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg","rating":{"rate":4.7,"count":130}},{"id":19,"title":"Opna Women's Short Sleeve Moisture","price":7.95,"description":"100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash &amp; Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, ... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-05-27T22:45:55.574401" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/products</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.156057" elapsed="0.418436"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:55.576448" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.574869" elapsed="0.001758"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:55.579999" level="INFO">${json} = [{'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 in...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.576961" elapsed="0.003126"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:55.580211" elapsed="0.000117"/>
+</return>
+<msg time="2025-05-27T22:45:55.581107" level="INFO">${products} = [{'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 in...</msg>
+<var>${products}</var>
+<status status="PASS" start="2025-05-27T22:45:55.155731" elapsed="0.425460"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-05-27T22:45:55.582302" level="INFO">Length is 20.</msg>
+<msg time="2025-05-27T22:45:55.582518" level="INFO">${length} = 20</msg>
+<var>${length}</var>
+<arg>${products}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.582038" elapsed="0.000537"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${length} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.584034" elapsed="0.000437"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:55.154580" elapsed="0.430613"/>
+</test>
+<test id="s1-t2" name="TC02 - Add New Product" line="51">
+<kw name="Add New Product" owner="fakestore_keywords">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:55.729553" level="INFO">POST Request : url=https://fakestoreapi.com/products 
+ path_url=/products 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '264'} 
+ body=b'{"title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops", "price": "109.95", "description": "Your perfect pack for everyday use and walks in the forest...", "category": "men\'s clothing", "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"}' 
+ </msg>
+<msg time="2025-05-27T22:45:55.729695" level="INFO">POST Response : url=https://fakestoreapi.com/products 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:56 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"107-xNKV+xFfJiuI0C6D/WGm4y7a95U"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=bqaNSjst468UcHeGe2Gfgc9cyUBmg2QpkwPJJGRDrtUOZDPCFuv428%2BXemZJuuH3qINCg1hlOngDhHFRSTPwKEj5MBqY5zjPoZGjKfvTCtc%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690ba16d45e097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":21,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":"109.95","description":"Your perfect pack for everyday use and walks in the forest...","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","category":"men's clothing"} 
+ </msg>
+<msg time="2025-05-27T22:45:55.729863" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/products</arg>
+<arg>json=${product_data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.590402" elapsed="0.139498"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-27T22:45:55.730835" level="INFO">Response: {"id":21,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":"109.95","description":"Your perfect pack for everyday use and walks in the forest...","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","category":"men's clothing"}</msg>
+<arg>Response: ${response.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.730126" elapsed="0.000809"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:55.732696" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.731401" elapsed="0.001433"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:55.734283" level="INFO">${json} = {'id': 21, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': '109.95', 'description': 'Your perfect pack for everyday use and walks in the forest...', 'image': 'https://fakest...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.733173" elapsed="0.001160"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:55.734437" elapsed="0.000068"/>
+</return>
+<msg time="2025-05-27T22:45:55.734709" level="INFO">${new_product} = {'id': 21, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': '109.95', 'description': 'Your perfect pack for everyday use and walks in the forest...', 'image': 'https://fakest...</msg>
+<var>${new_product}</var>
+<arg>${TEST_PRODUCT}</arg>
+<status status="PASS" start="2025-05-27T22:45:55.589989" elapsed="0.144758"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${new_product}</arg>
+<arg>id</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.735952" elapsed="0.000253"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:55.739007" level="INFO">${NEW_PRODUCT_ID} = 21</msg>
+<arg>${NEW_PRODUCT_ID}</arg>
+<arg>${new_product['id']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.737572" elapsed="0.001506"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:55.589086" elapsed="0.151236"/>
+</test>
+<test id="s1-t3" name="TC03 - Get Single Product" line="56">
+<kw name="Get Single Product" owner="fakestore_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:55.875606" level="INFO">GET Request : url=https://fakestoreapi.com/products/1 
+ path_url=/products/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-05-27T22:45:55.875703" level="INFO">GET Response : url=https://fakestoreapi.com/products/1 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:56 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"16c-MMdrqY6N0sTiefLdsgtBej9eunY"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2Ft%2BuPRFbthBrDTRJnXcXGuFPt9rcdxVVfat2Ng1P0IqSs7Iw%2FP5oJgk5W1DXHb1tEe4aav1bIFMMBLPM7hH2gPYZwMnH3VyI%2FYfejmBuifs%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690ba26dd5e097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}} 
+ </msg>
+<msg time="2025-05-27T22:45:55.876004" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/products/${product_id}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.749953" elapsed="0.126088"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:55.876807" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.876199" elapsed="0.000693"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:55.877595" level="INFO">${json} = {'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inc...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.877026" elapsed="0.000603"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:55.877688" elapsed="0.000038"/>
+</return>
+<msg time="2025-05-27T22:45:55.877892" level="INFO">${product} = {'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inc...</msg>
+<var>${product}</var>
+<arg>1</arg>
+<status status="PASS" start="2025-05-27T22:45:55.749296" elapsed="0.128628"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${product['title']}</arg>
+<arg>${TEST_PRODUCT['title']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.879156" elapsed="0.000877"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:55.748044" elapsed="0.133257"/>
+</test>
+<test id="s1-t4" name="TC04 - Update Product" line="60">
+<kw name="Update Product" owner="fakestore_keywords">
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:56.012914" level="INFO">PUT Request : url=https://fakestoreapi.com/products/21 
+ path_url=/products/21 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '82'} 
+ body=b'{"title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops", "price": "110"}' 
+ </msg>
+<msg time="2025-05-27T22:45:56.013036" level="INFO">PUT Response : url=https://fakestoreapi.com/products/21 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:56 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"57-+4NB+CFYsbtc2LfZQP2f6gmIOtA"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=A15uN198%2BwmQ6DWP5QqyhjOqt00aB4C85G7bVIbUur0UyZiF9azOxFnQJwOzHFjeGBnlWIlgtiocMLX3URb9roB9HRlek%2FHV3aiQO0Itt2s%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690ba33e86e097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":21,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":"110"} 
+ </msg>
+<msg time="2025-05-27T22:45:56.013206" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/products/${product_id}</arg>
+<arg>json=${product_data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:55.888531" elapsed="0.124712"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.014045" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.013425" elapsed="0.000710"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.015962" level="INFO">${json} = {'id': 21, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': '110'}</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.014424" elapsed="0.001619"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:56.016197" elapsed="0.000081"/>
+</return>
+<msg time="2025-05-27T22:45:56.016602" level="INFO">${updated_product} = {'id': 21, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': '110'}</msg>
+<var>${updated_product}</var>
+<arg>${NEW_PRODUCT_ID}</arg>
+<arg>${TEST_PRODUCT_UPDATE}</arg>
+<status status="PASS" start="2025-05-27T22:45:55.886972" elapsed="0.129707"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${updated_product['title']}</arg>
+<arg>${TEST_PRODUCT_UPDATE['title']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.017601" elapsed="0.001481"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:55.885877" elapsed="0.134303"/>
+</test>
+<test id="s1-t5" name="TC05 - Delete Product" line="64">
+<kw name="Delete Product" owner="fakestore_keywords">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:56.255387" level="INFO">DELETE Request : url=https://fakestoreapi.com/products/21 
+ path_url=/products/21 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-05-27T22:45:56.255530" level="INFO">DELETE Response : url=https://fakestoreapi.com/products/21 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:56 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4-K+iMpCQsduglOsYkdIUQZQMtaDM"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=9ylbaiiKMoOdWnOAJxAL%2BDfzwJdYyeGfCg0in2VqsQ5ZI4y%2Bx%2Fi5OTbl%2BKGJC%2FX%2B7pSlAPgclszJBuf77EVTSES2D4ewQ921SdNYySMjgIo%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690ba41f1ce097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=null 
+ </msg>
+<msg time="2025-05-27T22:45:56.255712" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/products/${product_id}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.024618" elapsed="0.231138"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.256854" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.255962" elapsed="0.000969"/>
+</kw>
+<arg>${NEW_PRODUCT_ID}</arg>
+<status status="PASS" start="2025-05-27T22:45:56.024295" elapsed="0.232736"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:56.023710" elapsed="0.234756"/>
+</test>
+<test id="s1-t6" name="TC06 - Get All Carts" line="67">
+<kw name="Get All Carts" owner="fakestore_keywords">
+<kw name="Get All Products" owner="fakestore_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:56.398787" level="INFO">GET Request : url=https://fakestoreapi.com/products 
+ path_url=/products 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-05-27T22:45:56.399002" level="INFO">GET Response : url=https://fakestoreapi.com/products 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:56 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"297c-h+n6NsR3M51S6528jZo3BluzvtU"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=a5fLfs65qbke3sCeL1tFL34mYjPRen4FGlrJkvdH5vi7zfpNdYbeYjWDoQBTMLnkumLuZcRrNY2g%2FDlM%2BzPXfTrx1nyPRIKN8x%2FsyqgswJM%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690ba5981ee097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}},{"id":2,"title":"Mens Casual Premium Slim Fit T-Shirts ","price":22.3,"description":"Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight &amp; soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.","category":"men's clothing","image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg","rating":{"rate":4.1,"count":259}},{"id":3,"title":"Mens Cotton Jacket","price":55.99,"description":"great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.","category":"men's clothing","image":"https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg","rating":{"rate":4.7,"count":500}},{"id":4,"title":"Mens Casual Slim Fit","price":15.99,"description":"The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.","category":"men's clothing","image":"https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg","rating":{"rate":2.1,"count":430}},{"id":5,"title":"John Hardy Women's Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet","price":695,"description":"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.","category":"jewelery","image":"https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":4.6,"count":400}},{"id":6,"title":"Solid Gold Petite Micropave ","price":168,"description":"Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.","category":"jewelery","image":"https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3.9,"count":70}},{"id":7,"title":"White Gold Plated Princess","price":9.99,"description":"Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...","category":"jewelery","image":"https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3,"count":400}},{"id":8,"title":"Pierced Owl Rose Gold Plated Stainless Steel Double","price":10.99,"description":"Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel","category":"jewelery","image":"https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":1.9,"count":100}},{"id":9,"title":"WD 2TB Elements Portable External Hard Drive - USB 3.0 ","price":64,"description":"USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system","category":"electronics","image":"https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg","rating":{"rate":3.3,"count":203}},{"id":10,"title":"SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s","price":109,"description":"Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)","category":"electronics","image":"https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg","rating":{"rate":2.9,"count":470}},{"id":11,"title":"Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5","price":109,"description":"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking &amp; Correction) to provide the optimized performance and enhanced reliability.","category":"electronics","image":"https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg","rating":{"rate":4.8,"count":319}},{"id":12,"title":"WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive","price":114,"description":"Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty","category":"electronics","image":"https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg","rating":{"rate":4.8,"count":400}},{"id":13,"title":"Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin","price":599,"description":"21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz","category":"electronics","image":"https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg","rating":{"rate":2.9,"count":250}},{"id":14,"title":"Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ","price":999.99,"description":"49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag","category":"electronics","image":"https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg","rating":{"rate":2.2,"count":140}},{"id":15,"title":"BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats","price":56.99,"description":"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates","category":"women's clothing","image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg","rating":{"rate":2.6,"count":235}},{"id":16,"title":"Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket","price":29.95,"description":"100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON","category":"women's clothing","image":"https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg","rating":{"rate":2.9,"count":340}},{"id":17,"title":"Rain Jacket Women Windbreaker Striped Climbing Raincoats","price":39.99,"description":"Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.","category":"women's clothing","image":"https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg","rating":{"rate":3.8,"count":679}},{"id":18,"title":"MBJ Women's Solid Short Sleeve Boat Neck V ","price":9.85,"description":"95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem","category":"women's clothing","image":"https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg","rating":{"rate":4.7,"count":130}},{"id":19,"title":"Opna Women's Short Sleeve Moisture","price":7.95,"description":"100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash &amp; Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, ... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-05-27T22:45:56.399826" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/products</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.268434" elapsed="0.131471"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.401454" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.400235" elapsed="0.001345"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.403479" level="INFO">${json} = [{'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 in...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.401990" elapsed="0.001541"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:56.403608" elapsed="0.000050"/>
+</return>
+<status status="PASS" start="2025-05-27T22:45:56.267836" elapsed="0.135961"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:56.649223" level="INFO">GET Request : url=https://fakestoreapi.com/carts 
+ path_url=/carts 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-05-27T22:45:56.649436" level="INFO">GET Response : url=https://fakestoreapi.com/carts 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3a8-j3C8983spvK8GpaSYa+SyYlAS2A"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=0dNs47JaulMeZiP0ek8K7znevFZ4lYKc%2FviFGivTZrZUNk8sN55hbP%2Fn%2FBUmMUDWN5nFW%2Bg63hU9vV32mDH12npUBmByIUul29vY%2BdqGqC4%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690ba678dae097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":1,"userId":1,"date":"2020-03-02T00:00:00.000Z","products":[{"productId":1,"quantity":4},{"productId":2,"quantity":1},{"productId":3,"quantity":6}],"__v":0},{"id":2,"userId":1,"date":"2020-01-02T00:00:00.000Z","products":[{"productId":2,"quantity":4},{"productId":1,"quantity":10},{"productId":5,"quantity":2}],"__v":0},{"id":3,"userId":2,"date":"2020-03-01T00:00:00.000Z","products":[{"productId":1,"quantity":2},{"productId":9,"quantity":1}],"__v":0},{"id":4,"userId":3,"date":"2020-01-01T00:00:00.000Z","products":[{"productId":1,"quantity":4}],"__v":0},{"id":5,"userId":3,"date":"2020-03-01T00:00:00.000Z","products":[{"productId":7,"quantity":1},{"productId":8,"quantity":1}],"__v":0},{"id":6,"userId":4,"date":"2020-03-01T00:00:00.000Z","products":[{"productId":10,"quantity":2},{"productId":12,"quantity":3}],"__v":0},{"id":7,"userId":8,"date":"2020-03-01T00:00:00.000Z","products":[{"productId":18,"quantity":1}],"__v":0}] 
+ </msg>
+<msg time="2025-05-27T22:45:56.649685" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/carts</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.403932" elapsed="0.245816"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.651318" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.650043" elapsed="0.001398"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.652915" level="INFO">${json} = [{'id': 1, 'userId': 1, 'date': '2020-03-02T00:00:00.000Z', 'products': [{'productId': 1, 'quantity': 4}, {'productId': 2, 'quantity': 1}, {'productId': 3, 'quantity': 6}], '__v': 0}, {'id': 2, 'userI...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.651687" elapsed="0.001295"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:56.653095" elapsed="0.000059"/>
+</return>
+<msg time="2025-05-27T22:45:56.653462" level="INFO">${carts} = [{'id': 1, 'userId': 1, 'date': '2020-03-02T00:00:00.000Z', 'products': [{'productId': 1, 'quantity': 4}, {'productId': 2, 'quantity': 1}, {'productId': 3, 'quantity': 6}], '__v': 0}, {'id': 2, 'userI...</msg>
+<var>${carts}</var>
+<status status="PASS" start="2025-05-27T22:45:56.266925" elapsed="0.386610"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.654698" level="INFO">Length is 7.</msg>
+<msg time="2025-05-27T22:45:56.654893" level="INFO">${length} = 7</msg>
+<var>${length}</var>
+<arg>${carts}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.654433" elapsed="0.000510"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${length} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.655788" elapsed="0.000251"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:56.265796" elapsed="0.390933"/>
+</test>
+<test id="s1-t7" name="TC07 - Add New Cart" line="72">
+<kw name="Add New Cart" owner="fakestore_keywords">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:56.783329" level="INFO">POST Request : url=https://fakestoreapi.com/carts 
+ path_url=/carts 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '91'} 
+ body=b'{"id": "11", "userId": "1", "products": ["Create List", {"productId": 101, "quantity": 2}]}' 
+ </msg>
+<msg time="2025-05-27T22:45:56.783541" level="INFO">POST Response : url=https://fakestoreapi.com/carts 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"50-usRXlWr6NIcwBAwvL68J+/l56mc"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Q%2FwpmKl%2B8r1Qx%2FX8XI7c3hYOaltVDZS6Eus4dnZlCvy4WdjvvMamc7ITZGzjEYio6%2B7nRXM%2FWR%2B7GzBCe64XrRMCqopL9FxRKU0Je19pCxQ%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690ba81a46e097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":11,"userId":"1","products":["Create List",{"productId":101,"quantity":2}]} 
+ </msg>
+<msg time="2025-05-27T22:45:56.783869" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/carts</arg>
+<arg>json=${cart_data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.660384" elapsed="0.123605"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.785405" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.784382" elapsed="0.001122"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.786720" level="INFO">${json} = {'id': 11, 'userId': '1', 'products': ['Create List', {'productId': 101, 'quantity': 2}]}</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.785831" elapsed="0.000972"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:56.786918" elapsed="0.000069"/>
+</return>
+<msg time="2025-05-27T22:45:56.787255" level="INFO">${new_cart} = {'id': 11, 'userId': '1', 'products': ['Create List', {'productId': 101, 'quantity': 2}]}</msg>
+<var>${new_cart}</var>
+<arg>${TEST_CART}</arg>
+<status status="PASS" start="2025-05-27T22:45:56.660089" elapsed="0.127214"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${new_cart['userId']}</arg>
+<arg>${TEST_CART['userId']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.788132" elapsed="0.001445"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.791022" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${new_cart['id']}</arg>
+<arg>${TEST_CART['id']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.790199" elapsed="0.000937"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:56.793127" level="INFO">${NEW_CART_ID} = 11</msg>
+<arg>${NEW_CART_ID}</arg>
+<arg>${new_cart['id']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.791960" elapsed="0.001225"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:56.659483" elapsed="0.134497"/>
+</test>
+<test id="s1-t8" name="TC08 - Get Single Cart" line="78">
+<kw name="Get Single Cart" owner="fakestore_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:57.026510" level="INFO">GET Request : url=https://fakestoreapi.com/carts/1 
+ path_url=/carts/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-05-27T22:45:57.026619" level="INFO">GET Response : url=https://fakestoreapi.com/carts/1 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"a1-wvAyaNKAHffOoZd5/I4wHuNFvSs"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Wz3VCkusmANAvkHE3NVa6HcWRIox%2Bdc82WgxTgOsVtm4ZH12mH5UDNlMAkXcx4crYBWuZLomscleefiKs5Ua%2BN3F47tOXhkl%2F8joPkMRqcg%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690ba8faece097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":1,"userId":1,"date":"2020-03-02T00:00:00.000Z","products":[{"productId":1,"quantity":4},{"productId":2,"quantity":1},{"productId":3,"quantity":6}],"__v":0} 
+ </msg>
+<msg time="2025-05-27T22:45:57.026764" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/carts/${cart_id}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:56.802037" elapsed="0.224763"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:57.027599" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.026973" elapsed="0.000702"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:57.028470" level="INFO">${json} = {'id': 1, 'userId': 1, 'date': '2020-03-02T00:00:00.000Z', 'products': [{'productId': 1, 'quantity': 4}, {'productId': 2, 'quantity': 1}, {'productId': 3, 'quantity': 6}], '__v': 0}</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.027821" elapsed="0.000690"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:57.028581" elapsed="0.000044"/>
+</return>
+<msg time="2025-05-27T22:45:57.028790" level="INFO">${cart} = {'id': 1, 'userId': 1, 'date': '2020-03-02T00:00:00.000Z', 'products': [{'productId': 1, 'quantity': 4}, {'productId': 2, 'quantity': 1}, {'productId': 3, 'quantity': 6}], '__v': 0}</msg>
+<var>${cart}</var>
+<arg>1</arg>
+<status status="PASS" start="2025-05-27T22:45:56.801549" elapsed="0.227277"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-05-27T22:45:57.030711" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${cart['userId']}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.030055" elapsed="0.000757"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:56.800234" elapsed="0.231791"/>
+</test>
+<test id="s1-t9" name="TC09 - Update Cart" line="82">
+<kw name="Update Cart" owner="fakestore_keywords">
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:57.168242" level="INFO">PUT Request : url=https://fakestoreapi.com/carts/11 
+ path_url=/carts/11 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '48'} 
+ body=b'{"products": "[{\'productId\':101,\'quantity\':5}]"}' 
+ </msg>
+<msg time="2025-05-27T22:45:57.168420" level="INFO">PUT Response : url=https://fakestoreapi.com/carts/11 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"37-Ni8vo6KFjmvveVCVWzt6K76UL9w"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=R9N8bIqL3xuEjknFHWWgf7bfxlerxHuPzvhPrjEsWVU0TrT%2BEXrFz4OboVj8WsUDkHHKBE7dycowUrz90b1HVZQlEGe9jObCUUOcOt5Islc%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690baa6c56e097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":11,"products":"[{'productId':101,'quantity':5}]"} 
+ </msg>
+<msg time="2025-05-27T22:45:57.168648" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/carts/${cart_id}</arg>
+<arg>json=${cart_data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.038175" elapsed="0.130537"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:57.169519" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.168904" elapsed="0.000681"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:57.170258" level="INFO">${json} = {'id': 11, 'products': "[{'productId':101,'quantity':5}]"}</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.169714" elapsed="0.000650"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:57.170428" elapsed="0.000040"/>
+</return>
+<msg time="2025-05-27T22:45:57.170615" level="INFO">${updated_cart} = {'id': 11, 'products': "[{'productId':101,'quantity':5}]"}</msg>
+<var>${updated_cart}</var>
+<arg>${NEW_CART_ID}</arg>
+<arg>${TEST_CART_UPDATE}</arg>
+<status status="PASS" start="2025-05-27T22:45:57.037615" elapsed="0.133029"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${updated_cart}</arg>
+<arg>products</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.171747" elapsed="0.000224"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:57.036422" elapsed="0.136752"/>
+</test>
+<test id="s1-t10" name="TC10 - Delete Cart" line="86">
+<kw name="Delete Cart" owner="fakestore_keywords">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:57.404978" level="INFO">DELETE Request : url=https://fakestoreapi.com/carts/11 
+ path_url=/carts/11 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-05-27T22:45:57.405156" level="INFO">DELETE Response : url=https://fakestoreapi.com/carts/11 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4-K+iMpCQsduglOsYkdIUQZQMtaDM"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=pGffkomWrY9oj6Yq490LDt5GLb%2BDsAZu0X0QE2n8jGNBljFPDxkMKeSEBJJE4vV32nhjRJV6Z%2FlTQ4OrvVoiw%2FCs4f94KQftd7lgDl2hSx4%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690bab5d4de097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=null 
+ </msg>
+<msg time="2025-05-27T22:45:57.405325" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/carts/${cart_id}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.180136" elapsed="0.225245"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:57.406463" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.405597" elapsed="0.000972"/>
+</kw>
+<arg>${NEW_CART_ID}</arg>
+<status status="PASS" start="2025-05-27T22:45:57.179828" elapsed="0.226960"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:57.179238" elapsed="0.228486"/>
+</test>
+<test id="s1-t11" name="TC11 - Get All Users" line="89">
+<kw name="Get All Users" owner="fakestore_keywords">
+<kw name="Get All Products" owner="fakestore_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:57.547184" level="INFO">GET Request : url=https://fakestoreapi.com/products 
+ path_url=/products 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-05-27T22:45:57.547383" level="INFO">GET Response : url=https://fakestoreapi.com/products 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"297c-h+n6NsR3M51S6528jZo3BluzvtU"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=zzTHnTMaizpknfEBDmjGdLiz%2FDm4DBHJUTAKjycZdZQlONwA9w0V3PcXMbnCYDv8DufALKlgsNp%2BdKFTvU0uneouELh0h0JW4xlk4DXq%2F9U%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690bacce68e097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}},{"id":2,"title":"Mens Casual Premium Slim Fit T-Shirts ","price":22.3,"description":"Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight &amp; soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.","category":"men's clothing","image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg","rating":{"rate":4.1,"count":259}},{"id":3,"title":"Mens Cotton Jacket","price":55.99,"description":"great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.","category":"men's clothing","image":"https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg","rating":{"rate":4.7,"count":500}},{"id":4,"title":"Mens Casual Slim Fit","price":15.99,"description":"The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.","category":"men's clothing","image":"https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg","rating":{"rate":2.1,"count":430}},{"id":5,"title":"John Hardy Women's Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet","price":695,"description":"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.","category":"jewelery","image":"https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":4.6,"count":400}},{"id":6,"title":"Solid Gold Petite Micropave ","price":168,"description":"Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.","category":"jewelery","image":"https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3.9,"count":70}},{"id":7,"title":"White Gold Plated Princess","price":9.99,"description":"Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...","category":"jewelery","image":"https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3,"count":400}},{"id":8,"title":"Pierced Owl Rose Gold Plated Stainless Steel Double","price":10.99,"description":"Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel","category":"jewelery","image":"https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":1.9,"count":100}},{"id":9,"title":"WD 2TB Elements Portable External Hard Drive - USB 3.0 ","price":64,"description":"USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system","category":"electronics","image":"https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg","rating":{"rate":3.3,"count":203}},{"id":10,"title":"SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s","price":109,"description":"Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)","category":"electronics","image":"https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg","rating":{"rate":2.9,"count":470}},{"id":11,"title":"Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5","price":109,"description":"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking &amp; Correction) to provide the optimized performance and enhanced reliability.","category":"electronics","image":"https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg","rating":{"rate":4.8,"count":319}},{"id":12,"title":"WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive","price":114,"description":"Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty","category":"electronics","image":"https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg","rating":{"rate":4.8,"count":400}},{"id":13,"title":"Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin","price":599,"description":"21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz","category":"electronics","image":"https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg","rating":{"rate":2.9,"count":250}},{"id":14,"title":"Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ","price":999.99,"description":"49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag","category":"electronics","image":"https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg","rating":{"rate":2.2,"count":140}},{"id":15,"title":"BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats","price":56.99,"description":"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates","category":"women's clothing","image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg","rating":{"rate":2.6,"count":235}},{"id":16,"title":"Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket","price":29.95,"description":"100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON","category":"women's clothing","image":"https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg","rating":{"rate":2.9,"count":340}},{"id":17,"title":"Rain Jacket Women Windbreaker Striped Climbing Raincoats","price":39.99,"description":"Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.","category":"women's clothing","image":"https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg","rating":{"rate":3.8,"count":679}},{"id":18,"title":"MBJ Women's Solid Short Sleeve Boat Neck V ","price":9.85,"description":"95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem","category":"women's clothing","image":"https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg","rating":{"rate":4.7,"count":130}},{"id":19,"title":"Opna Women's Short Sleeve Moisture","price":7.95,"description":"100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash &amp; Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, ... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-05-27T22:45:57.548274" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/products</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.412140" elapsed="0.136225"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:57.549985" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.548670" elapsed="0.001473"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:57.552377" level="INFO">${json} = [{'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 in...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.550493" elapsed="0.001965"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:57.552562" elapsed="0.000075"/>
+</return>
+<status status="PASS" start="2025-05-27T22:45:57.411915" elapsed="0.140952"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:57.780113" level="INFO">GET Request : url=https://fakestoreapi.com/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-05-27T22:45:57.780240" level="INFO">GET Response : url=https://fakestoreapi.com/users 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:58 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"bae-Vi0JNVg0EAD6LcGk4v18ASK0bgA"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=YW93HNhdLVdijNl6zJxmDctxgNO5RV5OmLQJbPOF6QvZg8TNZGMYvjgnNY8cLFexrVf6SUMCxzMVURU9AlArhERD9ViUQijhk4mYFOXZ7ek%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690badaf1ae097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"address":{"geolocation":{"lat":"-37.3159","long":"81.1496"},"city":"kilcoole","street":"new road","number":7682,"zipcode":"12926-3874"},"id":1,"email":"john@gmail.com","username":"johnd","password":"m38rmF$","name":{"firstname":"john","lastname":"doe"},"phone":"1-570-236-7033","__v":0},{"address":{"geolocation":{"lat":"-37.3159","long":"81.1496"},"city":"kilcoole","street":"Lovers Ln","number":7267,"zipcode":"12926-3874"},"id":2,"email":"morrison@gmail.com","username":"mor_2314","password":"83r5^_","name":{"firstname":"david","lastname":"morrison"},"phone":"1-570-236-7033","__v":0},{"address":{"geolocation":{"lat":"40.3467","long":"-30.1310"},"city":"Cullman","street":"Frances Ct","number":86,"zipcode":"29567-1452"},"id":3,"email":"kevin@gmail.com","username":"kevinryan","password":"kev02937@","name":{"firstname":"kevin","lastname":"ryan"},"phone":"1-567-094-1345","__v":0},{"address":{"geolocation":{"lat":"50.3467","long":"-20.1310"},"city":"San Antonio","street":"Hunters Creek Dr","number":6454,"zipcode":"98234-1734"},"id":4,"email":"don@gmail.com","username":"donero","password":"ewedon","name":{"firstname":"don","lastname":"romer"},"phone":"1-765-789-6734","__v":0},{"address":{"geolocation":{"lat":"40.3467","long":"-40.1310"},"city":"san Antonio","street":"adams St","number":245,"zipcode":"80796-1234"},"id":5,"email":"derek@gmail.com","username":"derek","password":"jklg*_56","name":{"firstname":"derek","lastname":"powell"},"phone":"1-956-001-1945","__v":0},{"address":{"geolocation":{"lat":"20.1677","long":"-10.6789"},"city":"el paso","street":"prospect st","number":124,"zipcode":"12346-0456"},"id":6,"email":"david_r@gmail.com","username":"david_r","password":"3478*#54","name":{"firstname":"david","lastname":"russell"},"phone":"1-678-345-9856","__v":0},{"address":{"geolocation":{"lat":"10.3456","long":"20.6419"},"city":"fresno","street":"saddle st","number":1342,"zipcode":"96378-0245"},"id":7,"email":"miriam@gmail.com","username":"snyder","password":"f238&amp;@*$","name":{"firstname":"miriam","lastname":"snyder"},"phone":"1-123-943-0563","__v":0},{"address":{"geolocation":{"lat":"50.3456","long":"10.6419"},"city":"mesa","street":"vally view ln","number":1342,"zipcode":"96378-0245"},"id":8,"email":"william@gmail.com","username":"hopkins","password":"William56$hj","name":{"firstname":"william","lastname":"hopkins"},"phone":"1-478-001-0890","__v":0},{"address":{"geolocation":{"lat":"40.12456","long":"20.5419"},"city":"miami","street":"avondale ave","number":345,"zipcode":"96378-0245"},"id":9,"email":"kate@gmail.com","username":"kate_h","password":"kfejk@*_","name":{"firstname":"kate","lastname":"hale"},"phone":"1-678-456-1934","__v":0},{"address":{"geolocation":{"lat":"30.24788","long":"-20.545419"},"city":"fort wayne","street":"oak lawn ave","number":526,"zipcode":"10256-4532"},"id":10,"email":"jimmie@gmail.com","username":"jimmie_k","password":"klein*#%*","name":{"firstname":"jimmie","lastname":"klein"},"phone":"1-104-001-4567","__v":0}] 
+ </msg>
+<msg time="2025-05-27T22:45:57.780461" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.553082" elapsed="0.227421"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:57.782472" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.780745" elapsed="0.001872"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:57.784650" level="INFO">${json} = [{'address': {'geolocation': {'lat': '-37.3159', 'long': '81.1496'}, 'city': 'kilcoole', 'street': 'new road', 'number': 7682, 'zipcode': '12926-3874'}, 'id': 1, 'email': 'john@gmail.com', 'username':...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.782911" elapsed="0.001798"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:57.784810" elapsed="0.000056"/>
+</return>
+<msg time="2025-05-27T22:45:57.785165" level="INFO">${users} = [{'address': {'geolocation': {'lat': '-37.3159', 'long': '81.1496'}, 'city': 'kilcoole', 'street': 'new road', 'number': 7682, 'zipcode': '12926-3874'}, 'id': 1, 'email': 'john@gmail.com', 'username':...</msg>
+<var>${users}</var>
+<status status="PASS" start="2025-05-27T22:45:57.411592" elapsed="0.373620"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-05-27T22:45:57.787068" level="INFO">Length is 10.</msg>
+<msg time="2025-05-27T22:45:57.787175" level="INFO">${length} = 10</msg>
+<var>${length}</var>
+<arg>${users}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.786867" elapsed="0.000344"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${length} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.788510" elapsed="0.000285"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:57.411039" elapsed="0.379021"/>
+</test>
+<test id="s1-t12" name="TC12 - Add New User" line="94">
+<kw name="Add New User" owner="fakestore_keywords">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:58.025025" level="INFO">POST Request : url=https://fakestoreapi.com/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '102'} 
+ body=b'{"id": "11", "email": "jane.smith@example.com", "username": "janesmith", "password": "securePass123!"}' 
+ </msg>
+<msg time="2025-05-27T22:45:58.025180" level="INFO">POST Response : url=https://fakestoreapi.com/users 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:58 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"9-hVv0cNJophUD7CGn+ZqXp8tVGo0"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Mx3McqhBSXAXzelXm646lFXTRACgYxQbRcEYhhL02%2F3QWtz2P9L12FzPSk2r4R8HcsTYrboACam6OAlWSjJBgfNOi4nHGWV%2BKIxtWZVhOdg%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690baf2888e097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":11} 
+ </msg>
+<msg time="2025-05-27T22:45:58.025439" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/users</arg>
+<arg>json=${user_data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:57.800418" elapsed="0.225072"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:58.026750" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.025778" elapsed="0.001093"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:58.027789" level="INFO">${json} = {'id': 11}</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.027085" elapsed="0.000748"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:58.027910" elapsed="0.000051"/>
+</return>
+<msg time="2025-05-27T22:45:58.028144" level="INFO">${new_user} = {'id': 11}</msg>
+<var>${new_user}</var>
+<arg>${TEST_USER_2}</arg>
+<status status="PASS" start="2025-05-27T22:45:57.799551" elapsed="0.228631"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${new_user}</arg>
+<arg>id</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.029122" elapsed="0.000227"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:58.032890" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${new_user['id']}</arg>
+<arg>${TEST_USER_2['id']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.030264" elapsed="0.002784"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:57.798183" elapsed="0.235854"/>
+</test>
+<test id="s1-t13" name="TC13 - Get Single User" line="99">
+<kw name="Get Single User" owner="fakestore_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:58.282168" level="INFO">GET Request : url=https://fakestoreapi.com/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-05-27T22:45:58.282324" level="INFO">GET Response : url=https://fakestoreapi.com/users/1 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:58 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"120-HNMhv14aQeBJetA9fBvavCZ+gdk"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=b0uyewBiPTGBVWpNSXFSDlxz4glmbkX9earZO%2FZb89daj0OajO4AX5esTKuJk806VenNYDLKbVk%2F22eFzjbOHw6LXhuarTE0EeBOKo5fHg0%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690bb0b9bbe097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"address":{"geolocation":{"lat":"-37.3159","long":"81.1496"},"city":"kilcoole","street":"new road","number":7682,"zipcode":"12926-3874"},"id":1,"email":"john@gmail.com","username":"johnd","password":"m38rmF$","name":{"firstname":"john","lastname":"doe"},"phone":"1-570-236-7033","__v":0} 
+ </msg>
+<msg time="2025-05-27T22:45:58.282536" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/users/${user_id}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.043590" elapsed="0.239005"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:58.283938" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.282844" elapsed="0.001229"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:58.285541" level="INFO">${json} = {'address': {'geolocation': {'lat': '-37.3159', 'long': '81.1496'}, 'city': 'kilcoole', 'street': 'new road', 'number': 7682, 'zipcode': '12926-3874'}, 'id': 1, 'email': 'john@gmail.com', 'username': ...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.284353" elapsed="0.001253"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:58.285716" elapsed="0.000097"/>
+</return>
+<msg time="2025-05-27T22:45:58.286067" level="INFO">${user} = {'address': {'geolocation': {'lat': '-37.3159', 'long': '81.1496'}, 'city': 'kilcoole', 'street': 'new road', 'number': 7682, 'zipcode': '12926-3874'}, 'id': 1, 'email': 'john@gmail.com', 'username': ...</msg>
+<var>${user}</var>
+<arg>1</arg>
+<status status="PASS" start="2025-05-27T22:45:58.043214" elapsed="0.242906"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${user['username']}</arg>
+<arg>${TEST_USER['username']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.294840" elapsed="0.001983"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:58.042149" elapsed="0.255680"/>
+</test>
+<test id="s1-t14" name="TC14 - Update User" line="103">
+<kw name="Update User" owner="fakestore_keywords">
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:58.447928" level="INFO">PUT Request : url=https://fakestoreapi.com/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '96'} 
+ body=b'{"email": "upjane.smith@example.com", "username": "upjanesmith", "password": "upsecurePass123!"}' 
+ </msg>
+<msg time="2025-05-27T22:45:58.448144" level="INFO">PUT Response : url=https://fakestoreapi.com/users/1 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:58 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"5b-AaGkR9Fi/8XSisXPfZDHfCcouqI"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=OelfVa%2BHIzBYrr8%2FzhaYGzX9b8tP4TRJ2lLKwgS5NRvT0A2tXyRFhmUVjMJPYbbiQGVePo7eCanq%2Fg15YVyrW%2FShN4tZ7S5kHKDaoH2J09w%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690bb26b63e097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"email":"upjane.smith@example.com","username":"upjanesmith","password":"upsecurePass123!"} 
+ </msg>
+<msg time="2025-05-27T22:45:58.448529" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/users/${user_id}</arg>
+<arg>json=${user_data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.315200" elapsed="0.133374"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:58.449446" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.448766" elapsed="0.000767"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-27T22:45:58.450736" level="INFO">${json} = {'email': 'upjane.smith@example.com', 'username': 'upjanesmith', 'password': 'upsecurePass123!'}</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.449704" elapsed="0.001107"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-05-27T22:45:58.450939" elapsed="0.000065"/>
+</return>
+<msg time="2025-05-27T22:45:58.451289" level="INFO">${updated_user} = {'email': 'upjane.smith@example.com', 'username': 'upjanesmith', 'password': 'upsecurePass123!'}</msg>
+<var>${updated_user}</var>
+<arg>1</arg>
+<arg>${TEST_USER_UPDATE}</arg>
+<status status="PASS" start="2025-05-27T22:45:58.314169" elapsed="0.137165"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${updated_user['username']}</arg>
+<arg>${TEST_USER_UPDATE['username']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.452554" elapsed="0.001578"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:58.301977" elapsed="0.153019"/>
+</test>
+<test id="s1-t15" name="TC15 - Delete User" line="107">
+<kw name="Delete User" owner="fakestore_keywords">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-05-27T22:45:58.691909" level="INFO">DELETE Request : url=https://fakestoreapi.com/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-05-27T22:45:58.692042" level="INFO">DELETE Response : url=https://fakestoreapi.com/users/1 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 27 May 2025 22:45:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"120-HNMhv14aQeBJetA9fBvavCZ+gdk"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=5czavCFog0tpBwStCDxIsjri9IQtcpffrUT4Zip791tYQB4lVBoMeZhLpPqxo5QNIOy4%2BbvTIeSD%2FF5OuVC%2FbOzPxZVp9FzSS3SuxByZQ7k%3D"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '94690bb34c40e097-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"address":{"geolocation":{"lat":"-37.3159","long":"81.1496"},"city":"kilcoole","street":"new road","number":7682,"zipcode":"12926-3874"},"id":1,"email":"john@gmail.com","username":"johnd","password":"m38rmF$","name":{"firstname":"john","lastname":"doe"},"phone":"1-570-236-7033","__v":0} 
+ </msg>
+<msg time="2025-05-27T22:45:58.692246" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fakestore</arg>
+<arg>/users/${user_id}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.459463" elapsed="0.232824"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-27T22:45:58.693233" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-27T22:45:58.692476" elapsed="0.000830"/>
+</kw>
+<arg>1</arg>
+<status status="PASS" start="2025-05-27T22:45:58.459185" elapsed="0.234213"/>
+</kw>
+<status status="PASS" start="2025-05-27T22:45:58.458531" elapsed="0.236272"/>
+</test>
+<status status="PASS" start="2025-05-27T22:45:52.988521" elapsed="5.711823"/>
+</suite>
+<statistics>
+<total>
+<stat pass="15" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Fakestore Api Tests" id="s1" pass="15" fail="0" skip="0">Fakestore Api Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
