@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-24T10:16:07.279617" rpa="false" schemaversion="5">
+<suite id="s1" name="Selenium Practice" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\4_QA_Robot_Documentation_FOR_LOG\testcases\selenium_practice.robot">
+<kw name="Ouvrir le navigateur" owner="selenium_practice" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-24T10:16:07.817999" level="INFO">Opening browser 'Chrome' to base url 'https://selenium-practice.netlify.app'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-24T10:16:07.817642" elapsed="3.695177"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-24T10:16:11.513200" elapsed="0.254582"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-06-24T10:16:11.768096" elapsed="0.006206"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-06-24T10:16:11.775226" elapsed="0.002537"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-24T10:16:11.779137" level="INFO">Executing JavaScript:
+return navigator.language || navigator.userLanguage;
+Without any arguments.</msg>
+<msg time="2025-06-24T10:16:11.794740" level="INFO">${language} = fr-FR</msg>
+<var>${language}</var>
+<arg>return navigator.language || navigator.userLanguage;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-24T10:16:11.778141" elapsed="0.016688"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-24T10:16:11.797129" level="INFO">${lang_code} = fr</msg>
+<var>${lang_code}</var>
+<arg>'${language.split("-")[0]}'.lower()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-24T10:16:11.795472" elapsed="0.001740"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-06-24T10:16:11.798002" level="INFO">${LANG} = fr</msg>
+<arg>${LANG}</arg>
+<arg>${lang_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-06-24T10:16:11.797560" elapsed="0.000553"/>
+</kw>
+<doc>Ouvre le navigateur et détecte la langue automatiquement via le navigateur.</doc>
+<status status="PASS" start="2025-06-24T10:16:07.816763" elapsed="3.981527"/>
+</kw>
+<test id="s1-t1" name="Test Remplissage Et Soumission Du Formulaire" line="12">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-24T10:16:11.801417" level="INFO">${expected_msg} = Soumis avec succès</msg>
+<var>${expected_msg}</var>
+<arg>${VALID_MSG_${LANG}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-24T10:16:11.800525" elapsed="0.001127"/>
+</kw>
+<kw name="Exécuter scénario" owner="selenium_practice">
+<kw name="Afficher informations testeur" owner="selenium_practice">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-24T10:16:11.810507" level="INFO">Testeur: Mamadou Bobo DIALLO</msg>
+<arg>Testeur: ${TESTER_FIRSTNAME} ${TESTER_LASTNAME}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-24T10:16:11.810092" elapsed="0.001730"/>
+</kw>
+<doc>Affiche les informations du testeur dans la console.</doc>
+<status status="PASS" start="2025-06-24T10:16:11.809615" elapsed="0.002406"/>
+</kw>
+<kw name="Remplir le formulaire" owner="selenium_practice">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-24T10:16:11.813584" level="INFO">Typing text 'Mamadou Bobo DIALLO' into text field 'id=name'.</msg>
+<arg>${NAME_FIELD}</arg>
+<arg>${TESTER_FIRSTNAME} ${TESTER_LASTNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T10:16:11.812799" elapsed="0.769301"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-06-24T10:16:12.582858" level="INFO">Selecting options from selection list 'id=selection' by value item2.</msg>
+<arg>${SELECT_DROPDOWN}</arg>
+<arg>item2</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-06-24T10:16:12.582444" elapsed="0.160329"/>
+</kw>
+<kw name="Cocher Toutes Les Checkboxes" owner="selenium_practice">
+<for flavor="IN">
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T10:16:12.745027" level="INFO">Clicking element 'id=check1'.</msg>
+<arg>${CHECKBOX}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T10:16:12.744556" elapsed="0.141691"/>
+</kw>
+<var name="${CHECKBOX}">id=check1</var>
+<status status="PASS" start="2025-06-24T10:16:12.744228" elapsed="0.142176"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T10:16:12.887347" level="INFO">Clicking element 'id=check3'.</msg>
+<arg>${CHECKBOX}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T10:16:12.886941" elapsed="0.118377"/>
+</kw>
+<var name="${CHECKBOX}">id=check3</var>
+<status status="PASS" start="2025-06-24T10:16:12.886711" elapsed="0.118751"/>
+</iter>
+<var>${CHECKBOX}</var>
+<value>@{CHECKBOX_IDS}</value>
+<status status="PASS" start="2025-06-24T10:16:12.743734" elapsed="0.261874"/>
+</for>
+<doc>Coche toutes les cases spécifiées.</doc>
+<status status="PASS" start="2025-06-24T10:16:12.743244" elapsed="0.262569"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-24T10:16:13.006592" level="INFO">Typing text '06/09/1999' into text field 'id=date'.</msg>
+<arg>${DATE_PICKER}</arg>
+<arg>${DATE_TEST}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.006108" elapsed="0.153933"/>
+</kw>
+<doc>Remplit le formulaire avec les données de test.</doc>
+<status status="PASS" start="2025-06-24T10:16:11.812329" elapsed="1.348015"/>
+</kw>
+<kw name="Soumettre le formulaire" owner="selenium_practice">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-24T10:16:13.161669" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.161248" elapsed="0.162497"/>
+</kw>
+<doc>Clique sur le bouton de soumission du formulaire.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.160731" elapsed="0.163248"/>
+</kw>
+<kw name="Vérifier message de réussite" owner="selenium_practice">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-24T10:16:13.372593" level="INFO">${page_text} = Submitted Successfully</msg>
+<var>${page_text}</var>
+<arg>xpath=/html/body/form/div</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.325137" elapsed="0.047539"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-24T10:16:13.374224" level="INFO">Message trouvé en anglais : Submitted Successfully</msg>
+<arg>Message trouvé en anglais : ${VALID_MSG_en}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.373842" elapsed="0.002003"/>
+</kw>
+<arg>'${expected_msg}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message attendu trouvé : ${expected_msg}</arg>
+<arg>console=True</arg>
+<arg>ELSE IF</arg>
+<arg>'${VALID_MSG_en}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message trouvé en anglais : ${VALID_MSG_en}</arg>
+<arg>console=True</arg>
+<arg>ELSE IF</arg>
+<arg>'${VALID_MSG_fr}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message trouvé en français : ${VALID_MSG_fr}</arg>
+<arg>console=True</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Aucun des messages attendus ('${expected_msg}', '${VALID_MSG_en}', '${VALID_MSG_fr}') n'a été trouvé.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.372970" elapsed="0.003059"/>
+</kw>
+<arg>${expected_msg}</arg>
+<doc>Vérifie si le message de succès attendu est présent, sinon vérifie la version alternative.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.324378" elapsed="0.052129"/>
+</kw>
+<arg>${expected_msg}</arg>
+<status status="PASS" start="2025-06-24T10:16:11.808275" elapsed="1.568379"/>
+</kw>
+<kw name="Capture Screenshot If Test Failed" owner="selenium_practice" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.378132" elapsed="0.000195"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Log Source</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.378562" elapsed="0.000172"/>
+</kw>
+<doc>Capture une capture d'écran si le test échoue.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.377578" elapsed="0.001302"/>
+</kw>
+<doc>Ce test vérifie que le formulaire peut être rempli correctement et qu'un message valide est affiché.</doc>
+<tag>sanity</tag>
+<tag>selenium_practice</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-06-24T10:16:11.798464" elapsed="1.580973"/>
+</test>
+<kw name="Fermer le navigateur" owner="selenium_practice" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.385041" elapsed="2.478236"/>
+</kw>
+<doc>Ferme proprement le navigateur.</doc>
+<status status="PASS" start="2025-06-24T10:16:13.384675" elapsed="2.478833"/>
+</kw>
+<doc>Scénario de test de remplissage et soumission de formulaire Selenium Practice.</doc>
+<status status="PASS" start="2025-06-24T10:16:07.282922" elapsed="8.580720"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">sanity</stat>
+<stat pass="1" fail="0" skip="0">selenium_practice</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Selenium Practice" id="s1" pass="1" fail="0" skip="0">Selenium Practice</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

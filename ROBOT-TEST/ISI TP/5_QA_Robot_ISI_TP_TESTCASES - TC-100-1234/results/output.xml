@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-24T13:04:38.762247" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Negative Remember" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\5_QA_Robot_ISI_TP_TESTCASES\testcases\login_negative_remember.robot">
+<kw name="Préparer environnement test" owner="home_page_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:39.139987" level="INFO">Opening browser 'Chrome' to base url 'https://automationplayground.com/crm/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-24T13:04:39.139383" elapsed="6.089328"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-24T13:04:45.229220" elapsed="0.078490"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.5s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-06-24T13:04:45.308119" elapsed="0.001217"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-06-24T13:04:45.309660" elapsed="0.510380"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:45.821079" level="INFO">Executing JavaScript:
+return navigator.language || navigator.userLanguage;
+Without any arguments.</msg>
+<msg time="2025-06-24T13:04:46.333354" level="INFO">${language} = fr-FR</msg>
+<var>${language}</var>
+<arg>return navigator.language || navigator.userLanguage;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-24T13:04:45.820371" elapsed="0.513086"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-24T13:04:46.335808" level="INFO">${lang_code} = fr</msg>
+<var>${lang_code}</var>
+<arg>'${language.split("-")[0]}'.lower()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-24T13:04:46.333812" elapsed="0.002072"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-06-24T13:04:46.336620" level="INFO">${LANG} = fr</msg>
+<arg>${LANG}</arg>
+<arg>${lang_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-06-24T13:04:46.336174" elapsed="0.000567"/>
+</kw>
+<doc>Prépare le navigateur et configure les délais.</doc>
+<status status="PASS" start="2025-06-24T13:04:39.137260" elapsed="7.199678"/>
+</kw>
+<test id="s1-t1" name="TC-1003-1 Empty Credentials Should Prevent Submission" line="15">
+<kw name="Navigate To Login Page" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:46.340674" level="INFO">Clicking element 'xpath=/html/body/nav/ul/li/a'.</msg>
+<arg>${LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:04:46.339721" elapsed="1.607825"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T13:04:47.947909" elapsed="0.528103"/>
+</kw>
+<doc>Clique sur le lien Login depuis la homepage</doc>
+<status status="PASS" start="2025-06-24T13:04:46.339031" elapsed="2.137819"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:48.481080" level="INFO">Clicking element 'id=submit-id'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:04:48.479691" elapsed="1.219251"/>
+</kw>
+<kw name="Verify Required Fields Enforcement" owner="login_keywords">
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:50.864171" level="INFO">Element 'id=email-id' attribute 'required' contains value 'true'.</msg>
+<arg>${LOGIN_EMAIL}</arg>
+<arg>required</arg>
+<arg>true</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2025-06-24T13:04:49.762606" elapsed="1.101717"/>
+</kw>
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:51.903764" level="INFO">Element 'id=password' attribute 'required' contains value 'true'.</msg>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>required</arg>
+<arg>true</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2025-06-24T13:04:50.864580" elapsed="1.039352"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_FORM}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-24T13:04:51.904152" elapsed="1.057989"/>
+</kw>
+<doc>Vérifie que les champs obligatoires bloquent la soumission</doc>
+<status status="PASS" start="2025-06-24T13:04:49.761965" elapsed="3.200406"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-24T13:04:52.964729" level="INFO">${expected_msg} = Se connecter</msg>
+<var>${expected_msg}</var>
+<arg>${INVALID_MSG_LOGIN_${LANG}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-24T13:04:52.964244" elapsed="0.000555"/>
+</kw>
+<kw name="Vérifier message d'échec login" owner="login_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:54.062737" level="INFO">${page_text} = Login</msg>
+<var>${page_text}</var>
+<arg>${LOGIN_PAGE_TEXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:04:52.966003" elapsed="1.096834"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-24T13:04:54.064583" level="INFO">Message trouvé en anglais : Login</msg>
+<arg>Message trouvé en anglais : ${INVALID_MSG_LOGIN_en}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-24T13:04:54.064110" elapsed="0.001607"/>
+</kw>
+<arg>'${expected_msg}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message attendu trouvé : ${expected_msg}</arg>
+<arg>console=True</arg>
+<arg>ELSE IF</arg>
+<arg>'${INVALID_MSG_LOGIN_en}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message trouvé en anglais : ${INVALID_MSG_LOGIN_en}</arg>
+<arg>console=True</arg>
+<arg>ELSE IF</arg>
+<arg>'${INVALID_MSG_LOGIN_fr}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message trouvé en français : ${INVALID_MSG_LOGIN_fr}</arg>
+<arg>console=True</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Aucun des messages attendus ('${expected_msg}', '${INVALID_MSG_LOGIN_en}', '${INVALID_MSG_LOGIN_fr}') n'a été trouvé.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-06-24T13:04:54.063168" elapsed="0.002754"/>
+</kw>
+<arg>${expected_msg}</arg>
+<doc>Vérifie si le message d'échec attendu est présent, sinon vérifie la version alternative.</doc>
+<status status="PASS" start="2025-06-24T13:04:52.965440" elapsed="1.100775"/>
+</kw>
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:54.620550" level="INFO">Current page does not contain element 'id=customers'.</msg>
+<arg>${CONTACTS_TABLE}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2025-06-24T13:04:54.066987" elapsed="0.553757"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Capture Screenshot If Test Failed" owner="home_page_keywords">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-24T13:04:54.663585" elapsed="0.000685"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Log Source</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-24T13:04:54.664673" elapsed="0.000264"/>
+</kw>
+<doc>Capture une capture d'écran si le test échoue.</doc>
+<status status="PASS" start="2025-06-24T13:04:54.662713" elapsed="0.002681"/>
+</kw>
+<kw name="Logout User" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:54.667810" level="INFO">Clicking element 'xpath=/html/body/nav/ul/li/a'.</msg>
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:04:54.667299" elapsed="1.369090"/>
+</kw>
+<doc>Effectue la déconnexion</doc>
+<status status="PASS" start="2025-06-24T13:04:54.666480" elapsed="1.370120"/>
+</kw>
+<arg>Capture Screenshot If Test Failed</arg>
+<arg>AND</arg>
+<arg>Logout User</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-06-24T13:04:54.662002" elapsed="1.374706"/>
+</kw>
+<doc>Vérifie que les champs required empêchent la soumission</doc>
+<tag>functional</tag>
+<tag>login_validation</tag>
+<status status="PASS" start="2025-06-24T13:04:46.337158" elapsed="9.700549"/>
+</test>
+<test id="s1-t2" name="TC-1003-2 Remember Me Should Persist Email" line="31">
+<kw name="Navigate To Login Page" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:56.044169" level="INFO">Clicking element 'xpath=/html/body/nav/ul/li/a'.</msg>
+<arg>${LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:04:56.043944" elapsed="1.276022"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T13:04:57.320269" elapsed="0.526376"/>
+</kw>
+<doc>Clique sur le lien Login depuis la homepage</doc>
+<status status="PASS" start="2025-06-24T13:04:56.043608" elapsed="1.803194"/>
+</kw>
+<kw name="Enter Valid Credentials" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:57.848944" level="INFO">Typing text 'admin@robotframeworktutorial.com' into text field 'id=email-id'.</msg>
+<arg>${LOGIN_EMAIL}</arg>
+<arg>${VALID_USERNAME_AUTOMATION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:04:57.848369" elapsed="1.859328"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:04:59.708531" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2025-06-24T13:05:00.771654" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${VALID_PASSWORD_AUTOMATION}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:04:59.708052" elapsed="1.679501"/>
+</kw>
+<doc>Saisit des identifiants valides</doc>
+<status status="PASS" start="2025-06-24T13:04:57.847645" elapsed="3.540047"/>
+</kw>
+<kw name="Enable Remember Me" owner="login_keywords">
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:01.388890" level="INFO">Selecting checkbox 'id=remember'.</msg>
+<arg>${REMEMBER_ME}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:01.388661" elapsed="2.690832"/>
+</kw>
+<doc>Coche la case "Remember me"</doc>
+<status status="PASS" start="2025-06-24T13:05:01.388375" elapsed="2.691339"/>
+</kw>
+<kw name="Submit Login Form" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:04.081574" level="INFO">Clicking element 'id=submit-id'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:04.081178" elapsed="1.346763"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CONTACTS_TABLE}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T13:05:05.428272" elapsed="1.175859"/>
+</kw>
+<doc>Soumet le formulaire et vérifie la redirection</doc>
+<status status="PASS" start="2025-06-24T13:05:04.080586" elapsed="2.523697"/>
+</kw>
+<kw name="Logout User" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:06.606367" level="INFO">Clicking element 'xpath=/html/body/nav/ul/li/a'.</msg>
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:06.605964" elapsed="1.826016"/>
+</kw>
+<doc>Effectue la déconnexion</doc>
+<status status="PASS" start="2025-06-24T13:05:06.605369" elapsed="1.826775"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-24T13:05:08.433533" level="INFO">${expected_msg} = Déconnecté</msg>
+<var>${expected_msg}</var>
+<arg>${VALID_MSG_POST_LOGOUT_${LANG}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-24T13:05:08.433194" elapsed="0.000385"/>
+</kw>
+<kw name="Vérifier message de réussite logout" owner="login_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:09.471338" level="INFO">${page_text} = Signed Out</msg>
+<var>${page_text}</var>
+<arg>${LOGOUT_SUCCESS_TEXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:08.434869" elapsed="1.036562"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-24T13:05:09.473119" level="INFO">Message trouvé en anglais : Signed Out</msg>
+<arg>Message trouvé en anglais : ${VALID_MSG_POST_LOGOUT_en}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-24T13:05:09.472727" elapsed="0.001293"/>
+</kw>
+<arg>'${expected_msg}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message attendu trouvé : ${expected_msg}</arg>
+<arg>console=True</arg>
+<arg>ELSE IF</arg>
+<arg>'${VALID_MSG_POST_LOGOUT_en}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message trouvé en anglais : ${VALID_MSG_POST_LOGOUT_en}</arg>
+<arg>console=True</arg>
+<arg>ELSE IF</arg>
+<arg>'${VALID_MSG_POST_LOGOUT_fr}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message trouvé en français : ${VALID_MSG_POST_LOGOUT_fr}</arg>
+<arg>console=True</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Aucun des messages attendus ('${expected_msg}', '${VALID_MSG_POST_LOGOUT_en}', '${VALID_MSG_POST_LOGOUT_fr}') n'a été trouvé.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-06-24T13:05:09.471765" elapsed="0.002433"/>
+</kw>
+<arg>${expected_msg}</arg>
+<doc>Vérifie si le message de succès attendu est présent, sinon vérifie la version alternative.</doc>
+<status status="PASS" start="2025-06-24T13:05:08.434494" elapsed="1.039973"/>
+</kw>
+<kw name="Navigate To Login Page" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:09.475955" level="INFO">Clicking element 'xpath=/html/body/nav/ul/li/a'.</msg>
+<arg>${LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:09.475620" elapsed="1.309128"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T13:05:10.784993" elapsed="0.512879"/>
+</kw>
+<doc>Clique sur le lien Login depuis la homepage</doc>
+<status status="PASS" start="2025-06-24T13:05:09.475141" elapsed="1.823167"/>
+</kw>
+<kw name="Enter Valid Credentials" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:11.300214" level="INFO">Typing text 'admin@robotframeworktutorial.com' into text field 'id=email-id'.</msg>
+<arg>${LOGIN_EMAIL}</arg>
+<arg>${VALID_USERNAME_AUTOMATION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:11.299760" elapsed="1.877089"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:13.177682" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2025-06-24T13:05:14.233944" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${VALID_PASSWORD_AUTOMATION}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:13.177180" elapsed="1.687087"/>
+</kw>
+<doc>Saisit des identifiants valides</doc>
+<status status="PASS" start="2025-06-24T13:05:11.299231" elapsed="3.565171"/>
+</kw>
+<kw name="Verify Email Persistence" owner="login_keywords">
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:15.896969" level="INFO">${stored_email} = admin@robotframeworktutorial.com</msg>
+<var>${stored_email}</var>
+<arg>${PERSISTED_EMAIL}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:14.867299" elapsed="1.029753"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${stored_email}</arg>
+<arg>${VALID_USERNAME_AUTOMATION}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-24T13:05:15.897286" elapsed="0.000373"/>
+</kw>
+<doc>Vérifie que l'email est pré-rempli</doc>
+<status status="PASS" start="2025-06-24T13:05:14.866992" elapsed="1.030784"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Capture Screenshot If Test Failed" owner="home_page_keywords">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-24T13:05:15.899423" elapsed="0.000105"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Log Source</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-24T13:05:15.899676" elapsed="0.000140"/>
+</kw>
+<doc>Capture une capture d'écran si le test échoue.</doc>
+<status status="PASS" start="2025-06-24T13:05:15.899144" elapsed="0.000759"/>
+</kw>
+<kw name="Logout User" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:15.900536" level="INFO">Clicking element 'xpath=/html/body/nav/ul/li/a'.</msg>
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:15.900338" elapsed="1.226385"/>
+</kw>
+<doc>Effectue la déconnexion</doc>
+<status status="PASS" start="2025-06-24T13:05:15.900071" elapsed="1.226803"/>
+</kw>
+<arg>Capture Screenshot If Test Failed</arg>
+<arg>AND</arg>
+<arg>Logout User</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-06-24T13:05:15.898892" elapsed="1.228059"/>
+</kw>
+<doc>Vérifie la persistance de l'email avec "Remember me"</doc>
+<tag>functional</tag>
+<tag>remember persistence</tag>
+<status status="PASS" start="2025-06-24T13:04:56.042478" elapsed="21.085345"/>
+</test>
+<test id="s1-t3" name="TC-1004 Should be able to log out" line="52">
+<kw name="Navigate To Login Page" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:17.134086" level="INFO">Clicking element 'xpath=/html/body/nav/ul/li/a'.</msg>
+<arg>${LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:17.133684" elapsed="1.193586"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T13:05:18.327524" elapsed="0.515413"/>
+</kw>
+<doc>Clique sur le lien Login depuis la homepage</doc>
+<status status="PASS" start="2025-06-24T13:05:17.133143" elapsed="1.710033"/>
+</kw>
+<kw name="Enter Valid Credentials" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:18.845485" level="INFO">Typing text 'admin@robotframeworktutorial.com' into text field 'id=email-id'.</msg>
+<arg>${LOGIN_EMAIL}</arg>
+<arg>${VALID_USERNAME_AUTOMATION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:18.845063" elapsed="1.855529"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:20.701157" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2025-06-24T13:05:21.759580" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${VALID_PASSWORD_AUTOMATION}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:20.700840" elapsed="1.677847"/>
+</kw>
+<doc>Saisit des identifiants valides</doc>
+<status status="PASS" start="2025-06-24T13:05:18.844570" elapsed="3.534282"/>
+</kw>
+<kw name="Submit Login Form" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:22.380553" level="INFO">Clicking element 'id=submit-id'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:22.380269" elapsed="1.102988"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CONTACTS_TABLE}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T13:05:23.483481" elapsed="0.513395"/>
+</kw>
+<doc>Soumet le formulaire et vérifie la redirection</doc>
+<status status="PASS" start="2025-06-24T13:05:22.379892" elapsed="1.617215"/>
+</kw>
+<kw name="Logout User" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:23.998894" level="INFO">Clicking element 'xpath=/html/body/nav/ul/li/a'.</msg>
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:23.998510" elapsed="1.242072"/>
+</kw>
+<doc>Effectue la déconnexion</doc>
+<status status="PASS" start="2025-06-24T13:05:23.998012" elapsed="1.242748"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-24T13:05:25.241700" level="INFO">${expected_msg} = Déconnecté</msg>
+<var>${expected_msg}</var>
+<arg>${VALID_MSG_POST_LOGOUT_${LANG}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-24T13:05:25.241392" elapsed="0.000349"/>
+</kw>
+<kw name="Vérifier message de réussite logout" owner="login_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:26.269775" level="INFO">${page_text} = Signed Out</msg>
+<var>${page_text}</var>
+<arg>${LOGOUT_SUCCESS_TEXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:25.242693" elapsed="1.027178"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-24T13:05:26.271571" level="INFO">Message trouvé en anglais : Signed Out</msg>
+<arg>Message trouvé en anglais : ${VALID_MSG_POST_LOGOUT_en}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-24T13:05:26.271170" elapsed="0.001471"/>
+</kw>
+<arg>'${expected_msg}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message attendu trouvé : ${expected_msg}</arg>
+<arg>console=True</arg>
+<arg>ELSE IF</arg>
+<arg>'${VALID_MSG_POST_LOGOUT_en}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message trouvé en anglais : ${VALID_MSG_POST_LOGOUT_en}</arg>
+<arg>console=True</arg>
+<arg>ELSE IF</arg>
+<arg>'${VALID_MSG_POST_LOGOUT_fr}' in '${page_text}'</arg>
+<arg>Log</arg>
+<arg>Message trouvé en français : ${VALID_MSG_POST_LOGOUT_fr}</arg>
+<arg>console=True</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Aucun des messages attendus ('${expected_msg}', '${VALID_MSG_POST_LOGOUT_en}', '${VALID_MSG_POST_LOGOUT_fr}') n'a été trouvé.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-06-24T13:05:26.270207" elapsed="0.002749"/>
+</kw>
+<arg>${expected_msg}</arg>
+<doc>Vérifie si le message de succès attendu est présent, sinon vérifie la version alternative.</doc>
+<status status="PASS" start="2025-06-24T13:05:25.242363" elapsed="1.030849"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Capture Screenshot If Test Failed" owner="home_page_keywords">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-24T13:05:26.274663" elapsed="0.000161"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Log Source</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-24T13:05:26.274966" elapsed="0.000099"/>
+</kw>
+<doc>Capture une capture d'écran si le test échoue.</doc>
+<status status="PASS" start="2025-06-24T13:05:26.274235" elapsed="0.000914"/>
+</kw>
+<kw name="Logout User" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T13:05:26.275954" level="INFO">Clicking element 'xpath=/html/body/nav/ul/li/a'.</msg>
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T13:05:26.275686" elapsed="1.255350"/>
+</kw>
+<doc>Effectue la déconnexion</doc>
+<status status="PASS" start="2025-06-24T13:05:26.275314" elapsed="1.255872"/>
+</kw>
+<arg>Capture Screenshot If Test Failed</arg>
+<arg>AND</arg>
+<arg>Logout User</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-06-24T13:05:26.273915" elapsed="1.257357"/>
+</kw>
+<doc>Vérifie que la déconnexion est normale</doc>
+<tag>functional</tag>
+<tag>logout</tag>
+<status status="PASS" start="2025-06-24T13:05:17.131845" elapsed="10.399966"/>
+</test>
+<kw name="Fermer le navigateur proprement" owner="home_page_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-24T13:05:27.535149" elapsed="2.774268"/>
+</kw>
+<doc>Ferme proprement le navigateur.</doc>
+<status status="PASS" start="2025-06-24T13:05:27.534860" elapsed="2.774761"/>
+</kw>
+<doc>TC-1003-1-2 &amp; TC-1004 - Login should fail with missing credentials - "Remember me" should persist email address - Should be able to log out</doc>
+<status status="PASS" start="2025-06-24T13:04:38.764926" elapsed="51.544806"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">functional</stat>
+<stat pass="1" fail="0" skip="0">login_validation</stat>
+<stat pass="1" fail="0" skip="0">logout</stat>
+<stat pass="1" fail="0" skip="0">remember persistence</stat>
+</tag>
+<suite>
+<stat name="Login Negative Remember" id="s1" pass="3" fail="0" skip="0">Login Negative Remember</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
