@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-07-08T20:51:29.361332" rpa="false" schemaversion="5">
+<suite id="s1" name="Petstore Api Tests" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\7_Labo_Petstore_Test_APIs\testcases\petstore_api_tests.robot">
+<kw name="Suite Setup" owner="petstore_keywords" type="SETUP">
+<kw name="Create Session To PetStore" owner="petstore_keywords">
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-07-08T20:51:31.858928" level="INFO">Length is 30.</msg>
+<arg>${BASE_URL}</arg>
+<arg>msg=Base URL not configured</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-07-08T20:51:31.858471" elapsed="0.000589"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>https://</arg>
+<arg>msg=Insecure HTTP protocol</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-08T20:51:31.859392" elapsed="0.000418"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>/v2</arg>
+<arg>msg=Missing API version path</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-08T20:51:31.860045" elapsed="0.000347"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Creating session to: ${BASE_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-08T20:51:31.860608" elapsed="0.000810"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:31.862082" level="INFO">Creating Session using : alias=petstore, url=https://petstore.swagger.io/v2, headers={'Content-Type': 'application/json', 'accept': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-07-08T20:51:31.862394" level="INFO">${session} = &lt;requests.sessions.Session object at 0x0000021EFBB41160&gt;</msg>
+<var>${session}</var>
+<arg>petstore</arg>
+<arg>${BASE_URL}</arg>
+<arg>headers=${HEADERS}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-07-08T20:51:31.861685" elapsed="0.000744"/>
+</kw>
+<return>
+<value>${session}</value>
+<status status="PASS" start="2025-07-08T20:51:31.862509" elapsed="0.000060"/>
+</return>
+<doc>Creates HTTP session to PetStore API
+- Base URL: https://petstore.swagger.io/v2
+- Headers: {'Content-Type': 'application/json', 'accept': 'application/json'}
+- SSL Verification: Enabled</doc>
+<status status="PASS" start="2025-07-08T20:51:31.857540" elapsed="0.005238"/>
+</kw>
+<status status="PASS" start="2025-07-08T20:51:31.856997" elapsed="0.005887"/>
+</kw>
+<test id="s1-t1" name="TC00 - Verify API Connection" line="46">
+<kw name="Create Session To PetStore" owner="petstore_keywords">
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-07-08T20:51:31.864709" level="INFO">Length is 30.</msg>
+<arg>${BASE_URL}</arg>
+<arg>msg=Base URL not configured</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-07-08T20:51:31.864385" elapsed="0.000413"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>https://</arg>
+<arg>msg=Insecure HTTP protocol</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-08T20:51:31.865003" elapsed="0.000247"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>/v2</arg>
+<arg>msg=Missing API version path</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-08T20:51:31.865397" elapsed="0.000205"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Creating session to: ${BASE_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-08T20:51:31.865756" elapsed="0.000784"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:31.867179" level="INFO">Creating Session using : alias=petstore, url=https://petstore.swagger.io/v2, headers={'Content-Type': 'application/json', 'accept': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-07-08T20:51:31.867574" level="INFO">${session} = &lt;requests.sessions.Session object at 0x0000021EFBB35F90&gt;</msg>
+<var>${session}</var>
+<arg>petstore</arg>
+<arg>${BASE_URL}</arg>
+<arg>headers=${HEADERS}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-07-08T20:51:31.866757" elapsed="0.000860"/>
+</kw>
+<return>
+<value>${session}</value>
+<status status="PASS" start="2025-07-08T20:51:31.867712" elapsed="0.000058"/>
+</return>
+<doc>Creates HTTP session to PetStore API
+- Base URL: https://petstore.swagger.io/v2
+- Headers: {'Content-Type': 'application/json', 'accept': 'application/json'}
+- SSL Verification: Enabled</doc>
+<status status="PASS" start="2025-07-08T20:51:31.864028" elapsed="0.003900"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:32.934920" level="INFO">GET Request : url=https://petstore.swagger.io/v2/swagger.json 
+ path_url=/v2/swagger.json 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-07-08T20:51:32.935115" level="INFO">GET Response : url=https://petstore.swagger.io/v2/swagger.json 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 08 Jul 2025 20:51:32 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"swagger":"2.0","info":{"description":"This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.","version":"1.0.7","title":"Swagger Petstore","termsOfService":"http://swagger.io/terms/","contact":{"email":"apiteam@swagger.io"},"license":{"name":"Apache 2.0","url":"http://www.apache.org/licenses/LICENSE-2.0.html"}},"host":"petstore.swagger.io","basePath":"/v2","tags":[{"name":"pet","description":"Everything about your Pets","externalDocs":{"description":"Find out more","url":"http://swagger.io"}},{"name":"store","description":"Access to Petstore orders"},{"name":"user","description":"Operations about user","externalDocs":{"description":"Find out more about our store","url":"http://swagger.io"}}],"schemes":["https","http"],"paths":{"/pet/{petId}/uploadImage":{"post":{"tags":["pet"],"summary":"uploads an image","description":"","operationId":"uploadFile","consumes":["multipart/form-data"],"produces":["application/json"],"parameters":[{"name":"petId","in":"path","description":"ID of pet to update","required":true,"type":"integer","format":"int64"},{"name":"additionalMetadata","in":"formData","description":"Additional data to pass to server","required":false,"type":"string"},{"name":"file","in":"formData","description":"file to upload","required":false,"type":"file"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/ApiResponse"}}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/pet":{"post":{"tags":["pet"],"summary":"Add a new pet to the store","description":"","operationId":"addPet","consumes":["application/json","application/xml"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"Pet object that needs to be added to the store","required":true,"schema":{"$ref":"#/definitions/Pet"}}],"responses":{"405":{"description":"Invalid input"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]},"put":{"tags":["pet"],"summary":"Update an existing pet","description":"","operationId":"updatePet","consumes":["application/json","application/xml"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"Pet object that needs to be added to the store","required":true,"schema":{"$ref":"#/definitions/Pet"}}],"responses":{"400":{"description":"Invalid ID supplied"},"404":{"description":"Pet not found"},"405":{"description":"Validation exception"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/pet/findByStatus":{"get":{"tags":["pet"],"summary":"Finds Pets by status","description":"Multiple status values can be provided with comma separated strings","operationId":"findPetsByStatus","produces":["application/json","application/xml"],"parameters":[{"name":"status","in":"query","description":"Status values that need to be considered for filter","required":true,"type":"array","items":{"type":"string","enum":["available","pending","sold"],"default":"available"},"collectionFormat":"multi"}],"responses":{"200":{"description":"successful operation","schema":{"type":"array","items":{"$ref":"#/definitions/Pet"}}},"400":{"description":"Invalid status value"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/pet/findByTags":{"get":{"tags":["pet"],"summary":"Finds Pets by tags","description":"Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.","operationId":"findPetsByTags","produces":["application/json","application/xml"],"parameters":[{"name":"tags","in":"query","description":"Tags to filter by","required":true,"type":"array","items":{"type":"string"},"collectionFormat":"multi"}],"responses":{"200":{"description":"successful operation","schema":{"type":"array","items":{"$ref":"#/definitions/Pet"}}},"400":{"description":"Invalid tag value"}},"security":[{"petstore_auth":["write:pets","read:pets"]}],"deprecated":true}},"/pet/{petId}":{"get":{"tags":["pet"],"summary":"Find pet by ID","description":"Returns a single pet","operationId":"getPetById","produces":["application/json","application/xml"],"parameters":[{"name":"petId","in":"path","description":"ID of pet to return","required":true,"type":"integer","format":"int64"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/Pet"}},"400":{"description":"Invalid ID supplied"},"404":{"description":"Pet not found"}},"security":[{"api_key":[]}]},"post":{"tags":["pet"],"summary":"Updates a pet in the store with form data","description":"","operationId":"updatePetWithForm","consumes":["application/x-www-form-urlencoded"],"produces":["application/json","application/xml"],"parameters":[{"name":"petId","in":"path","description":"ID of pet that needs to be updated","required":true,"type":"integer","format":"int64"},{"name":"name","in":"formData","description":"Updated name of the pet","required":false,"type":"string"},{"name":"status","in":"formData","description":"Updated status of the pet","required":false,"type":"string"}],"responses":{"405":{"description":"Invalid input"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]},"delete":{"tags":["pet"],"summary":"Deletes a pet","description":"","operationId":"deletePet","produces":["application/json","application/xml"],"parameters":[{"name":"api_key","in":"header","required":false,"type":"string"},{"name":"petId","in":"path","description":"Pet id to delete","required":true,"type":"integer","format":"int64"}],"responses":{"400":{"description":"Invalid ID supplied"},"404":{"description":"Pet not found"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/store/inventory":{"get":{"tags":["store"],"summary":"Returns pet inventories by status","description":"Returns a map of status codes to quantities","operationId":"getInventory","produces":["application/json"],"parameters":[],"responses":{"200":{"description":"successful operation","schema":{"type":"object","additionalProperties":{"type":"integer","format":"int32"}}}},"security":[{"api_key":[]}]}},"/store/order":{"post":{"tags":["store"],"summary":"Place an order for a pet","description":"","operationId":"placeOrder","consumes":["application/json"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"order placed for purchasing the pet","required":true,"schema":{"$ref":"#/definitions/Order"}}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/Order"}},"400":{"description":"Invalid Order"}}}},"/store/order/{orderId}":{"get":{"tags":["store"],"summary":"Find purchase order by ID","description":"For valid response try integer IDs with value &gt;= 1 and &lt;= 10. Other values will generated exceptions","operationId":"getOrderById","produces":["application/json","application/xml"],"parameters":[{"name":"orderId","in":"path","description":"ID of pet that needs to be fetched","required":true,"type":"integer","maximum":10,"minimum":1,"format":"int64"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/Order"}},"400":{"description":"Invalid ID supplied"},"404":{"description":"Order not found"}}},"delete":{"tags":["store"],"summary":"Delete purchase order by ID","description":"For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors","operationId":"deleteOrder","produces":["application/json","application/xml"],"parameters":[{"name":"orderId","in":"path","description":"ID of the order that needs to be deleted","required":true,"type":"integer","minimum":1,"format":"int64"}],"responses":{"400":{"description":"Invalid ID supplied"},"404":{"description":"Order not found"}}}},"/user/createWithList":{"post":{"tags":["user"],"summary":"Creates list of users with given input array","description":"","operationId":"createUsersWithListInput","consumes":["application/json"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"List of user object","required":true,"schema":{"type":"array","items":{"$ref":"#/definitions/User"}}}],"responses":{"default":{"description":"successful operation"}}}},"/user/{username}":{"get":{"tags":["user"],"summary":"Get user by user name","description":"","operationId":"getUserByName","produces":["application/json","application/xml"],"parameters":[{"name":"username","in":"path","description":"The name that needs to be fetched. Use user1 for testing. ","required":true,"type":"string"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/User"}},"400":{"description":"Invalid username supplied"},"404":{"description":"User not found"}}},"put":{"tags":["user"],"summary":"Updated user","description":"This can only be done by the logged in user.","operationId":"updateUser","consumes":["application/json"],"produces":["application/json","application/xml"],"parameters":[{"name":"username","in":"path","description":"name that need to be updated","required":true,"type":"string"},{"in":"body","name":"body","description":"Updated user object","required":true,"schema":{"$ref":"#/definitions/User"}}],"responses":{"400":{"description":"Invalid user supplied"},"404":{"description":"User not found"}}},"delete":{"tags":["user"],"summary":"Delete user","description":"This can only be done by the logged in user.","operationId":"deleteUser","produces":["application/json","application/xml"],"parameters":[{"name":"username","in":"path","description":"The name that needs to be deleted","required":true,"type":"string"}],"responses":{"400":{"description":"Invalid username supplied"},"404":{"description":"User not found"}}}},"/user/login":{"get":{"tags":["user"],"summary":"Logs user into the system","description":"","operationId":"loginUser","produces":["applicatio... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-07-08T20:51:32.935569" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petstore</arg>
+<arg>/swagger.json</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-08T20:51:31.868576" elapsed="1.067029"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-08T20:51:32.937008" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:32.936350" elapsed="0.000728"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response.text}</arg>
+<arg>Petstore</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-08T20:51:32.938212" elapsed="0.000621"/>
+</kw>
+<status status="PASS" start="2025-07-08T20:51:31.862992" elapsed="1.076967"/>
+</test>
+<test id="s1-t2" name="TC001 - Debug API Connection" line="52">
+<kw name="Create Session To PetStore" owner="petstore_keywords">
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-07-08T20:51:32.945875" level="INFO">Length is 30.</msg>
+<arg>${BASE_URL}</arg>
+<arg>msg=Base URL not configured</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-07-08T20:51:32.945591" elapsed="0.000376"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>https://</arg>
+<arg>msg=Insecure HTTP protocol</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-08T20:51:32.946174" elapsed="0.000299"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>/v2</arg>
+<arg>msg=Missing API version path</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-08T20:51:32.946683" elapsed="0.000287"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Creating session to: ${BASE_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-08T20:51:32.947162" elapsed="0.001022"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:32.948784" level="INFO">Creating Session using : alias=petstore, url=https://petstore.swagger.io/v2, headers={'Content-Type': 'application/json', 'accept': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2025-07-08T20:51:32.949093" level="INFO">${session} = &lt;requests.sessions.Session object at 0x0000021EFBB37250&gt;</msg>
+<var>${session}</var>
+<arg>petstore</arg>
+<arg>${BASE_URL}</arg>
+<arg>headers=${HEADERS}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-07-08T20:51:32.948391" elapsed="0.000753"/>
+</kw>
+<return>
+<value>${session}</value>
+<status status="PASS" start="2025-07-08T20:51:32.949258" elapsed="0.000078"/>
+</return>
+<doc>Creates HTTP session to PetStore API
+- Base URL: https://petstore.swagger.io/v2
+- Headers: {'Content-Type': 'application/json', 'accept': 'application/json'}
+- SSL Verification: Enabled</doc>
+<status status="PASS" start="2025-07-08T20:51:32.945154" elapsed="0.004384"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:34.352625" level="INFO">GET Request : url=https://petstore.swagger.io/v2/swagger.json 
+ path_url=/v2/swagger.json 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-07-08T20:51:34.352781" level="INFO">GET Response : url=https://petstore.swagger.io/v2/swagger.json 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 08 Jul 2025 20:51:34 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"swagger":"2.0","info":{"description":"This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.","version":"1.0.7","title":"Swagger Petstore","termsOfService":"http://swagger.io/terms/","contact":{"email":"apiteam@swagger.io"},"license":{"name":"Apache 2.0","url":"http://www.apache.org/licenses/LICENSE-2.0.html"}},"host":"petstore.swagger.io","basePath":"/v2","tags":[{"name":"pet","description":"Everything about your Pets","externalDocs":{"description":"Find out more","url":"http://swagger.io"}},{"name":"store","description":"Access to Petstore orders"},{"name":"user","description":"Operations about user","externalDocs":{"description":"Find out more about our store","url":"http://swagger.io"}}],"schemes":["https","http"],"paths":{"/pet/{petId}/uploadImage":{"post":{"tags":["pet"],"summary":"uploads an image","description":"","operationId":"uploadFile","consumes":["multipart/form-data"],"produces":["application/json"],"parameters":[{"name":"petId","in":"path","description":"ID of pet to update","required":true,"type":"integer","format":"int64"},{"name":"additionalMetadata","in":"formData","description":"Additional data to pass to server","required":false,"type":"string"},{"name":"file","in":"formData","description":"file to upload","required":false,"type":"file"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/ApiResponse"}}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/pet":{"post":{"tags":["pet"],"summary":"Add a new pet to the store","description":"","operationId":"addPet","consumes":["application/json","application/xml"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"Pet object that needs to be added to the store","required":true,"schema":{"$ref":"#/definitions/Pet"}}],"responses":{"405":{"description":"Invalid input"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]},"put":{"tags":["pet"],"summary":"Update an existing pet","description":"","operationId":"updatePet","consumes":["application/json","application/xml"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"Pet object that needs to be added to the store","required":true,"schema":{"$ref":"#/definitions/Pet"}}],"responses":{"400":{"description":"Invalid ID supplied"},"404":{"description":"Pet not found"},"405":{"description":"Validation exception"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/pet/findByStatus":{"get":{"tags":["pet"],"summary":"Finds Pets by status","description":"Multiple status values can be provided with comma separated strings","operationId":"findPetsByStatus","produces":["application/json","application/xml"],"parameters":[{"name":"status","in":"query","description":"Status values that need to be considered for filter","required":true,"type":"array","items":{"type":"string","enum":["available","pending","sold"],"default":"available"},"collectionFormat":"multi"}],"responses":{"200":{"description":"successful operation","schema":{"type":"array","items":{"$ref":"#/definitions/Pet"}}},"400":{"description":"Invalid status value"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/pet/findByTags":{"get":{"tags":["pet"],"summary":"Finds Pets by tags","description":"Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.","operationId":"findPetsByTags","produces":["application/json","application/xml"],"parameters":[{"name":"tags","in":"query","description":"Tags to filter by","required":true,"type":"array","items":{"type":"string"},"collectionFormat":"multi"}],"responses":{"200":{"description":"successful operation","schema":{"type":"array","items":{"$ref":"#/definitions/Pet"}}},"400":{"description":"Invalid tag value"}},"security":[{"petstore_auth":["write:pets","read:pets"]}],"deprecated":true}},"/pet/{petId}":{"get":{"tags":["pet"],"summary":"Find pet by ID","description":"Returns a single pet","operationId":"getPetById","produces":["application/json","application/xml"],"parameters":[{"name":"petId","in":"path","description":"ID of pet to return","required":true,"type":"integer","format":"int64"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/Pet"}},"400":{"description":"Invalid ID supplied"},"404":{"description":"Pet not found"}},"security":[{"api_key":[]}]},"post":{"tags":["pet"],"summary":"Updates a pet in the store with form data","description":"","operationId":"updatePetWithForm","consumes":["application/x-www-form-urlencoded"],"produces":["application/json","application/xml"],"parameters":[{"name":"petId","in":"path","description":"ID of pet that needs to be updated","required":true,"type":"integer","format":"int64"},{"name":"name","in":"formData","description":"Updated name of the pet","required":false,"type":"string"},{"name":"status","in":"formData","description":"Updated status of the pet","required":false,"type":"string"}],"responses":{"405":{"description":"Invalid input"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]},"delete":{"tags":["pet"],"summary":"Deletes a pet","description":"","operationId":"deletePet","produces":["application/json","application/xml"],"parameters":[{"name":"api_key","in":"header","required":false,"type":"string"},{"name":"petId","in":"path","description":"Pet id to delete","required":true,"type":"integer","format":"int64"}],"responses":{"400":{"description":"Invalid ID supplied"},"404":{"description":"Pet not found"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/store/inventory":{"get":{"tags":["store"],"summary":"Returns pet inventories by status","description":"Returns a map of status codes to quantities","operationId":"getInventory","produces":["application/json"],"parameters":[],"responses":{"200":{"description":"successful operation","schema":{"type":"object","additionalProperties":{"type":"integer","format":"int32"}}}},"security":[{"api_key":[]}]}},"/store/order":{"post":{"tags":["store"],"summary":"Place an order for a pet","description":"","operationId":"placeOrder","consumes":["application/json"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"order placed for purchasing the pet","required":true,"schema":{"$ref":"#/definitions/Order"}}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/Order"}},"400":{"description":"Invalid Order"}}}},"/store/order/{orderId}":{"get":{"tags":["store"],"summary":"Find purchase order by ID","description":"For valid response try integer IDs with value &gt;= 1 and &lt;= 10. Other values will generated exceptions","operationId":"getOrderById","produces":["application/json","application/xml"],"parameters":[{"name":"orderId","in":"path","description":"ID of pet that needs to be fetched","required":true,"type":"integer","maximum":10,"minimum":1,"format":"int64"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/Order"}},"400":{"description":"Invalid ID supplied"},"404":{"description":"Order not found"}}},"delete":{"tags":["store"],"summary":"Delete purchase order by ID","description":"For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors","operationId":"deleteOrder","produces":["application/json","application/xml"],"parameters":[{"name":"orderId","in":"path","description":"ID of the order that needs to be deleted","required":true,"type":"integer","minimum":1,"format":"int64"}],"responses":{"400":{"description":"Invalid ID supplied"},"404":{"description":"Order not found"}}}},"/user/createWithList":{"post":{"tags":["user"],"summary":"Creates list of users with given input array","description":"","operationId":"createUsersWithListInput","consumes":["application/json"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"List of user object","required":true,"schema":{"type":"array","items":{"$ref":"#/definitions/User"}}}],"responses":{"default":{"description":"successful operation"}}}},"/user/{username}":{"get":{"tags":["user"],"summary":"Get user by user name","description":"","operationId":"getUserByName","produces":["application/json","application/xml"],"parameters":[{"name":"username","in":"path","description":"The name that needs to be fetched. Use user1 for testing. ","required":true,"type":"string"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/User"}},"400":{"description":"Invalid username supplied"},"404":{"description":"User not found"}}},"put":{"tags":["user"],"summary":"Updated user","description":"This can only be done by the logged in user.","operationId":"updateUser","consumes":["application/json"],"produces":["application/json","application/xml"],"parameters":[{"name":"username","in":"path","description":"name that need to be updated","required":true,"type":"string"},{"in":"body","name":"body","description":"Updated user object","required":true,"schema":{"$ref":"#/definitions/User"}}],"responses":{"400":{"description":"Invalid user supplied"},"404":{"description":"User not found"}}},"delete":{"tags":["user"],"summary":"Delete user","description":"This can only be done by the logged in user.","operationId":"deleteUser","produces":["application/json","application/xml"],"parameters":[{"name":"username","in":"path","description":"The name that needs to be deleted","required":true,"type":"string"}],"responses":{"400":{"description":"Invalid username supplied"},"404":{"description":"User not found"}}}},"/user/login":{"get":{"tags":["user"],"summary":"Logs user into the system","description":"","operationId":"loginUser","produces":["applicatio... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-07-08T20:51:34.353138" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petstore</arg>
+<arg>/swagger.json</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-08T20:51:32.950318" elapsed="1.402854"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-08T20:51:34.355023" level="INFO">API Status: 200</msg>
+<arg>API Status: ${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.354414" elapsed="0.000668"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-08T20:51:34.356707" level="INFO">API Response: {"swagger":"2.0","info":{"description":"This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.","version":"1.0.7","title":"Swagger Petstore","termsOfService":"http://swagger.io/terms/","contact":{"email":"apiteam@swagger.io"},"license":{"name":"Apache 2.0","url":"http://www.apache.org/licenses/LICENSE-2.0.html"}},"host":"petstore.swagger.io","basePath":"/v2","tags":[{"name":"pet","description":"Everything about your Pets","externalDocs":{"description":"Find out more","url":"http://swagger.io"}},{"name":"store","description":"Access to Petstore orders"},{"name":"user","description":"Operations about user","externalDocs":{"description":"Find out more about our store","url":"http://swagger.io"}}],"schemes":["https","http"],"paths":{"/pet/{petId}/uploadImage":{"post":{"tags":["pet"],"summary":"uploads an image","description":"","operationId":"uploadFile","consumes":["multipart/form-data"],"produces":["application/json"],"parameters":[{"name":"petId","in":"path","description":"ID of pet to update","required":true,"type":"integer","format":"int64"},{"name":"additionalMetadata","in":"formData","description":"Additional data to pass to server","required":false,"type":"string"},{"name":"file","in":"formData","description":"file to upload","required":false,"type":"file"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/ApiResponse"}}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/pet":{"post":{"tags":["pet"],"summary":"Add a new pet to the store","description":"","operationId":"addPet","consumes":["application/json","application/xml"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"Pet object that needs to be added to the store","required":true,"schema":{"$ref":"#/definitions/Pet"}}],"responses":{"405":{"description":"Invalid input"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]},"put":{"tags":["pet"],"summary":"Update an existing pet","description":"","operationId":"updatePet","consumes":["application/json","application/xml"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"Pet object that needs to be added to the store","required":true,"schema":{"$ref":"#/definitions/Pet"}}],"responses":{"400":{"description":"Invalid ID supplied"},"404":{"description":"Pet not found"},"405":{"description":"Validation exception"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/pet/findByStatus":{"get":{"tags":["pet"],"summary":"Finds Pets by status","description":"Multiple status values can be provided with comma separated strings","operationId":"findPetsByStatus","produces":["application/json","application/xml"],"parameters":[{"name":"status","in":"query","description":"Status values that need to be considered for filter","required":true,"type":"array","items":{"type":"string","enum":["available","pending","sold"],"default":"available"},"collectionFormat":"multi"}],"responses":{"200":{"description":"successful operation","schema":{"type":"array","items":{"$ref":"#/definitions/Pet"}}},"400":{"description":"Invalid status value"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/pet/findByTags":{"get":{"tags":["pet"],"summary":"Finds Pets by tags","description":"Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.","operationId":"findPetsByTags","produces":["application/json","application/xml"],"parameters":[{"name":"tags","in":"query","description":"Tags to filter by","required":true,"type":"array","items":{"type":"string"},"collectionFormat":"multi"}],"responses":{"200":{"description":"successful operation","schema":{"type":"array","items":{"$ref":"#/definitions/Pet"}}},"400":{"description":"Invalid tag value"}},"security":[{"petstore_auth":["write:pets","read:pets"]}],"deprecated":true}},"/pet/{petId}":{"get":{"tags":["pet"],"summary":"Find pet by ID","description":"Returns a single pet","operationId":"getPetById","produces":["application/json","application/xml"],"parameters":[{"name":"petId","in":"path","description":"ID of pet to return","required":true,"type":"integer","format":"int64"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/Pet"}},"400":{"description":"Invalid ID supplied"},"404":{"description":"Pet not found"}},"security":[{"api_key":[]}]},"post":{"tags":["pet"],"summary":"Updates a pet in the store with form data","description":"","operationId":"updatePetWithForm","consumes":["application/x-www-form-urlencoded"],"produces":["application/json","application/xml"],"parameters":[{"name":"petId","in":"path","description":"ID of pet that needs to be updated","required":true,"type":"integer","format":"int64"},{"name":"name","in":"formData","description":"Updated name of the pet","required":false,"type":"string"},{"name":"status","in":"formData","description":"Updated status of the pet","required":false,"type":"string"}],"responses":{"405":{"description":"Invalid input"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]},"delete":{"tags":["pet"],"summary":"Deletes a pet","description":"","operationId":"deletePet","produces":["application/json","application/xml"],"parameters":[{"name":"api_key","in":"header","required":false,"type":"string"},{"name":"petId","in":"path","description":"Pet id to delete","required":true,"type":"integer","format":"int64"}],"responses":{"400":{"description":"Invalid ID supplied"},"404":{"description":"Pet not found"}},"security":[{"petstore_auth":["write:pets","read:pets"]}]}},"/store/inventory":{"get":{"tags":["store"],"summary":"Returns pet inventories by status","description":"Returns a map of status codes to quantities","operationId":"getInventory","produces":["application/json"],"parameters":[],"responses":{"200":{"description":"successful operation","schema":{"type":"object","additionalProperties":{"type":"integer","format":"int32"}}}},"security":[{"api_key":[]}]}},"/store/order":{"post":{"tags":["store"],"summary":"Place an order for a pet","description":"","operationId":"placeOrder","consumes":["application/json"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"order placed for purchasing the pet","required":true,"schema":{"$ref":"#/definitions/Order"}}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/Order"}},"400":{"description":"Invalid Order"}}}},"/store/order/{orderId}":{"get":{"tags":["store"],"summary":"Find purchase order by ID","description":"For valid response try integer IDs with value &gt;= 1 and &lt;= 10. Other values will generated exceptions","operationId":"getOrderById","produces":["application/json","application/xml"],"parameters":[{"name":"orderId","in":"path","description":"ID of pet that needs to be fetched","required":true,"type":"integer","maximum":10,"minimum":1,"format":"int64"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/Order"}},"400":{"description":"Invalid ID supplied"},"404":{"description":"Order not found"}}},"delete":{"tags":["store"],"summary":"Delete purchase order by ID","description":"For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors","operationId":"deleteOrder","produces":["application/json","application/xml"],"parameters":[{"name":"orderId","in":"path","description":"ID of the order that needs to be deleted","required":true,"type":"integer","minimum":1,"format":"int64"}],"responses":{"400":{"description":"Invalid ID supplied"},"404":{"description":"Order not found"}}}},"/user/createWithList":{"post":{"tags":["user"],"summary":"Creates list of users with given input array","description":"","operationId":"createUsersWithListInput","consumes":["application/json"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"List of user object","required":true,"schema":{"type":"array","items":{"$ref":"#/definitions/User"}}}],"responses":{"default":{"description":"successful operation"}}}},"/user/{username}":{"get":{"tags":["user"],"summary":"Get user by user name","description":"","operationId":"getUserByName","produces":["application/json","application/xml"],"parameters":[{"name":"username","in":"path","description":"The name that needs to be fetched. Use user1 for testing. ","required":true,"type":"string"}],"responses":{"200":{"description":"successful operation","schema":{"$ref":"#/definitions/User"}},"400":{"description":"Invalid username supplied"},"404":{"description":"User not found"}}},"put":{"tags":["user"],"summary":"Updated user","description":"This can only be done by the logged in user.","operationId":"updateUser","consumes":["application/json"],"produces":["application/json","application/xml"],"parameters":[{"name":"username","in":"path","description":"name that need to be updated","required":true,"type":"string"},{"in":"body","name":"body","description":"Updated user object","required":true,"schema":{"$ref":"#/definitions/User"}}],"responses":{"400":{"description":"Invalid user supplied"},"404":{"description":"User not found"}}},"delete":{"tags":["user"],"summary":"Delete user","description":"This can only be done by the logged in user.","operationId":"deleteUser","produces":["application/json","application/xml"],"parameters":[{"name":"username","in":"path","description":"The name that needs to be deleted","required":true,"type":"string"}],"responses":{"400":{"description":"Invalid username supplied"},"404":{"description":"User not found"}}}},"/user/login":{"get":{"tags":["user"],"summary":"Logs user into the system","description":"","operationId":"loginUser","produces":["application/json","application/xml"],"parameters":[{"name":"username","in":"query","description":"The user name for login","required":true,"type":"string"},{"name":"password","in":"query","description":"The password for login in clear text","required":true,"type":"string"}],"responses":{"200":{"description":"successful operation","headers":{"X-Expires-After":{"type":"string","format":"date-time","description":"date in UTC when token expires"},"X-Rate-Limit":{"type":"integer","format":"int32","description":"calls per hour allowed by the user"}},"schema":{"type":"string"}},"400":{"description":"Invalid username/password supplied"}}}},"/user/logout":{"get":{"tags":["user"],"summary":"Logs out current logged in user session","description":"","operationId":"logoutUser","produces":["application/json","application/xml"],"parameters":[],"responses":{"default":{"description":"successful operation"}}}},"/user/createWithArray":{"post":{"tags":["user"],"summary":"Creates list of users with given input array","description":"","operationId":"createUsersWithArrayInput","consumes":["application/json"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"List of user object","required":true,"schema":{"type":"array","items":{"$ref":"#/definitions/User"}}}],"responses":{"default":{"description":"successful operation"}}}},"/user":{"post":{"tags":["user"],"summary":"Create user","description":"This can only be done by the logged in user.","operationId":"createUser","consumes":["application/json"],"produces":["application/json","application/xml"],"parameters":[{"in":"body","name":"body","description":"Created user object","required":true,"schema":{"$ref":"#/definitions/User"}}],"responses":{"default":{"description":"successful operation"}}}}},"securityDefinitions":{"api_key":{"type":"apiKey","name":"api_key","in":"header"},"petstore_auth":{"type":"oauth2","authorizationUrl":"https://petstore.swagger.io/oauth/authorize","flow":"implicit","scopes":{"read:pets":"read your pets","write:pets":"modify pets in your account"}}},"definitions":{"ApiResponse":{"type":"object","properties":{"code":{"type":"integer","format":"int32"},"type":{"type":"string"},"message":{"type":"string"}}},"Category":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"}},"xml":{"name":"Category"}},"Pet":{"type":"object","required":["name","photoUrls"],"properties":{"id":{"type":"integer","format":"int64"},"category":{"$ref":"#/definitions/Category"},"name":{"type":"string","example":"doggie"},"photoUrls":{"type":"array","xml":{"wrapped":true},"items":{"type":"string","xml":{"name":"photoUrl"}}},"tags":{"type":"array","xml":{"wrapped":true},"items":{"xml":{"name":"tag"},"$ref":"#/definitions/Tag"}},"status":{"type":"string","description":"pet status in the store","enum":["available","pending","sold"]}},"xml":{"name":"Pet"}},"Tag":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"}},"xml":{"name":"Tag"}},"Order":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"petId":{"type":"integer","format":"int64"},"quantity":{"type":"integer","format":"int32"},"shipDate":{"type":"string","format":"date-time"},"status":{"type":"string","description":"Order Status","enum":["placed","approved","delivered"]},"complete":{"type":"boolean"}},"xml":{"name":"Order"}},"User":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"username":{"type":"string"},"firstName":{"type":"string"},"lastName":{"type":"string"},"email":{"type":"string"},"password":{"type":"string"},"phone":{"type":"string"},"userStatus":{"type":"integer","format":"int32","description":"User Status"}},"xml":{"name":"User"}}},"externalDocs":{"description":"Find out more about Swagger","url":"http://swagger.io"}}</msg>
+<arg>API Response: ${response.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.356147" elapsed="0.000878"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-08T20:51:34.359108" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.358100" elapsed="0.001135"/>
+</kw>
+<status status="PASS" start="2025-07-08T20:51:32.943934" elapsed="1.415998"/>
+</test>
+<test id="s1-t3" name="TC01 - Add New Pet" line="59">
+<kw name="Add New Pet" owner="petstore_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-08T20:51:34.365391" level="INFO">${json_string} = {"id": 12345123451, "name": "Rex", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-...</msg>
+<var>${json_string}</var>
+<arg>json.dumps(${pet_data})</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.364702" elapsed="0.000748"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:34.634437" level="INFO">POST Request : url=https://petstore.swagger.io/v2/pet 
+ path_url=/v2/pet 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '348'} 
+ body={"id": 12345123451, "name": "Rex", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg"], "tags": [{"id": 1, "name": "friendly"}], "status": "available"} 
+ </msg>
+<msg time="2025-07-08T20:51:34.634528" level="INFO">POST Response : url=https://petstore.swagger.io/v2/pet 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 08 Jul 2025 20:51:34 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":12345123451,"category":{"id":1,"name":"Dogs"},"name":"Rex","photoUrls":["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg"],"tags":[{"id":1,"name":"friendly"}],"status":"available"} 
+ </msg>
+<msg time="2025-07-08T20:51:34.634661" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petstore</arg>
+<arg>/pet</arg>
+<arg>data=${json_string}</arg>
+<arg>headers=${HEADERS}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.365654" elapsed="0.269037"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-08T20:51:34.635493" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.634850" elapsed="0.000706"/>
+</kw>
+<return>
+<value>${response.json()}</value>
+<status status="PASS" start="2025-07-08T20:51:34.635617" elapsed="0.000040"/>
+</return>
+<msg time="2025-07-08T20:51:34.636329" level="INFO">${new_pet} = {'id': 12345123451, 'category': {'id': 1, 'name': 'Dogs'}, 'name': 'Rex', 'photoUrls': ['https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-...</msg>
+<var>${new_pet}</var>
+<arg>${TEST_PET_DOG}</arg>
+<status status="PASS" start="2025-07-08T20:51:34.364189" elapsed="0.272178"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${new_pet['id']}</arg>
+<arg>${TEST_PET_DOG['id']}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.637399" elapsed="0.001051"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${new_pet['name']}</arg>
+<arg>${TEST_PET_DOG['name']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.639650" elapsed="0.001055"/>
+</kw>
+<status status="PASS" start="2025-07-08T20:51:34.363286" elapsed="0.278605"/>
+</test>
+<test id="s1-t4" name="TC001 - Add New Pet" line="64">
+<kw name="Add New Pet" owner="petstore_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-08T20:51:34.648657" level="INFO">${json_string} = {"id": 12345123452, "name": "Whiskers", "category": {"id": 2, "name": "Cats"}, "photoUrls": ["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-port...</msg>
+<var>${json_string}</var>
+<arg>json.dumps(${pet_data})</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.646918" elapsed="0.001822"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:34.843801" level="INFO">POST Request : url=https://petstore.swagger.io/v2/pet 
+ path_url=/v2/pet 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '584'} 
+ body={"id": 12345123452, "name": "Whiskers", "category": {"id": 2, "name": "Cats"}, "photoUrls": ["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg", "https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg"], "tags": [{"id": 1, "name": "playful"}, {"id": 2, "name": "needs_attention"}], "status": "pending"} 
+ </msg>
+<msg time="2025-07-08T20:51:34.843893" level="INFO">POST Response : url=https://petstore.swagger.io/v2/pet 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 08 Jul 2025 20:51:35 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":12345123452,"category":{"id":2,"name":"Cats"},"name":"Whiskers","photoUrls":["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg","https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg"],"tags":[{"id":1,"name":"playful"},{"id":2,"name":"needs_attention"}],"status":"pending"} 
+ </msg>
+<msg time="2025-07-08T20:51:34.844038" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petstore</arg>
+<arg>/pet</arg>
+<arg>data=${json_string}</arg>
+<arg>headers=${HEADERS}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.649025" elapsed="0.195042"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-08T20:51:34.844766" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.844218" elapsed="0.000683"/>
+</kw>
+<return>
+<value>${response.json()}</value>
+<status status="PASS" start="2025-07-08T20:51:34.844963" elapsed="0.000040"/>
+</return>
+<msg time="2025-07-08T20:51:34.845562" level="INFO">${new_pet} = {'id': 12345123452, 'category': {'id': 2, 'name': 'Cats'}, 'name': 'Whiskers', 'photoUrls': ['https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-port...</msg>
+<var>${new_pet}</var>
+<arg>${TEST_PET_CAT}</arg>
+<status status="PASS" start="2025-07-08T20:51:34.646256" elapsed="0.199339"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${new_pet['id']}</arg>
+<arg>${TEST_PET_CAT['id']}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.846749" elapsed="0.002563"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${new_pet['name']}</arg>
+<arg>${TEST_PET_CAT['name']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.850184" elapsed="0.001154"/>
+</kw>
+<status status="PASS" start="2025-07-08T20:51:34.645175" elapsed="0.206921"/>
+</test>
+<test id="s1-t5" name="TC02 - Get Pet By ID" line="69">
+<kw name="Get Pet By ID" owner="petstore_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:35.078783" level="INFO">GET Request : url=https://petstore.swagger.io/v2/pet/12345123451 
+ path_url=/v2/pet/12345123451 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-07-08T20:51:35.078888" level="INFO">GET Response : url=https://petstore.swagger.io/v2/pet/12345123451 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 08 Jul 2025 20:51:35 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":12345123451,"category":{"id":1,"name":"Dogs"},"name":"Rex","photoUrls":["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg"],"tags":[{"id":1,"name":"friendly"}],"status":"available"} 
+ </msg>
+<msg time="2025-07-08T20:51:35.079037" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petstore</arg>
+<arg>/pet/${pet_id}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-08T20:51:34.856442" elapsed="0.222631"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-08T20:51:35.079942" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.079245" elapsed="0.000774"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-08T20:51:35.080867" level="INFO">${json} = {'id': 12345123451, 'category': {'id': 1, 'name': 'Dogs'}, 'name': 'Rex', 'photoUrls': ['https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.080163" elapsed="0.000746"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-07-08T20:51:35.080977" elapsed="0.000050"/>
+</return>
+<msg time="2025-07-08T20:51:35.081205" level="INFO">${pet} = {'id': 12345123451, 'category': {'id': 1, 'name': 'Dogs'}, 'name': 'Rex', 'photoUrls': ['https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-...</msg>
+<var>${pet}</var>
+<arg>${TEST_PET_DOG['id']}</arg>
+<status status="PASS" start="2025-07-08T20:51:34.855724" elapsed="0.225517"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${pet['name']}</arg>
+<arg>${TEST_PET_DOG['name']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.082255" elapsed="0.001902"/>
+</kw>
+<status status="PASS" start="2025-07-08T20:51:34.855154" elapsed="0.230054"/>
+</test>
+<test id="s1-t6" name="TC002 - Get Pet By ID" line="73">
+<kw name="Get Pet By ID" owner="petstore_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:35.297883" level="INFO">GET Request : url=https://petstore.swagger.io/v2/pet/12345123452 
+ path_url=/v2/pet/12345123452 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-07-08T20:51:35.297987" level="INFO">GET Response : url=https://petstore.swagger.io/v2/pet/12345123452 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 08 Jul 2025 20:51:35 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":12345123452,"category":{"id":2,"name":"Cats"},"name":"Whiskers","photoUrls":["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg","https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg"],"tags":[{"id":1,"name":"playful"},{"id":2,"name":"needs_attention"}],"status":"pending"} 
+ </msg>
+<msg time="2025-07-08T20:51:35.298138" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petstore</arg>
+<arg>/pet/${pet_id}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.089948" elapsed="0.208228"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-08T20:51:35.299014" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.298347" elapsed="0.000741"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-08T20:51:35.299988" level="INFO">${json} = {'id': 12345123452, 'category': {'id': 2, 'name': 'Cats'}, 'name': 'Whiskers', 'photoUrls': ['https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-port...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.299233" elapsed="0.000797"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-07-08T20:51:35.300100" elapsed="0.000045"/>
+</return>
+<msg time="2025-07-08T20:51:35.300325" level="INFO">${pet} = {'id': 12345123452, 'category': {'id': 2, 'name': 'Cats'}, 'name': 'Whiskers', 'photoUrls': ['https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-port...</msg>
+<var>${pet}</var>
+<arg>${TEST_PET_CAT['id']}</arg>
+<status status="PASS" start="2025-07-08T20:51:35.089163" elapsed="0.211279"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${pet['name']}</arg>
+<arg>${TEST_PET_CAT['name']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.301646" elapsed="0.001918"/>
+</kw>
+<status status="PASS" start="2025-07-08T20:51:35.088547" elapsed="0.216319"/>
+</test>
+<test id="s1-t7" name="TC03 - Update Pet" line="77">
+<kw name="Update Pet" owner="petstore_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-08T20:51:35.310950" level="INFO">${json_data} = {"id": 12345123451, "name": "Rex Update", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-po...</msg>
+<var>${json_data}</var>
+<arg>json.dumps(${pet_data})</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.310553" elapsed="0.000434"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:35.734081" level="INFO">PUT Request : url=https://petstore.swagger.io/v2/pet 
+ path_url=/v2/pet 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '350'} 
+ body={"id": 12345123451, "name": "Rex Update", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg"], "tags": [{"id": 1, "name": "friendly"}], "status": "sold"} 
+ </msg>
+<msg time="2025-07-08T20:51:35.734194" level="INFO">PUT Response : url=https://petstore.swagger.io/v2/pet 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 08 Jul 2025 20:51:35 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":12345123451,"category":{"id":1,"name":"Dogs"},"name":"Rex Update","photoUrls":["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg"],"tags":[{"id":1,"name":"friendly"}],"status":"sold"} 
+ </msg>
+<msg time="2025-07-08T20:51:35.734334" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petstore</arg>
+<arg>/pet</arg>
+<arg>data=${json_data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.311109" elapsed="0.423256"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-08T20:51:35.735089" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.734516" elapsed="0.000636"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-08T20:51:35.735888" level="INFO">${json} = {'id': 12345123451, 'category': {'id': 1, 'name': 'Dogs'}, 'name': 'Rex Update', 'photoUrls': ['https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-po...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.735272" elapsed="0.000654"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-07-08T20:51:35.735985" elapsed="0.000040"/>
+</return>
+<msg time="2025-07-08T20:51:35.736182" level="INFO">${updated_pet} = {'id': 12345123451, 'category': {'id': 1, 'name': 'Dogs'}, 'name': 'Rex Update', 'photoUrls': ['https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-po...</msg>
+<var>${updated_pet}</var>
+<arg>${TEST_PET_DOG_UPDATE}</arg>
+<status status="PASS" start="2025-07-08T20:51:35.310247" elapsed="0.425965"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${updated_pet['name']}</arg>
+<arg>${TEST_PET_DOG_UPDATE['name']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.736938" elapsed="0.000974"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${updated_pet['status']}</arg>
+<arg>${TEST_PET_DOG_UPDATE['status']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.739050" elapsed="0.000917"/>
+</kw>
+<status status="PASS" start="2025-07-08T20:51:35.309675" elapsed="0.431394"/>
+</test>
+<test id="s1-t8" name="TC003 - Update Pet" line="82">
+<kw name="Update Pet" owner="petstore_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-08T20:51:35.748660" level="INFO">${json_data} = {"id": 12345123452, "name": "Whiskers Update", "category": {"id": 2, "name": "Cats"}, "photoUrls": ["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-bla...</msg>
+<var>${json_data}</var>
+<arg>json.dumps(${pet_data})</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.748225" elapsed="0.000473"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:35.938138" level="INFO">PUT Request : url=https://petstore.swagger.io/v2/pet 
+ path_url=/v2/pet 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '588'} 
+ body={"id": 12345123452, "name": "Whiskers Update", "category": {"id": 2, "name": "Cats"}, "photoUrls": ["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg", "https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg"], "tags": [{"id": 1, "name": "playful"}, {"id": 2, "name": "needs_attention"}], "status": "sold"} 
+ </msg>
+<msg time="2025-07-08T20:51:35.938250" level="INFO">PUT Response : url=https://petstore.swagger.io/v2/pet 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 08 Jul 2025 20:51:36 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":12345123452,"category":{"id":2,"name":"Cats"},"name":"Whiskers Update","photoUrls":["https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg","https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-blanc-portrait-4.jpg&amp;token=exp=1752001883~hmac=e303bd11eea624ecbd8daa06f9556776&amp;filename=693.jpg"],"tags":[{"id":1,"name":"playful"},{"id":2,"name":"needs_attention"}],"status":"sold"} 
+ </msg>
+<msg time="2025-07-08T20:51:35.938399" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petstore</arg>
+<arg>/pet</arg>
+<arg>data=${json_data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.748824" elapsed="0.189611"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-08T20:51:35.939390" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.938694" elapsed="0.000772"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-08T20:51:35.940308" level="INFO">${json} = {'id': 12345123452, 'category': {'id': 2, 'name': 'Cats'}, 'name': 'Whiskers Update', 'photoUrls': ['https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-bla...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.939608" elapsed="0.000741"/>
+</kw>
+<return>
+<value>${json}</value>
+<status status="PASS" start="2025-07-08T20:51:35.940420" elapsed="0.000046"/>
+</return>
+<msg time="2025-07-08T20:51:35.940645" level="INFO">${updated_pet} = {'id': 12345123452, 'category': {'id': 2, 'name': 'Cats'}, 'name': 'Whiskers Update', 'photoUrls': ['https://downloadscdn6.freepik.com/1562/1/693.jpg?filename=chien-souriant-heureux-isole-sur-fond-bla...</msg>
+<var>${updated_pet}</var>
+<arg>${TEST_PET_CAT_UPDATE}</arg>
+<status status="PASS" start="2025-07-08T20:51:35.747890" elapsed="0.192791"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${updated_pet['name']}</arg>
+<arg>${TEST_PET_CAT_UPDATE['name']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.941803" elapsed="0.001142"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${updated_pet['status']}</arg>
+<arg>${TEST_PET_CAT_UPDATE['status']}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.944175" elapsed="0.001184"/>
+</kw>
+<status status="PASS" start="2025-07-08T20:51:35.746518" elapsed="0.200075"/>
+</test>
+<test id="s1-t9" name="TC04 - Delete Pet" line="87">
+<kw name="Delete Pet" owner="petstore_keywords">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:36.144169" level="INFO">DELETE Request : url=https://petstore.swagger.io/v2/pet/12345123451 
+ path_url=/v2/pet/12345123451 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-07-08T20:51:36.144257" level="INFO">DELETE Response : url=https://petstore.swagger.io/v2/pet/12345123451 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 08 Jul 2025 20:51:36 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"code":200,"type":"unknown","message":"12345123451"} 
+ </msg>
+<msg time="2025-07-08T20:51:36.144383" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petstore</arg>
+<arg>/pet/${pet_id}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-08T20:51:35.952559" elapsed="0.191859"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-08T20:51:36.145213" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:36.144627" elapsed="0.000649"/>
+</kw>
+<arg>${TEST_PET_DOG['id']}</arg>
+<status status="PASS" start="2025-07-08T20:51:35.951630" elapsed="0.193723"/>
+</kw>
+<status status="PASS" start="2025-07-08T20:51:35.950447" elapsed="0.195482"/>
+</test>
+<test id="s1-t10" name="TC004 - Delete Pet" line="90">
+<kw name="Delete Pet" owner="petstore_keywords">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-07-08T20:51:36.357279" level="INFO">DELETE Request : url=https://petstore.swagger.io/v2/pet/12345123452 
+ path_url=/v2/pet/12345123452 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-07-08T20:51:36.357407" level="INFO">DELETE Response : url=https://petstore.swagger.io/v2/pet/12345123452 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 08 Jul 2025 20:51:36 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"code":200,"type":"unknown","message":"12345123452"} 
+ </msg>
+<msg time="2025-07-08T20:51:36.357595" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petstore</arg>
+<arg>/pet/${pet_id}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-08T20:51:36.150024" elapsed="0.207639"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-08T20:51:36.359022" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-08T20:51:36.357907" elapsed="0.001263"/>
+</kw>
+<arg>${TEST_PET_CAT['id']}</arg>
+<status status="PASS" start="2025-07-08T20:51:36.149299" elapsed="0.210007"/>
+</kw>
+<status status="PASS" start="2025-07-08T20:51:36.148716" elapsed="0.211536"/>
+</test>
+<status status="PASS" start="2025-07-08T20:51:29.364887" elapsed="6.998771"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Petstore Api Tests" id="s1" pass="10" fail="0" skip="0">Petstore Api Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

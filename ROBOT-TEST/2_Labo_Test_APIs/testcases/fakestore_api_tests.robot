@@ -41,6 +41,9 @@ Suite Setup    Create Session To FakeStore
 ...    username=upjanesmith
 ...    password=upsecurePass123!
 
+&{NEW_PRODUCT_ID}    = null
+&{NEW_CART_ID}    = null
+
 *** Test Cases ***
 
 TC01 - Get List Of All Products
