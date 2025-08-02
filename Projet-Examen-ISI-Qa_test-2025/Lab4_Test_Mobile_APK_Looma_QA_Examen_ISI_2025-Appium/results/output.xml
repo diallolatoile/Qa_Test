@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-07-31T17:25:18.132250" rpa="false" schemaversion="5">
+<suite id="s1" name="Looma Mobile Test" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\Projet-Examen-ISI-Qa_test-2025\Lab4_Test_Mobile_APK_Looma_QA_Examen_ISI_2025-Appium\testcases\looma_mobile_test.robot">
+<kw name="Run Keyword" owner="BuiltIn" type="SETUP">
+<kw name="Open Application MyApp" owner="mobile_keywords">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>noReset=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-07-31T17:25:19.025855" elapsed="15.968372"/>
+</kw>
+<status status="PASS" start="2025-07-31T17:25:19.025570" elapsed="15.968953"/>
+</kw>
+<arg>Open Application MyApp</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2025-07-31T17:25:19.024858" elapsed="15.969788"/>
+</kw>
+<test id="s1-t1" name="TC01 - Open Application and Login" line="24">
+<kw name="Enter username" owner="mobile_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:36.447451" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]</msg>
+<arg>${USERNAME}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:34.996201" elapsed="1.451400"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:36.453357" level="INFO">Clicking element '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]'.</msg>
+<msg time="2025-07-31T17:25:36.798901" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]</msg>
+<arg>${USERNAME}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:36.447923" elapsed="0.351121"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:36.803868" level="INFO">Typing text 'johnd' into text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]'</msg>
+<msg time="2025-07-31T17:25:37.017904" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]</msg>
+<arg>${USERNAME}</arg>
+<arg>johnd</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:36.799358" elapsed="0.218713"/>
+</kw>
+<status status="PASS" start="2025-07-31T17:25:34.995770" elapsed="2.022482"/>
+</kw>
+<kw name="Enter password" owner="mobile_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:37.715310" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]</msg>
+<arg>${PASSWORD}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:37.022602" elapsed="0.692865"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:37.720246" level="INFO">Clicking element '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]'.</msg>
+<msg time="2025-07-31T17:25:38.044282" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]</msg>
+<arg>${PASSWORD}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:37.715717" elapsed="0.328723"/>
+</kw>
+<kw name="Input Password" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:38.049366" level="INFO">Typing password into text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]'</msg>
+<msg time="2025-07-31T17:25:39.577747" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]</msg>
+<arg>${PASSWORD}</arg>
+<arg>m38rmF$</arg>
+<doc>Types the given password into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:38.044703" elapsed="1.533179"/>
+</kw>
+<status status="PASS" start="2025-07-31T17:25:37.022004" elapsed="2.556046"/>
+</kw>
+<kw name="Log In" owner="mobile_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:40.261066" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Se connecter"]</msg>
+<arg>${LOGIN}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:39.579824" elapsed="0.681364"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:40.265694" level="INFO">Clicking element '//android.widget.Button[@content-desc="Se connecter"]'.</msg>
+<msg time="2025-07-31T17:25:40.564181" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Se connecter"]</msg>
+<arg>${LOGIN}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:40.261430" elapsed="0.302888"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:42.429927" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View
+xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View</msg>
+<arg>${PAGE_FORM}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2025-07-31T17:25:40.564874" elapsed="1.865193"/>
+</kw>
+<status status="PASS" start="2025-07-31T17:25:39.579106" elapsed="2.851119"/>
+</kw>
+<tag>"init"</tag>
+<status status="PASS" start="2025-07-31T17:25:34.994792" elapsed="7.436333"/>
+</test>
+<test id="s1-t2" name="TC02 - Fill Form To Add Product" line="31">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:43.015840" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View</msg>
+<arg>${PAGE_FORM}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:42.436867" elapsed="0.579589"/>
+</kw>
+<kw name="Fill in product details" owner="mobile_keywords">
+<kw name="Input Product Title" owner="mobile_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:43.466945" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[1]</msg>
+<arg>${FORM_TITLE}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:43.026701" elapsed="0.440377"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:43.472244" level="INFO">Clicking element '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[1]'.</msg>
+<msg time="2025-07-31T17:25:43.844010" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[1]</msg>
+<arg>${FORM_TITLE}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:43.467339" elapsed="0.376875"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:43.850927" level="INFO">Clear text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[1]'</msg>
+<msg time="2025-07-31T17:25:45.627238" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[1]</msg>
+<arg>${FORM_TITLE}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:43.844759" elapsed="1.782606"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:45.632072" level="INFO">Typing text 'John Hardy Women's Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet
+695 $' into text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[1]'</msg>
+<msg time="2025-07-31T17:25:45.886170" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[1]</msg>
+<arg>${FORM_TITLE}</arg>
+<arg>${title}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:45.627608" elapsed="0.258729"/>
+</kw>
+<arg>${TEST_PRODUCT['title']}</arg>
+<status status="PASS" start="2025-07-31T17:25:43.026079" elapsed="2.860445"/>
+</kw>
+<kw name="Input Product Price" owner="mobile_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:46.669828" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[2]</msg>
+<arg>${FORM_PRICE}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:45.887717" elapsed="0.782304"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:46.674084" level="INFO">Clicking element '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[2]'.</msg>
+<msg time="2025-07-31T17:25:46.995146" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[2]</msg>
+<arg>${FORM_PRICE}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:46.670285" elapsed="0.325141"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:47.003771" level="INFO">Clear text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[2]'</msg>
+<msg time="2025-07-31T17:25:48.258895" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[2]</msg>
+<arg>${FORM_PRICE}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:46.995731" elapsed="1.263326"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:48.263266" level="INFO">Typing text '695' into text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[2]'</msg>
+<msg time="2025-07-31T17:25:48.471141" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[2]</msg>
+<arg>${FORM_PRICE}</arg>
+<arg>${price}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:48.259326" elapsed="0.211947"/>
+</kw>
+<arg>${TEST_PRODUCT['price']}</arg>
+<status status="PASS" start="2025-07-31T17:25:45.886848" elapsed="2.584612"/>
+</kw>
+<kw name="Input Product Description" owner="mobile_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:49.040513" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[3]</msg>
+<arg>${FORM_DESCRIPTION}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:48.472505" elapsed="0.568131"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:49.045645" level="INFO">Clicking element '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[3]'.</msg>
+<msg time="2025-07-31T17:25:49.264225" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[3]</msg>
+<arg>${FORM_DESCRIPTION}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:49.040881" elapsed="0.223695"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:49.271192" level="INFO">Clear text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[3]'</msg>
+<msg time="2025-07-31T17:25:51.083440" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[3]</msg>
+<arg>${FORM_DESCRIPTION}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:49.264905" elapsed="1.818714"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:51.088232" level="INFO">Typing text 'From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.' into text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[3]'</msg>
+<msg time="2025-07-31T17:25:51.389358" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[3]</msg>
+<arg>${FORM_DESCRIPTION}</arg>
+<arg>${description}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:51.083844" elapsed="0.305817"/>
+</kw>
+<arg>${TEST_PRODUCT['description']}</arg>
+<status status="PASS" start="2025-07-31T17:25:48.471778" elapsed="2.918114"/>
+</kw>
+<kw name="Input Product Category" owner="mobile_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:52.088892" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[4]</msg>
+<arg>${FORM_CATEGORIE}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:51.390943" elapsed="0.698084"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:52.092698" level="INFO">Clicking element '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[4]'.</msg>
+<msg time="2025-07-31T17:25:52.366853" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[4]</msg>
+<arg>${FORM_CATEGORIE}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:52.089319" elapsed="0.277663"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:52.371634" level="INFO">Clear text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[4]'</msg>
+<msg time="2025-07-31T17:25:53.651266" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[4]</msg>
+<arg>${FORM_CATEGORIE}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:52.367226" elapsed="1.284185"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:53.654631" level="INFO">Typing text 'jewelery' into text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[4]'</msg>
+<msg time="2025-07-31T17:25:53.822627" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[4]</msg>
+<arg>${FORM_CATEGORIE}</arg>
+<arg>${category}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:53.651678" elapsed="0.171076"/>
+</kw>
+<arg>${TEST_PRODUCT['category']}</arg>
+<status status="PASS" start="2025-07-31T17:25:51.390256" elapsed="2.432728"/>
+</kw>
+<kw name="Input Product Image URL" owner="mobile_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:54.401266" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[5]</msg>
+<arg>${FORM_URL}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:53.824010" elapsed="0.577380"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:54.405029" level="INFO">Clicking element '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[5]'.</msg>
+<msg time="2025-07-31T17:25:54.618263" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[5]</msg>
+<arg>${FORM_URL}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:54.401682" elapsed="0.217044"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:54.623725" level="INFO">Clear text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[5]'</msg>
+<msg time="2025-07-31T17:25:55.946441" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[5]</msg>
+<arg>${FORM_URL}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:54.618969" elapsed="1.327602"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:55.951477" level="INFO">Typing text 'https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg' into text field '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[5]'</msg>
+<msg time="2025-07-31T17:25:56.153311" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText[5]</msg>
+<arg>${FORM_URL}</arg>
+<arg>${url}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:55.946818" elapsed="0.206643"/>
+</kw>
+<arg>${TEST_PRODUCT['image']}</arg>
+<status status="PASS" start="2025-07-31T17:25:53.823340" elapsed="2.330436"/>
+</kw>
+<arg>${TEST_PRODUCT['title']}</arg>
+<arg>${TEST_PRODUCT['price']}</arg>
+<arg>${TEST_PRODUCT['description']}</arg>
+<arg>${TEST_PRODUCT['category']}</arg>
+<arg>${TEST_PRODUCT['image']}</arg>
+<status status="PASS" start="2025-07-31T17:25:43.020074" elapsed="13.133868"/>
+</kw>
+<kw name="Click Add Product Button" owner="mobile_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:56.904173" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Ajouter"]</msg>
+<arg>${FORM_BUTTON_ADD}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:56.155747" elapsed="0.748539"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:56.908697" level="INFO">Clicking element '//android.widget.Button[@content-desc="Ajouter"]'.</msg>
+<msg time="2025-07-31T17:25:57.692294" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Ajouter"]</msg>
+<arg>${FORM_BUTTON_ADD}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:56.904556" elapsed="0.788191"/>
+</kw>
+<status status="PASS" start="2025-07-31T17:25:56.155184" elapsed="1.537750"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:59.602461" level="INFO">xpath criteria: //android.view.View[@content-desc="Liste des produits"]</msg>
+<arg>${PRODUCTS_LIST_PAGE}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:57.702918" elapsed="1.899689"/>
+</kw>
+<doc>Test filling out the product form and submitting it</doc>
+<tag>form</tag>
+<tag>product</tag>
+<status status="PASS" start="2025-07-31T17:25:42.435681" elapsed="17.167739"/>
+</test>
+<test id="s1-t3" name="TC03 - Vérification affichage produit" line="46">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${TEST_PRODUCT['title']}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T17:25:59.608847" elapsed="0.002355"/>
+</kw>
+<kw name="Verify Product Is Displayed" owner="mobile_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:59.805490" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View</msg>
+<arg>${ADDED_PRODUCT_PAGE}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:25:59.613178" elapsed="0.192449"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:25:59.809880" level="INFO">Clicking element '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View'.</msg>
+<msg time="2025-07-31T17:26:00.624317" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View</msg>
+<arg>${ADDED_PRODUCT_PAGE}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:25:59.805915" elapsed="0.818528"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:26:00.901443" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="Prix: $695
+Catégorie: jewelery
+From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection."]</msg>
+<arg>${PRODUCT_CARD}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:26:00.624693" elapsed="0.276905"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-31T17:26:00.902276" level="INFO">${product_locator} = //android.view.View[@content-desc="John Hardy Women's Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet"]</msg>
+<var>${product_locator}</var>
+<arg>${NEW_ADDED_PRODUCT}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-31T17:26:00.901874" elapsed="0.000467"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-31T17:26:01.037905" level="INFO">xpath criteria: //android.view.View[@content-desc="John Hardy Women's Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet"]</msg>
+<arg>${product_locator}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-31T17:26:00.902591" elapsed="0.135443"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produit trouvé avec le titre : ${product_title}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T17:26:01.038298" elapsed="0.001733"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produit affiché correctement : ${product_title}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T17:26:01.040353" elapsed="0.001498"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-07-31T17:26:01.044581" level="INFO">Clicking element '//android.widget.Button[@content-desc="Fermer"]'.</msg>
+<msg time="2025-07-31T17:26:01.314284" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Fermer"]</msg>
+<arg>${CLOSE_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-07-31T17:26:01.042022" elapsed="0.272394"/>
+</kw>
+<arg>${TEST_PRODUCT['title']}</arg>
+<doc>Vérifie que le produit avec le titre donné est visible dans la liste et clique dessus</doc>
+<status status="PASS" start="2025-07-31T17:25:59.611941" elapsed="1.702627"/>
+</kw>
+<doc>Vérifie que le produit ajouté est bien visible dans la liste</doc>
+<tag>display</tag>
+<tag>mobile</tag>
+<tag>product</tag>
+<tag>validation</tag>
+<status status="PASS" start="2025-07-31T17:25:59.607579" elapsed="1.711131"/>
+</test>
+<status status="PASS" start="2025-07-31T17:25:18.139025" elapsed="43.185375"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">"init"</stat>
+<stat pass="1" fail="0" skip="0">display</stat>
+<stat pass="1" fail="0" skip="0">form</stat>
+<stat pass="1" fail="0" skip="0">mobile</stat>
+<stat pass="2" fail="0" skip="0">product</stat>
+<stat pass="1" fail="0" skip="0">validation</stat>
+</tag>
+<suite>
+<stat name="Looma Mobile Test" id="s1" pass="3" fail="0" skip="0">Looma Mobile Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

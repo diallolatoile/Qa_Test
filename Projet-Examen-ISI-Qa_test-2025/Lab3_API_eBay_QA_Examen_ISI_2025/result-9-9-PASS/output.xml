@@ -1,0 +1,1558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-07-31T15:19:11.152283" rpa="false" schemaversion="5">
+<suite id="s1" name="TC 1001 ebay api tests" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\Projet-Examen-ISI-Qa_test-2025\Lab3_API_eBay_QA_Examen_ISI_2025\testcases\TC_1001_ebay_api_tests.robot">
+<kw name="Setup Test Environment" type="SETUP">
+<kw name="Authenticate To eBay API FOR Inventory" owner="ebay_api_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Tentative de création de la session eBay vers : ${INVENTORY_BASE_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:13.006252" elapsed="0.001014"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:13.007856" level="INFO">Creating Session using : alias=inventory, url=https://api.sandbox.ebay.com/sell/inventory/v1, headers={'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>inventory</arg>
+<arg>${INVENTORY_BASE_URL}</arg>
+<arg>headers=${HEADERS}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-07-31T15:19:13.007468" elapsed="0.000690"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:13.008683" level="INFO">${params} = {'limit': '2', 'offset': '0'}</msg>
+<var>${params}</var>
+<arg>limit=2</arg>
+<arg>offset=0</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:13.008336" elapsed="0.000383"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:13.971713" level="INFO">GET Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item?limit=2&amp;offset=0 
+ path_url=/sell/inventory/v1/inventory_item?limit=2&amp;offset=0 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:13.972041" level="INFO">GET Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item?limit=2&amp;offset=0 
+ status=200, reason=OK 
+ headers={'rlogid': 't6pitnmsgwjfiiw%28ufmadh%7B%3F%3Ctowoiudvn%60jhs.vgiggi%7F.0237g1e61%2B3mcac-1986110e573-0x2352', 'content-language': 'en-US', 'x-ebay-client-tls-version': 'TLSv1.3', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'cache-control': 'no-cache, no-store, max-age=0, must-revalidate', 'pragma': 'no-cache', 'expires': '0', 'x-frame-options': 'DENY', 'content-type': 'application/json', 'content-length': '1836', 'date': 'Thu, 31 Jul 2025 15:19:14 GMT', 'x-envoy-upstream-service-time': '141', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"total":4,"size":2,"href":"/sell/inventory/v1/inventory_item?offset=0&amp;limit=2","next":"/sell/inventory/v1/inventory_item?offset=2&amp;limit=2","limit":2,"inventoryItems":[{"sku":"apple-airpods-pro2-001","locale":"en_US","product":{"title":"Apple AirPods Pro 2 - Noise Cancelling Wireless Earbuds","aspects":{"CPU":["H2 Chip"],"Feature":["Noise Cancellation","Spatial Audio"]},"description":"Apple’s AirPods Pro 2 offer industry-leading noise cancellation, improved spatial audio, and long battery life. Perfect for music, work, and workouts.","upc":["194253397162"],"imageUrls":["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-gen-2-2023?wid=532&amp;hei=582","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-case-open?wid=532&amp;hei=582","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-earbuds?wid=532&amp;hei=582"]},"availability":{"shipToLocationAvailability":{"quantity":15}}},{"sku":"samsung-s23-ultra-blk-256gb","locale":"en_US","product":{"title":"Samsung Galaxy S23 Ultra - 256GB Phantom Black","aspects":{"CPU":["Snapdragon 8 Gen 2"],"Feature":["200MP Camera","S-Pen"]},"description":"Samsung Galaxy S23 Ultra with 200MP camera, powerful Snapdragon 8 Gen 2 chip, and built-in S-Pen. A premium flagship for photography lovers.","upc":["887276702375"],"imageUrls":["https://images.samsung.com/is/image/samsung/p6pim/levant/sm-s918bzkgmea/gallery/levant-galaxy-s23-ultra-s918-sm-s918bzkgmea-thumb-534151212","https://images.samsung.com/is/image/samsung/p6pim/levant/sm-s918bzkgmea/gallery/levant-galaxy-s23-ultra-s918-sm-s918bzkgmea-534151215","https://images.samsung.com/is/image/samsung/p6pim/levant/sm-s918bzkgmea/gallery/levant-galaxy-s23-ultra-s918-sm-s918bzkgmea-534151217"]},"availability":{"shipToLocationAvailability":{"quantity":8}}}]} 
+ </msg>
+<msg time="2025-07-31T15:19:13.972614" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>inventory</arg>
+<arg>/inventory_item</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:13.008856" elapsed="0.963814"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-31T15:19:13.973942" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-31T15:19:13.972884" elapsed="0.001204"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Session API eBay authentifiée avec succès</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:13.974374" elapsed="0.001173"/>
+</kw>
+<doc>Initialise la session API Inventory nommée "inventory" avec l’URL de base et le header OAuth</doc>
+<status status="PASS" start="2025-07-31T15:19:13.004897" elapsed="0.970787"/>
+</kw>
+<kw name="Authenticate To eBay API FOR Buy" owner="ebay_api_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Tentative de création de la session eBay vers : ${BUY_BASE_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:13.976202" elapsed="0.001007"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:13.978090" level="INFO">Creating Session using : alias=buy, url=https://apix.sandbox.ebay.com/buy/order/v1, headers={'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>buy</arg>
+<arg>${BUY_BASE_URL}</arg>
+<arg>headers=${HEADERS}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-07-31T15:19:13.977413" elapsed="0.001201"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Session API eBay authentifiée avec succès</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:13.979024" elapsed="0.000983"/>
+</kw>
+<doc>Initialise la session API Buy nommée "buy" avec l’URL de base et le header OAuth</doc>
+<status status="PASS" start="2025-07-31T15:19:13.975924" elapsed="0.004314"/>
+</kw>
+<kw name="Authenticate To eBay API FOR Fulfillment" owner="ebay_api_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Tentative de création de la session eBay vers : ${FULFILLMENT_BASE_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:13.981161" elapsed="0.001054"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:13.983029" level="INFO">Creating Session using : alias=fulfillment, url=https://api.sandbox.ebay.com/sell/fulfillment/v1, headers={'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>fulfillment</arg>
+<arg>${FULFILLMENT_BASE_URL}</arg>
+<arg>headers=${HEADERS}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-07-31T15:19:13.982519" elapsed="0.001066"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:14.767294" level="INFO">GET Request : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order 
+ path_url=/sell/fulfillment/v1/order 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:14.767495" level="INFO">GET Response : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order 
+ status=200, reason=OK 
+ headers={'rlogid': 't6pithqauq%60fiiw%28ufmadh%7B%3F%3Ctowiugvpd%60jhs.vgiggi%7F.01d73ece%3Ce*gu4j4-1986110e8cf-0x2362', 'x-ebay-client-tls-version': 'TLSv1.3', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'cache-control': 'no-cache, no-store, max-age=0, must-revalidate', 'pragma': 'no-cache', 'expires': '0', 'x-frame-options': 'DENY', 'content-type': 'application/json', 'content-length': '127', 'date': 'Thu, 31 Jul 2025 15:19:14 GMT', 'x-envoy-upstream-service-time': '77', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"href":"https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=50&amp;offset=0","total":0,"limit":50,"offset":0,"orders":[]} 
+ </msg>
+<msg time="2025-07-31T15:19:14.767722" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fulfillment</arg>
+<arg>/order</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:13.983892" elapsed="0.783897"/>
+</kw>
+<kw name="Log Response JSON" owner="ebay_api_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.769231" elapsed="0.002108"/>
+</kw>
+<arg>Log To Console</arg>
+<arg>Status Code: ${response.status_code}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.768783" elapsed="0.002631"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.772135" level="INFO">${body} = {"href":"https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=50&amp;offset=0","total":0,"limit":50,"offset":0,"orders":[]}</msg>
+<var>${body}</var>
+<arg>${response.text}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.771534" elapsed="0.000635"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.772604" level="INFO">${json} = {'href': 'https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=50&amp;offset=0', 'total': 0, 'limit': 50, 'offset': 0, 'orders': []}</msg>
+<var>${json}</var>
+<arg>json.loads(r'''${body}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.772288" elapsed="0.000349"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.773108" level="INFO">${pretty} = {
+  "href": "https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=50&amp;offset=0",
+  "total": 0,
+  "limit": 50,
+  "offset": 0,
+  "orders": []
+}</msg>
+<var>${pretty}</var>
+<arg>json.dumps(${json}, indent=2)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.772753" elapsed="0.000389"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Réponse JSON :\n${pretty}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.773252" elapsed="0.005075"/>
+</kw>
+<arg>${response}</arg>
+<status status="PASS" start="2025-07-31T15:19:14.768176" elapsed="0.010241"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.779087" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.778554" elapsed="0.000598"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Session API eBay authentifiée avec succès</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.779270" elapsed="0.000573"/>
+</kw>
+<doc>Initialise la session API Fulfillment nommée "fulfillment" avec l’URL de base et le header OAuth</doc>
+<status status="PASS" start="2025-07-31T15:19:13.980691" elapsed="0.799227"/>
+</kw>
+<status status="PASS" start="2025-07-31T15:19:13.003889" elapsed="1.776088"/>
+</kw>
+<test id="s1-t1" name="TC_0001 Création De Produits - Success" line="19">
+<kw name="Create A Product - Test Product" owner="ebay_api_keywords">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.782058" level="INFO">${feature_list} = ['Water resistance', 'GPS']</msg>
+<var>${feature_list}</var>
+<arg>Water resistance</arg>
+<arg>GPS</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.781739" elapsed="0.000461"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.782692" level="INFO">${cpu_list} = ['Dual-Core Processor']</msg>
+<var>${cpu_list}</var>
+<arg>Dual-Core Processor</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.782443" elapsed="0.000306"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.783227" level="INFO">${upc_list} = ['888462079525']</msg>
+<var>${upc_list}</var>
+<arg>888462079525</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.782967" elapsed="0.000314"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.783853" level="INFO">${image_urls} = ['http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/S/1/S1/42/S1-42-alu-silver-sport-white-grid?wid=332&amp;hei=392&amp;fmt=jpeg&amp;qlt=95&amp;op_sharpen=0&amp;resMod...</msg>
+<var>${image_urls}</var>
+<arg>http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/S/1/S1/42/S1-42-alu-silver-sport-white-grid?wid=332&amp;hei=392&amp;fmt=jpeg&amp;qlt=95&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.5,0.5,0,0&amp;iccEmbed=0&amp;layer=comp&amp;.v=1472247758975</arg>
+<arg>http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/4/2/42/stainless/42-stainless-sport-white-grid?wid=332&amp;hei=392&amp;fmt=jpeg&amp;qlt=95&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.5,0.5,0,0&amp;iccEmbed=0&amp;layer=comp&amp;.v=1472247760390</arg>
+<arg>http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/4/2/42/ceramic/42-ceramic-sport-cloud-grid?wid=332&amp;hei=392&amp;fmt=jpeg&amp;qlt=95&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.5,0.5,0,0&amp;iccEmbed=0&amp;layer=comp&amp;.v=1472247758007</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.783499" elapsed="0.000410"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.784740" level="INFO">${product_aspects} = {'Feature': ['Water resistance', 'GPS'], 'CPU': ['Dual-Core Processor']}</msg>
+<var>${product_aspects}</var>
+<arg>Feature=${feature_list}</arg>
+<arg>CPU=${cpu_list}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.784177" elapsed="0.000595"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.785295" level="INFO">${product} = {'title': 'Test listing - do not bid or buy - awesome Apple watch test 2', 'aspects': {'Feature': ['Water resistance', 'GPS'], 'CPU': ['Dual-Core Processor']}, 'description': 'Test listing - do not bi...</msg>
+<var>${product}</var>
+<arg>title=Test listing - do not bid or buy - awesome Apple watch test 2</arg>
+<arg>aspects=${product_aspects}</arg>
+<arg>description=Test listing - do not bid or buy\nBuilt-in GPS. Water resistance to 50 meters. A new lightning-fast dual-core processor. And a display that’s two times brighter than before. Full of features that help you stay active, motivated, and connected, Apple Watch Series 2 is designed for all the ways you move</arg>
+<arg>upc=${upc_list}</arg>
+<arg>imageUrls=${image_urls}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.784894" elapsed="0.000436"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.785670" level="INFO">${package_dimensions} = {'height': '5', 'length': '10', 'width': '15', 'unit': 'INCH'}</msg>
+<var>${package_dimensions}</var>
+<arg>height=5</arg>
+<arg>length=10</arg>
+<arg>width=15</arg>
+<arg>unit=INCH</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.785467" elapsed="0.000234"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.785999" level="INFO">${package_weight} = {'value': '2', 'unit': 'POUND'}</msg>
+<var>${package_weight}</var>
+<arg>value=2</arg>
+<arg>unit=POUND</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.785821" elapsed="0.000209"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.786439" level="INFO">${packageWeightAndSize} = {'dimensions': {'height': '5', 'length': '10', 'width': '15', 'unit': 'INCH'}, 'packageType': 'MAILING_BOX', 'weight': {'value': '2', 'unit': 'POUND'}}</msg>
+<var>${packageWeightAndSize}</var>
+<arg>dimensions=${package_dimensions}</arg>
+<arg>packageType=MAILING_BOX</arg>
+<arg>weight=${package_weight}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.786165" elapsed="0.000305"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.786752" level="INFO">${availability_ship} = {'quantity': '10'}</msg>
+<var>${availability_ship}</var>
+<arg>quantity=10</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.786589" elapsed="0.000192"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.787126" level="INFO">${availability} = {'shipToLocationAvailability': {'quantity': '10'}}</msg>
+<var>${availability}</var>
+<arg>shipToLocationAvailability=${availability_ship}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.786891" elapsed="0.000266"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:14.787617" level="INFO">${payload} = {'product': {'title': 'Test listing - do not bid or buy - awesome Apple watch test 2', 'aspects': {'Feature': ['Water resistance', 'GPS'], 'CPU': ['Dual-Core Processor']}, 'description': 'Test listing...</msg>
+<var>${payload}</var>
+<arg>product=${product}</arg>
+<arg>condition=NEW</arg>
+<arg>availability=${availability}</arg>
+<arg>packageWeightAndSize=${packageWeightAndSize}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.787288" elapsed="0.000363"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:15.148091" level="INFO">PUT Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/demo-sku-001 
+ path_url=/sell/inventory/v1/inventory_item/demo-sku-001 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '1606'} 
+ body=b'{"product": {"title": "Test listing - do not bid or buy - awesome Apple watch test 2", "aspects": {"Feature": ["Water resistance", "GPS"], "CPU": ["Dual-Core Processor"]}, "description": "Test listing - do not bid or buy\\nBuilt-in GPS. Water resistance to 50 meters. A new lightning-fast dual-core processor. And a display that\\u2019s two times brighter than before. Full of features that help you stay active, motivated, and connected, Apple Watch Series 2 is designed for all the ways you move", "upc": ["888462079525"], "imageUrls": ["http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/S/1/S1/42/S1-42-alu-silver-sport-white-grid?wid=332&amp;hei=392&amp;fmt=jpeg&amp;qlt=95&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.5,0.5,0,0&amp;iccEmbed=0&amp;layer=comp&amp;.v=1472247758975", "http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/4/2/42/stainless/42-stainless-sport-white-grid?wid=332&amp;hei=392&amp;fmt=jpeg&amp;qlt=95&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.5,0.5,0,0&amp;iccEmbed=0&amp;layer=comp&amp;.v=1472247760390", "http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/4/2/42/ceramic/42-ceramic-sport-cloud-grid?wid=332&amp;hei=392&amp;fmt=jpeg&amp;qlt=95&amp;op_sharpen=0&amp;resMode=bicub&amp;op_usm=0.5,0.5,0,0&amp;iccEmbed=0&amp;layer=comp&amp;.v=1472247758007"]}, "condition": "NEW", "availability": {"shipToLocationAvailability": {"quantity": "10"}}, "packageWeightAndSize": {"dimensions": {"height": "5", "length": "10", "width": "15", "unit": "INCH"}, "packageType": "MAILING_BOX", "weight": {"value": "2", "unit": "POUND"}}}' 
+ </msg>
+<msg time="2025-07-31T15:19:15.148435" level="INFO">PUT Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/demo-sku-001 
+ status=204, reason=No Content 
+ headers={'rlogid': 't6pitnmsgwjfiiw%28ufmadh%7B%3F%3Ctowoiudvn%60jhs.vgiggi%7F.0237g1e61%2Bdkadl-1986110ea1c-0x2350', 'content-language': 'en-US', 'x-ebay-client-tls-version': 'TLSv1.3', 'date': 'Thu, 31 Jul 2025 15:19:15 GMT', 'x-envoy-upstream-service-time': '120', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:15.148635" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<var>${response}</var>
+<arg>inventory</arg>
+<arg>/inventory_item/${SKU}</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:14.787784" elapsed="0.360901"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.149691" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>204</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.148913" elapsed="0.000846"/>
+</kw>
+<status status="PASS" start="2025-07-31T15:19:14.781191" elapsed="0.368648"/>
+</kw>
+<kw name="Create Product - Apple AirPods Pro 2" owner="ebay_api_keywords">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.151616" level="INFO">${feature_list} = ['Noise Cancellation', 'Spatial Audio']</msg>
+<var>${feature_list}</var>
+<arg>Noise Cancellation</arg>
+<arg>Spatial Audio</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.151442" elapsed="0.000214"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.151905" level="INFO">${cpu_list} = ['H2 Chip']</msg>
+<var>${cpu_list}</var>
+<arg>H2 Chip</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.151773" elapsed="0.000161"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.152183" level="INFO">${upc_list} = ['194253397162']</msg>
+<var>${upc_list}</var>
+<arg>194253397162</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.152036" elapsed="0.000177"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.152471" level="INFO">${image_urls} = ['https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-gen-2-2023?wid=532&amp;hei=582', 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-case-ope...</msg>
+<var>${image_urls}</var>
+<arg>https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-gen-2-2023?wid=532&amp;hei=582</arg>
+<arg>https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-case-open?wid=532&amp;hei=582</arg>
+<arg>https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-earbuds?wid=532&amp;hei=582</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.152316" elapsed="0.000184"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.152913" level="INFO">${product_aspects} = {'Feature': ['Noise Cancellation', 'Spatial Audio'], 'CPU': ['H2 Chip']}</msg>
+<var>${product_aspects}</var>
+<arg>Feature=${feature_list}</arg>
+<arg>CPU=${cpu_list}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.152636" elapsed="0.000308"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.153390" level="INFO">${product} = {'title': 'Apple AirPods Pro 2 - Noise Cancelling Wireless Earbuds', 'aspects': {'Feature': ['Noise Cancellation', 'Spatial Audio'], 'CPU': ['H2 Chip']}, 'description': 'Apple’s AirPods Pro 2 offer in...</msg>
+<var>${product}</var>
+<arg>title=Apple AirPods Pro 2 - Noise Cancelling Wireless Earbuds</arg>
+<arg>aspects=${product_aspects}</arg>
+<arg>description=Apple’s AirPods Pro 2 offer industry-leading noise cancellation, improved spatial audio, and long battery life. Perfect for music, work, and workouts.</arg>
+<arg>upc=${upc_list}</arg>
+<arg>imageUrls=${image_urls}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.153061" elapsed="0.000368"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.153758" level="INFO">${package_dimensions} = {'height': '2', 'length': '5', 'width': '5', 'unit': 'INCH'}</msg>
+<var>${package_dimensions}</var>
+<arg>height=2</arg>
+<arg>length=5</arg>
+<arg>width=5</arg>
+<arg>unit=INCH</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.153561" elapsed="0.000227"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.154102" level="INFO">${package_weight} = {'value': '1', 'unit': 'POUND'}</msg>
+<var>${package_weight}</var>
+<arg>value=1</arg>
+<arg>unit=POUND</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.153908" elapsed="0.000224"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.154515" level="INFO">${packageWeightAndSize} = {'dimensions': {'height': '2', 'length': '5', 'width': '5', 'unit': 'INCH'}, 'packageType': 'MAILING_BOX', 'weight': {'value': '1', 'unit': 'POUND'}}</msg>
+<var>${packageWeightAndSize}</var>
+<arg>dimensions=${package_dimensions}</arg>
+<arg>packageType=MAILING_BOX</arg>
+<arg>weight=${package_weight}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.154248" elapsed="0.000297"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.154822" level="INFO">${availability_ship} = {'quantity': '15'}</msg>
+<var>${availability_ship}</var>
+<arg>quantity=15</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.154663" elapsed="0.000188"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.155203" level="INFO">${availability} = {'shipToLocationAvailability': {'quantity': '15'}}</msg>
+<var>${availability}</var>
+<arg>shipToLocationAvailability=${availability_ship}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.154958" elapsed="0.000275"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.155661" level="INFO">${payload} = {'product': {'title': 'Apple AirPods Pro 2 - Noise Cancelling Wireless Earbuds', 'aspects': {'Feature': ['Noise Cancellation', 'Spatial Audio'], 'CPU': ['H2 Chip']}, 'description': 'Apple’s AirPods Pr...</msg>
+<var>${payload}</var>
+<arg>product=${product}</arg>
+<arg>condition=NEW</arg>
+<arg>availability=${availability}</arg>
+<arg>packageWeightAndSize=${packageWeightAndSize}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.155348" elapsed="0.000348"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:15.543330" level="INFO">PUT Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/apple-airpods-pro2-001 
+ path_url=/sell/inventory/v1/inventory_item/apple-airpods-pro2-001 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '969'} 
+ body=b'{"product": {"title": "Apple AirPods Pro 2 - Noise Cancelling Wireless Earbuds", "aspects": {"Feature": ["Noise Cancellation", "Spatial Audio"], "CPU": ["H2 Chip"]}, "description": "Apple\\u2019s AirPods Pro 2 offer industry-leading noise cancellation, improved spatial audio, and long battery life. Perfect for music, work, and workouts.", "upc": ["194253397162"], "imageUrls": ["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-gen-2-2023?wid=532&amp;hei=582", "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-case-open?wid=532&amp;hei=582", "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-earbuds?wid=532&amp;hei=582"]}, "condition": "NEW", "availability": {"shipToLocationAvailability": {"quantity": "15"}}, "packageWeightAndSize": {"dimensions": {"height": "2", "length": "5", "width": "5", "unit": "INCH"}, "packageType": "MAILING_BOX", "weight": {"value": "1", "unit": "POUND"}}}' 
+ </msg>
+<msg time="2025-07-31T15:19:15.543676" level="INFO">PUT Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/apple-airpods-pro2-001 
+ status=204, reason=No Content 
+ headers={'rlogid': 't6pitnmsgwjfiiw%28ufmadh%7B%3F%3Ctowoiudvn%60jhs.vgiggi%7F.0237g1e61%2Bsi%7F4k-1986110eb8b-0x2367', 'content-language': 'en-US', 'x-ebay-client-tls-version': 'TLSv1.3', 'date': 'Thu, 31 Jul 2025 15:19:15 GMT', 'x-envoy-upstream-service-time': '155', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:15.543888" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<var>${response}</var>
+<arg>inventory</arg>
+<arg>/inventory_item/${APPLE_SKU}</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.155811" elapsed="0.388130"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.545406" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>204</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.544188" elapsed="0.001338"/>
+</kw>
+<status status="PASS" start="2025-07-31T15:19:15.150973" elapsed="0.394709"/>
+</kw>
+<kw name="Create Product - Logitech MX Master 3S" owner="ebay_api_keywords">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.547901" level="INFO">${feature_list} = ['Ergonomic Design', 'Silent Clicks']</msg>
+<var>${feature_list}</var>
+<arg>Ergonomic Design</arg>
+<arg>Silent Clicks</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.547522" elapsed="0.000472"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.548689" level="INFO">${cpu_list} = ['Advanced Optical Sensor']</msg>
+<var>${cpu_list}</var>
+<arg>Advanced Optical Sensor</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.548296" elapsed="0.000485"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.549424" level="INFO">${upc_list} = ['097855190172']</msg>
+<var>${upc_list}</var>
+<arg>097855190172</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.549039" elapsed="0.000474"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.550147" level="INFO">${image_urls} = ['https://resource.logitech.com/w_800,c_limit,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-gallery-1.png', 'https://resource.logitec...</msg>
+<var>${image_urls}</var>
+<arg>https://resource.logitech.com/w_800,c_limit,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-gallery-1.png</arg>
+<arg>https://resource.logitech.com/w_800,c_limit,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-gallery-2.png</arg>
+<arg>https://resource.logitech.com/w_800,c_limit,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-gallery-3.png</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.549794" elapsed="0.000421"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.551146" level="INFO">${product_aspects} = {'Feature': ['Ergonomic Design', 'Silent Clicks'], 'CPU': ['Advanced Optical Sensor']}</msg>
+<var>${product_aspects}</var>
+<arg>Feature=${feature_list}</arg>
+<arg>CPU=${cpu_list}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.550506" elapsed="0.000715"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.552265" level="INFO">${product} = {'title': 'Logitech MX Master 3S - Wireless Ergonomic Mouse - Graphite', 'aspects': {'Feature': ['Ergonomic Design', 'Silent Clicks'], 'CPU': ['Advanced Optical Sensor']}, 'description': 'Logitech MX ...</msg>
+<var>${product}</var>
+<arg>title=Logitech MX Master 3S - Wireless Ergonomic Mouse - Graphite</arg>
+<arg>aspects=${product_aspects}</arg>
+<arg>description=Logitech MX Master 3S is designed for advanced users who need precision, ergonomics, and silent clicks. Perfect for productivity workflows.</arg>
+<arg>upc=${upc_list}</arg>
+<arg>imageUrls=${image_urls}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.551507" elapsed="0.000827"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.553271" level="INFO">${package_dimensions} = {'height': '3', 'length': '5', 'width': '4', 'unit': 'INCH'}</msg>
+<var>${package_dimensions}</var>
+<arg>height=3</arg>
+<arg>length=5</arg>
+<arg>width=4</arg>
+<arg>unit=INCH</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.552655" elapsed="0.000691"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.554184" level="INFO">${package_weight} = {'value': '0.5', 'unit': 'POUND'}</msg>
+<var>${package_weight}</var>
+<arg>value=0.5</arg>
+<arg>unit=POUND</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.553719" elapsed="0.000547"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.555291" level="INFO">${packageWeightAndSize} = {'dimensions': {'height': '3', 'length': '5', 'width': '4', 'unit': 'INCH'}, 'packageType': 'MAILING_BOX', 'weight': {'value': '0.5', 'unit': 'POUND'}}</msg>
+<var>${packageWeightAndSize}</var>
+<arg>dimensions=${package_dimensions}</arg>
+<arg>packageType=MAILING_BOX</arg>
+<arg>weight=${package_weight}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.554554" elapsed="0.000824"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.555979" level="INFO">${availability_ship} = {'quantity': '20'}</msg>
+<var>${availability_ship}</var>
+<arg>quantity=20</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.555652" elapsed="0.000398"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.556820" level="INFO">${availability} = {'shipToLocationAvailability': {'quantity': '20'}}</msg>
+<var>${availability}</var>
+<arg>shipToLocationAvailability=${availability_ship}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.556318" elapsed="0.000563"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.557822" level="INFO">${payload} = {'product': {'title': 'Logitech MX Master 3S - Wireless Ergonomic Mouse - Graphite', 'aspects': {'Feature': ['Ergonomic Design', 'Silent Clicks'], 'CPU': ['Advanced Optical Sensor']}, 'description': '...</msg>
+<var>${payload}</var>
+<arg>product=${product}</arg>
+<arg>condition=NEW</arg>
+<arg>availability=${availability}</arg>
+<arg>packageWeightAndSize=${packageWeightAndSize}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.557181" elapsed="0.000716"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:15.933143" level="INFO">PUT Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/logi-mx3s-graphite-001 
+ path_url=/sell/inventory/v1/inventory_item/logi-mx3s-graphite-001 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '1169'} 
+ body=b'{"product": {"title": "Logitech MX Master 3S - Wireless Ergonomic Mouse - Graphite", "aspects": {"Feature": ["Ergonomic Design", "Silent Clicks"], "CPU": ["Advanced Optical Sensor"]}, "description": "Logitech MX Master 3S is designed for advanced users who need precision, ergonomics, and silent clicks. Perfect for productivity workflows.", "upc": ["097855190172"], "imageUrls": ["https://resource.logitech.com/w_800,c_limit,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-gallery-1.png", "https://resource.logitech.com/w_800,c_limit,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-gallery-2.png", "https://resource.logitech.com/w_800,c_limit,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-gallery-3.png"]}, "condition": "NEW", "availability": {"shipToLocationAvailability": {"quantity": "20"}}, "packageWeightAndSize": {"dimensions": {"height": "3", "length": "5", "width": "4", "unit": "INCH"}, "packageType": "MAILING_BOX", "weight": {"value": "0.5", "unit": "POUND"}}}' 
+ </msg>
+<msg time="2025-07-31T15:19:15.933546" level="INFO">PUT Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/logi-mx3s-graphite-001 
+ status=204, reason=No Content 
+ headers={'rlogid': 't6pitnmsgwjfiiw%28ufmadh%7B%3F%3Ctowoiudvn%60jhs.vgiggi%7F.0237g1e61%2Beqrp2-1986110ed1e-0x232e', 'content-language': 'en-US', 'x-ebay-client-tls-version': 'TLSv1.3', 'date': 'Thu, 31 Jul 2025 15:19:16 GMT', 'x-envoy-upstream-service-time': '141', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:15.933812" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<var>${response}</var>
+<arg>inventory</arg>
+<arg>/inventory_item/${LOGI_SKU}</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.558115" elapsed="0.375768"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.936038" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>204</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.934217" elapsed="0.001973"/>
+</kw>
+<status status="PASS" start="2025-07-31T15:19:15.546858" elapsed="0.389526"/>
+</kw>
+<kw name="Create Product - Samsung S23 Ultra" owner="ebay_api_keywords">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.938208" level="INFO">${feature_list} = ['200MP Camera', 'S-Pen']</msg>
+<var>${feature_list}</var>
+<arg>200MP Camera</arg>
+<arg>S-Pen</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.938025" elapsed="0.000228"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.938541" level="INFO">${cpu_list} = ['Snapdragon 8 Gen 2']</msg>
+<var>${cpu_list}</var>
+<arg>Snapdragon 8 Gen 2</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.938386" elapsed="0.000190"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.938864" level="INFO">${upc_list} = ['887276702375']</msg>
+<var>${upc_list}</var>
+<arg>887276702375</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.938694" elapsed="0.000205"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.939201" level="INFO">${image_urls} = ['https://images.samsung.com/is/image/samsung/p6pim/levant/sm-s918bzkgmea/gallery/levant-galaxy-s23-ultra-s918-sm-s918bzkgmea-thumb-534151212', 'https://images.samsung.com/is/image/samsung/p6pim/levan...</msg>
+<var>${image_urls}</var>
+<arg>https://images.samsung.com/is/image/samsung/p6pim/levant/sm-s918bzkgmea/gallery/levant-galaxy-s23-ultra-s918-sm-s918bzkgmea-thumb-534151212</arg>
+<arg>https://images.samsung.com/is/image/samsung/p6pim/levant/sm-s918bzkgmea/gallery/levant-galaxy-s23-ultra-s918-sm-s918bzkgmea-534151215</arg>
+<arg>https://images.samsung.com/is/image/samsung/p6pim/levant/sm-s918bzkgmea/gallery/levant-galaxy-s23-ultra-s918-sm-s918bzkgmea-534151217</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.939021" elapsed="0.000220"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.939711" level="INFO">${product_aspects} = {'Feature': ['200MP Camera', 'S-Pen'], 'CPU': ['Snapdragon 8 Gen 2']}</msg>
+<var>${product_aspects}</var>
+<arg>Feature=${feature_list}</arg>
+<arg>CPU=${cpu_list}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.939389" elapsed="0.000358"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.940253" level="INFO">${product} = {'title': 'Samsung Galaxy S23 Ultra - 256GB Phantom Black', 'aspects': {'Feature': ['200MP Camera', 'S-Pen'], 'CPU': ['Snapdragon 8 Gen 2']}, 'description': 'Samsung Galaxy S23 Ultra with 200MP camera...</msg>
+<var>${product}</var>
+<arg>title=Samsung Galaxy S23 Ultra - 256GB Phantom Black</arg>
+<arg>aspects=${product_aspects}</arg>
+<arg>description=Samsung Galaxy S23 Ultra with 200MP camera, powerful Snapdragon 8 Gen 2 chip, and built-in S-Pen. A premium flagship for photography lovers.</arg>
+<arg>upc=${upc_list}</arg>
+<arg>imageUrls=${image_urls}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.939884" elapsed="0.000407"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.940670" level="INFO">${package_dimensions} = {'height': '6', 'length': '3', 'width': '0.5', 'unit': 'INCH'}</msg>
+<var>${package_dimensions}</var>
+<arg>height=6</arg>
+<arg>length=3</arg>
+<arg>width=0.5</arg>
+<arg>unit=INCH</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.940441" elapsed="0.000264"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.941048" level="INFO">${package_weight} = {'value': '1.2', 'unit': 'POUND'}</msg>
+<var>${package_weight}</var>
+<arg>value=1.2</arg>
+<arg>unit=POUND</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.940847" elapsed="0.000255"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.941567" level="INFO">${packageWeightAndSize} = {'dimensions': {'height': '6', 'length': '3', 'width': '0.5', 'unit': 'INCH'}, 'packageType': 'MAILING_BOX', 'weight': {'value': '1.2', 'unit': 'POUND'}}</msg>
+<var>${packageWeightAndSize}</var>
+<arg>dimensions=${package_dimensions}</arg>
+<arg>packageType=MAILING_BOX</arg>
+<arg>weight=${package_weight}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.941246" elapsed="0.000358"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.941967" level="INFO">${availability_ship} = {'quantity': '8'}</msg>
+<var>${availability_ship}</var>
+<arg>quantity=8</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.941744" elapsed="0.000258"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.942414" level="INFO">${availability} = {'shipToLocationAvailability': {'quantity': '8'}}</msg>
+<var>${availability}</var>
+<arg>shipToLocationAvailability=${availability_ship}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.942156" elapsed="0.000292"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:15.942941" level="INFO">${payload} = {'product': {'title': 'Samsung Galaxy S23 Ultra - 256GB Phantom Black', 'aspects': {'Feature': ['200MP Camera', 'S-Pen'], 'CPU': ['Snapdragon 8 Gen 2']}, 'description': 'Samsung Galaxy S23 Ultra with ...</msg>
+<var>${payload}</var>
+<arg>product=${product}</arg>
+<arg>condition=NEW</arg>
+<arg>availability=${availability}</arg>
+<arg>packageWeightAndSize=${packageWeightAndSize}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.942581" elapsed="0.000399"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:16.312536" level="INFO">PUT Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/samsung-s23-ultra-blk-256gb 
+ path_url=/sell/inventory/v1/inventory_item/samsung-s23-ultra-blk-256gb 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '1036'} 
+ body=b'{"product": {"title": "Samsung Galaxy S23 Ultra - 256GB Phantom Black", "aspects": {"Feature": ["200MP Camera", "S-Pen"], "CPU": ["Snapdragon 8 Gen 2"]}, "description": "Samsung Galaxy S23 Ultra with 200MP camera, powerful Snapdragon 8 Gen 2 chip, and built-in S-Pen. A premium flagship for photography lovers.", "upc": ["887276702375"], "imageUrls": ["https://images.samsung.com/is/image/samsung/p6pim/levant/sm-s918bzkgmea/gallery/levant-galaxy-s23-ultra-s918-sm-s918bzkgmea-thumb-534151212", "https://images.samsung.com/is/image/samsung/p6pim/levant/sm-s918bzkgmea/gallery/levant-galaxy-s23-ultra-s918-sm-s918bzkgmea-534151215", "https://images.samsung.com/is/image/samsung/p6pim/levant/sm-s918bzkgmea/gallery/levant-galaxy-s23-ultra-s918-sm-s918bzkgmea-534151217"]}, "condition": "NEW", "availability": {"shipToLocationAvailability": {"quantity": "8"}}, "packageWeightAndSize": {"dimensions": {"height": "6", "length": "3", "width": "0.5", "unit": "INCH"}, "packageType": "MAILING_BOX", "weight": {"value": "1.2", "unit": "POUND"}}}' 
+ </msg>
+<msg time="2025-07-31T15:19:16.312969" level="INFO">PUT Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/samsung-s23-ultra-blk-256gb 
+ status=204, reason=No Content 
+ headers={'rlogid': 't6pitnmsgwjfiiw%28ufmadh%7B%3F%3Ctowoiudvn%60jhs.vgiggi%7F.0237g1e61%2B3mcac-1986110ee9f-0x2362', 'content-language': 'en-US', 'x-ebay-client-tls-version': 'TLSv1.3', 'date': 'Thu, 31 Jul 2025 15:19:16 GMT', 'x-envoy-upstream-service-time': '134', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:16.313238" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<var>${response}</var>
+<arg>inventory</arg>
+<arg>/inventory_item/${SAMSUNG_SKU}</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:15.943117" elapsed="0.370206"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.314848" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>204</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.313604" elapsed="0.001354"/>
+</kw>
+<status status="PASS" start="2025-07-31T15:19:15.937703" elapsed="0.377408"/>
+</kw>
+<tag>create</tag>
+<tag>inventory</tag>
+<tag>positive</tag>
+<status status="PASS" start="2025-07-31T15:19:14.780053" elapsed="1.535841"/>
+</test>
+<test id="s1-t2" name="TC_0002 Création De Produit - Fail" line="26">
+<kw name="Create A Product - Test Product - Fail" owner="ebay_api_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.320411" level="INFO">${product} = {'title': '', 'description': ''}</msg>
+<var>${product}</var>
+<arg>title=</arg>
+<arg>description=</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.320192" elapsed="0.000253"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.320788" level="INFO">${payload} = {'product': {'title': '', 'description': ''}, 'condition': 'NEW'}</msg>
+<var>${payload}</var>
+<arg>product=${product}</arg>
+<arg>condition=NEW</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.320567" elapsed="0.000252"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.321059" level="INFO">${sku} = produit-invalide-001</msg>
+<var>${sku}</var>
+<arg>produit-invalide-001</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.320931" elapsed="0.000156"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:16.560594" level="INFO">POST Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/produit-invalide-001 
+ path_url=/sell/inventory/v1/inventory_item/produit-invalide-001 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '65'} 
+ body=b'{"product": {"title": "", "description": ""}, "condition": "NEW"}' 
+ </msg>
+<msg time="2025-07-31T15:19:16.560870" level="INFO">POST Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/produit-invalide-001 
+ status=400, reason=Bad Request 
+ headers={'rlogid': 't6pitnmsgwjfiiw%28ufmadh%7B%3F%3Ctowoiudvn%60jhs.vgiggi%7F.0237g1e61%2Bdkadl-1986110f019-0x235f', 'x-ebay-client-tls-version': 'TLSv1.3', 'content-length': '182', 'date': 'Thu, 31 Jul 2025 15:19:16 GMT', 'x-envoy-upstream-service-time': '7', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"errors":[{"errorId":2004,"domain":"ACCESS","category":"REQUEST","message":"Invalid request","longMessage":"The request has errors. For help, see the documentation for this API."}]} 
+ </msg>
+<msg time="2025-07-31T15:19:16.561065" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/produit-invalide-001</msg>
+<arg>inventory</arg>
+<arg>/inventory_item/${sku}</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-07-31T15:19:16.321370" elapsed="0.244966">HTTPError: 400 Client Error: Bad Request for url: https://api.sandbox.ebay.com/sell/inventory/v1/inventory_item/produit-invalide-001</status>
+</kw>
+<arg>*Client Error*</arg>
+<arg>POST On Session</arg>
+<arg>inventory</arg>
+<arg>/inventory_item/${sku}</arg>
+<arg>json=${payload}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.321198" elapsed="0.245473"/>
+</kw>
+<status status="PASS" start="2025-07-31T15:19:16.319891" elapsed="0.246895"/>
+</kw>
+<tag>create</tag>
+<tag>inventory</tag>
+<tag>negative</tag>
+<tag>regression</tag>
+<status status="PASS" start="2025-07-31T15:19:16.319235" elapsed="0.248422"/>
+</test>
+<test id="s1-t3" name="TC_0003 Créer et Activer un lieu eBay à Dakar" line="34">
+<kw name="Créer et Activer un lieu eBay à Dakar" owner="ebay_api_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.572101" level="INFO">${address} = {'addressLine1': '10 Avenue Léopold Sédar Senghor', 'addressLine2': 'Immeuble Atlantic', 'city': 'Dakar', 'country': 'SN', 'postalCode': 'BP12500', 'stateOrProvince': 'DA'}</msg>
+<var>${address}</var>
+<arg>addressLine1=10 Avenue Léopold Sédar Senghor</arg>
+<arg>addressLine2=Immeuble Atlantic</arg>
+<arg>city=Dakar</arg>
+<arg>country=SN</arg>
+<arg>postalCode=BP12500</arg>
+<arg>stateOrProvince=DA</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.571833" elapsed="0.000305"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.572444" level="INFO">${geo} = {'latitude': '14.6928', 'longitude': '-17.4467'}</msg>
+<var>${geo}</var>
+<arg>latitude=14.6928</arg>
+<arg>longitude=-17.4467</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.572271" elapsed="0.000203"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.572886" level="INFO">${location} = {'address': {'addressLine1': '10 Avenue Léopold Sédar Senghor', 'addressLine2': 'Immeuble Atlantic', 'city': 'Dakar', 'country': 'SN', 'postalCode': 'BP12500', 'stateOrProvince': 'DA'}, 'geoCoordinate...</msg>
+<var>${location}</var>
+<arg>address=${address}</arg>
+<arg>geoCoordinates=${geo}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.572607" elapsed="0.000313"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.573231" level="INFO">${interval} = {'open': '08:30:00', 'close': '17:30:00'}</msg>
+<var>${interval}</var>
+<arg>open=08:30:00</arg>
+<arg>close=17:30:00</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.573041" elapsed="0.000221"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.573537" level="INFO">${intervals} = [{'open': '08:30:00', 'close': '17:30:00'}]</msg>
+<var>${intervals}</var>
+<arg>${interval}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.573372" elapsed="0.000194"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.573889" level="INFO">${day_mo} = {'dayOfWeekEnum': 'MONDAY', 'intervals': [{'open': '08:30:00', 'close': '17:30:00'}]}</msg>
+<var>${day_mo}</var>
+<arg>dayOfWeekEnum=MONDAY</arg>
+<arg>intervals=${intervals}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.573677" elapsed="0.000242"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.574242" level="INFO">${day_tu} = {'dayOfWeekEnum': 'TUESDAY', 'intervals': [{'open': '08:30:00', 'close': '17:30:00'}]}</msg>
+<var>${day_tu}</var>
+<arg>dayOfWeekEnum=TUESDAY</arg>
+<arg>intervals=${intervals}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.574034" elapsed="0.000238"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.574597" level="INFO">${day_we} = {'dayOfWeekEnum': 'WEDNESDAY', 'intervals': [{'open': '08:30:00', 'close': '17:30:00'}]}</msg>
+<var>${day_we}</var>
+<arg>dayOfWeekEnum=WEDNESDAY</arg>
+<arg>intervals=${intervals}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.574392" elapsed="0.000234"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.574943" level="INFO">${day_th} = {'dayOfWeekEnum': 'THURSDAY', 'intervals': [{'open': '08:30:00', 'close': '17:30:00'}]}</msg>
+<var>${day_th}</var>
+<arg>dayOfWeekEnum=THURSDAY</arg>
+<arg>intervals=${intervals}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.574738" elapsed="0.000262"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.575329" level="INFO">${day_fr} = {'dayOfWeekEnum': 'FRIDAY', 'intervals': [{'open': '08:30:00', 'close': '17:30:00'}]}</msg>
+<var>${day_fr}</var>
+<arg>dayOfWeekEnum=FRIDAY</arg>
+<arg>intervals=${intervals}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.575109" elapsed="0.000249"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.575701" level="INFO">${operating_hours} = [{'dayOfWeekEnum': 'MONDAY', 'intervals': [{'open': '08:30:00', 'close': '17:30:00'}]}, {'dayOfWeekEnum': 'TUESDAY', 'intervals': [{'open': '08:30:00', 'close': '17:30:00'}]}, {'dayOfWeekEnum': 'WEDNE...</msg>
+<var>${operating_hours}</var>
+<arg>${day_mo}</arg>
+<arg>${day_tu}</arg>
+<arg>${day_we}</arg>
+<arg>${day_th}</arg>
+<arg>${day_fr}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.575464" elapsed="0.000266"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.575970" level="INFO">${weekdays} = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY']</msg>
+<var>${weekdays}</var>
+<arg>MONDAY</arg>
+<arg>TUESDAY</arg>
+<arg>WEDNESDAY</arg>
+<arg>THURSDAY</arg>
+<arg>FRIDAY</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.575838" elapsed="0.000158"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.576250" level="INFO">${weekend} = ['SATURDAY', 'SUNDAY']</msg>
+<var>${weekend}</var>
+<arg>SATURDAY</arg>
+<arg>SUNDAY</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.576123" elapsed="0.000154"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.576619" level="INFO">${cutoff_weekdays} = {'dayOfWeekEnum': ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'], 'cutOffTime': '15:00'}</msg>
+<var>${cutoff_weekdays}</var>
+<arg>dayOfWeekEnum=${weekdays}</arg>
+<arg>cutOffTime=15:00</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.576382" elapsed="0.000266"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.577422" level="INFO">${cutoff_weekend} = {'dayOfWeekEnum': ['SATURDAY', 'SUNDAY'], 'cutOffTime': '12:00'}</msg>
+<var>${cutoff_weekend}</var>
+<arg>dayOfWeekEnum=${weekend}</arg>
+<arg>cutOffTime=12:00</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.576780" elapsed="0.000723"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.578232" level="INFO">${weekly_schedule} = [{'dayOfWeekEnum': ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'], 'cutOffTime': '15:00'}, {'dayOfWeekEnum': ['SATURDAY', 'SUNDAY'], 'cutOffTime': '12:00'}]</msg>
+<var>${weekly_schedule}</var>
+<arg>${cutoff_weekdays}</arg>
+<arg>${cutoff_weekend}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.577778" elapsed="0.000530"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.579126" level="INFO">${cutoff_times} = {'weeklySchedule': [{'dayOfWeekEnum': ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'], 'cutOffTime': '15:00'}, {'dayOfWeekEnum': ['SATURDAY', 'SUNDAY'], 'cutOffTime': '12:00'}]}</msg>
+<var>${cutoff_times}</var>
+<arg>weeklySchedule=${weekly_schedule}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.578614" elapsed="0.000574"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.580108" level="INFO">${fulfillment_specs} = {'sameDayShippingCutOffTimes': {'weeklySchedule': [{'dayOfWeekEnum': ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'], 'cutOffTime': '15:00'}, {'dayOfWeekEnum': ['SATURDAY', 'SUNDAY'], 'cutOff...</msg>
+<var>${fulfillment_specs}</var>
+<arg>sameDayShippingCutOffTimes=${cutoff_times}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.579568" elapsed="0.000627"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.580721" level="INFO">${location_types} = ['STORE', 'FULFILLMENT_CENTER', 'WAREHOUSE']</msg>
+<var>${location_types}</var>
+<arg>STORE</arg>
+<arg>FULFILLMENT_CENTER</arg>
+<arg>WAREHOUSE</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.580436" elapsed="0.000345"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.581560" level="INFO">${payload} = {'name': 'mamad_3324_DakarStore_6', 'merchantLocationKey': 'mamad_3324_DakarStore_6', 'location': {'address': {'addressLine1': '10 Avenue Léopold Sédar Senghor', 'addressLine2': 'Immeuble Atlantic', '...</msg>
+<var>${payload}</var>
+<arg>name=${MERCHANT_LOCATION_KEY}</arg>
+<arg>merchantLocationKey=${MERCHANT_LOCATION_KEY}</arg>
+<arg>location=${location}</arg>
+<arg>phone=+221781234567</arg>
+<arg>locationTypes=${location_types}</arg>
+<arg>operatingHours=${operating_hours}</arg>
+<arg>fulfillmentCenterSpecifications=${fulfillment_specs}</arg>
+<arg>status=ENABLED</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.581071" elapsed="0.000538"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.582506" level="INFO">${json_payload} = {
+    "name": "mamad_3324_DakarStore_6",
+    "merchantLocationKey": "mamad_3324_DakarStore_6",
+    "location": {
+        "address": {
+            "addressLine1": "10 Avenue L\u00e9opold S\u00e9dar Sen...</msg>
+<var>${json_payload}</var>
+<arg>json.dumps(${payload}, indent=4)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.581754" elapsed="0.000788"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:16.980117" level="INFO">POST Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/location/mamad_3324_DakarStore_6 
+ path_url=/sell/inventory/v1/location/mamad_3324_DakarStore_6 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '1188'} 
+ body=b'{"name": "mamad_3324_DakarStore_6", "merchantLocationKey": "mamad_3324_DakarStore_6", "location": {"address": {"addressLine1": "10 Avenue L\\u00e9opold S\\u00e9dar Senghor", "addressLine2": "Immeuble Atlantic", "city": "Dakar", "country": "SN", "postalCode": "BP12500", "stateOrProvince": "DA"}, "geoCoordinates": {"latitude": "14.6928", "longitude": "-17.4467"}}, "phone": "+221781234567", "locationTypes": ["STORE", "FULFILLMENT_CENTER", "WAREHOUSE"], "operatingHours": [{"dayOfWeekEnum": "MONDAY", "intervals": [{"open": "08:30:00", "close": "17:30:00"}]}, {"dayOfWeekEnum": "TUESDAY", "intervals": [{"open": "08:30:00", "close": "17:30:00"}]}, {"dayOfWeekEnum": "WEDNESDAY", "intervals": [{"open": "08:30:00", "close": "17:30:00"}]}, {"dayOfWeekEnum": "THURSDAY", "intervals": [{"open": "08:30:00", "close": "17:30:00"}]}, {"dayOfWeekEnum": "FRIDAY", "intervals": [{"open": "08:30:00", "close": "17:30:00"}]}], "fulfillmentCenterSpecifications": {"sameDayShippingCutOffTimes": {"weeklySchedule": [{"dayOfWeekEnum": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"], "cutOffTime": "15:00"}, {"dayOfWeekEnum": ["SATURDAY", "SUNDAY"], "cutOffTime": "12:00"}]}}, "status": "ENABLED"}' 
+ </msg>
+<msg time="2025-07-31T15:19:16.980226" level="INFO">POST Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/location/mamad_3324_DakarStore_6 
+ status=204, reason=No Content 
+ headers={'rlogid': 't6pitf%60quq%60fiiw%28ufmadh%7B%3F%3Ctowgdwvpd%60jhs.vgiggi%7F.c03%3A10%3Eg3%2Bqyt1s-1986110f11e-0x2367', 'x-ebay-client-tls-version': 'TLSv1.3', 'date': 'Thu, 31 Jul 2025 15:19:17 GMT', 'x-envoy-upstream-service-time': '164', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:16.980353" level="INFO">${response_create} = &lt;Response [204]&gt;</msg>
+<var>${response_create}</var>
+<arg>inventory</arg>
+<arg>/location/${MERCHANT_LOCATION_KEY}</arg>
+<arg>json=${payload}</arg>
+<arg>expected_status=204</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.582663" elapsed="0.397719"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${response_create.status_code}' != '204'</arg>
+<arg>Log Response JSON</arg>
+<arg>${response_create}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.980542" elapsed="0.000655"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-31T15:19:16.981955" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response_create.status_code}</arg>
+<arg>204</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.981393" elapsed="0.000631"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:17.304120" level="INFO">POST Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/location/mamad_3324_DakarStore_6/enable 
+ path_url=/sell/inventory/v1/location/mamad_3324_DakarStore_6/enable 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:17.304284" level="INFO">POST Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/location/mamad_3324_DakarStore_6/enable 
+ status=200, reason=OK 
+ headers={'rlogid': 't6pitf%60quq%60fiiw%28ufmadh%7B%3F%3Ctowgdwvpd%60jhs.vgiggi%7F.c03%3A10%3Eg3%2Bmoo42-1986110f2ad-0x2358', 'x-ebay-client-tls-version': 'TLSv1.3', 'content-length': '0', 'date': 'Thu, 31 Jul 2025 15:19:17 GMT', 'x-envoy-upstream-service-time': '90', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:17.304485" level="INFO">${response_activate} = &lt;Response [200]&gt;</msg>
+<var>${response_activate}</var>
+<arg>inventory</arg>
+<arg>/location/${MERCHANT_LOCATION_KEY}/enable</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:16.982136" elapsed="0.322407"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${response_activate.status_code}' != '200'</arg>
+<arg>Log Response JSON</arg>
+<arg>${response_activate}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-31T15:19:17.304856" elapsed="0.001292"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-31T15:19:17.307420" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response_activate.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-31T15:19:17.306403" elapsed="0.001087"/>
+</kw>
+<status status="PASS" start="2025-07-31T15:19:16.571553" elapsed="0.736013"/>
+</kw>
+<tag>inventory</tag>
+<tag>location</tag>
+<tag>positive</tag>
+<status status="PASS" start="2025-07-31T15:19:16.570777" elapsed="0.737652"/>
+</test>
+<test id="s1-t4" name="TC_0003 Création D’Offre" line="41">
+<kw name="Create An Offer" owner="ebay_api_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:17.312682" level="INFO">${price} = {'value': '0.99', 'currency': 'USD'}</msg>
+<var>${price}</var>
+<arg>value=0.99</arg>
+<arg>currency=USD</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:17.312488" elapsed="0.000227"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:17.313064" level="INFO">${pricingSummary} = {'price': {'value': '0.99', 'currency': 'USD'}}</msg>
+<var>${pricingSummary}</var>
+<arg>price=${price}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:17.312833" elapsed="0.000262"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:17.313467" level="INFO">${tax} = {'vatPercentage': '10.2', 'applyTax': True, 'thirdPartyTaxCategory': 'Electronics'}</msg>
+<var>${tax}</var>
+<arg>vatPercentage=10.2</arg>
+<arg>applyTax=${True}</arg>
+<arg>thirdPartyTaxCategory=Electronics</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:17.313209" elapsed="0.000288"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:17.313970" level="INFO">${payload} = {'sku': 'apple-airpods-pro2-001', 'marketplaceId': 'EBAY_US', 'format': 'FIXED_PRICE', 'listingDescription': '&lt;ul&gt;&lt;li&gt;&lt;font face="Arial"&gt;&lt;span style="font-size: 18.6667px;"&gt;&lt;p class="p1"&gt;Test listing ...</msg>
+<var>${payload}</var>
+<arg>sku=${APPLE_SKU}</arg>
+<arg>marketplaceId=EBAY_US</arg>
+<arg>format=FIXED_PRICE</arg>
+<arg>listingDescription=&lt;ul&gt;&lt;li&gt;&lt;font face="Arial"&gt;&lt;span style="font-size: 18.6667px;"&gt;&lt;p class="p1"&gt;Test listing - do not bid or buy&amp;nbsp;&lt;/p&gt;&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;p class="p1"&gt;Built-in GPS.&amp;nbsp;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class="p1"&gt;Water resistance to 50 meters.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class="p1"&gt;&amp;nbsp;A new lightning-fast dual-core processor.&amp;nbsp;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class="p1"&gt;And a display that’s two times brighter than before.&amp;nbsp;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class="p1"&gt;Full of features that help you stay active, motivated, and connected, Apple Watch Series 2 is designed for all the ways you move&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</arg>
+<arg>availableQuantity=60</arg>
+<arg>quantityLimitPerBuyer=10</arg>
+<arg>pricingSummary=${pricingSummary}</arg>
+<arg>categoryId=178086</arg>
+<arg>merchantLocationKey=mamad_3324_DakarStore_1</arg>
+<arg>tax=${tax}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:17.313615" elapsed="0.000407"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-31T15:19:17.314713" level="INFO">${json_payload} = {"sku": "apple-airpods-pro2-001", "marketplaceId": "EBAY_US", "format": "FIXED_PRICE", "listingDescription": "&lt;ul&gt;&lt;li&gt;&lt;font face=\"Arial\"&gt;&lt;span style=\"font-size: 18.6667px;\"&gt;&lt;p class=\"p1\"&gt;Test li...</msg>
+<var>${json_payload}</var>
+<arg>json.dumps(${payload})</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-31T15:19:17.314248" elapsed="0.000502"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:17.737794" level="INFO">POST Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/offer 
+ path_url=/sell/inventory/v1/offer 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '990'} 
+ body=b'{"sku": "apple-airpods-pro2-001", "marketplaceId": "EBAY_US", "format": "FIXED_PRICE", "listingDescription": "&lt;ul&gt;&lt;li&gt;&lt;font face=\\"Arial\\"&gt;&lt;span style=\\"font-size: 18.6667px;\\"&gt;&lt;p class=\\"p1\\"&gt;Test listing - do not bid or buy&amp;nbsp;&lt;/p&gt;&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;p class=\\"p1\\"&gt;Built-in GPS.&amp;nbsp;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class=\\"p1\\"&gt;Water resistance to 50 meters.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class=\\"p1\\"&gt;&amp;nbsp;A new lightning-fast dual-core processor.&amp;nbsp;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class=\\"p1\\"&gt;And a display that\\u2019s two times brighter than before.&amp;nbsp;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class=\\"p1\\"&gt;Full of features that help you stay active, motivated, and connected, Apple Watch Series 2 is designed for all the ways you move&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;", "availableQuantity": "60", "quantityLimitPerBuyer": "10", "pricingSummary": {"price": {"value": "0.99", "currency": "USD"}}, "categoryId": "178086", "merchantLocationKey": "mamad_3324_DakarStore_1", "tax": {"vatPercentage": "10.2", "applyTax": true, "thirdPartyTaxCategory": "Electronics"}}' 
+ </msg>
+<msg time="2025-07-31T15:19:17.737938" level="INFO">POST Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/offer 
+ status=201, reason=Created 
+ headers={'rlogid': 't6pitnmsgwjfiiw%28ufmadh%7B%3F%3Ctowoiudvn%60jhs.vgiggi%7F.0237g1e61%2Bsi%7F4k-1986110f3fa-0x2347', 'content-language': 'en-US', 'x-ebay-client-tls-version': 'TLSv1.3', 'content-type': 'application/json', 'content-length': '24', 'date': 'Thu, 31 Jul 2025 15:19:17 GMT', 'x-envoy-upstream-service-time': '187', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"offerId":"9520466010"} 
+ </msg>
+<msg time="2025-07-31T15:19:17.738074" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>inventory</arg>
+<arg>/offer</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:17.314879" elapsed="0.423230"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-31T15:19:17.739050" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-31T15:19:17.738282" elapsed="0.000833"/>
+</kw>
+<doc>Crée une annonce (offer)</doc>
+<status status="PASS" start="2025-07-31T15:19:17.312198" elapsed="0.426994"/>
+</kw>
+<tag>inventory</tag>
+<tag>offer</tag>
+<tag>positive</tag>
+<status status="PASS" start="2025-07-31T15:19:17.311483" elapsed="0.428414"/>
+</test>
+<test id="s1-t5" name="TC_0003 Publication D’Offre et Delete All Offers" line="45">
+<kw name="Handle Offers For SKU" owner="ebay_api_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-31T15:19:17.745944" level="INFO">${params} = {'sku': 'apple-airpods-pro2-001'}</msg>
+<var>${params}</var>
+<arg>sku=${sku}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-31T15:19:17.745506" elapsed="0.000478"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:18.075851" level="INFO">GET Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/offer?sku=apple-airpods-pro2-001 
+ path_url=/sell/inventory/v1/offer?sku=apple-airpods-pro2-001 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:18.076245" level="INFO">GET Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/offer?sku=apple-airpods-pro2-001 
+ status=200, reason=OK 
+ headers={'rlogid': 't6pitnmsgwjfiiw%28ufmadh%7B%3F%3Ctowoiudvn%60jhs.vgiggi%7F.0237g1e61%2Beqrp2-1986110f5a9-0x2359', 'content-language': 'en-US', 'x-ebay-client-tls-version': 'TLSv1.3', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'cache-control': 'no-cache, no-store, max-age=0, must-revalidate', 'pragma': 'no-cache', 'expires': '0', 'x-frame-options': 'DENY', 'content-type': 'application/json', 'content-length': '1226', 'date': 'Thu, 31 Jul 2025 15:19:18 GMT', 'x-envoy-upstream-service-time': '96', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"total":1,"size":1,"href":"/sell/inventory/v1/offer?offset=0&amp;limit=20","limit":20,"offers":[{"offerId":"9520466010","sku":"apple-airpods-pro2-001","marketplaceId":"EBAY_US","format":"FIXED_PRICE","listingDescription":"&lt;ul&gt;&lt;li&gt;&lt;font face=\"Arial\"&gt;&lt;span style=\"font-size: 18.6667px;\"&gt;&lt;p class=\"p1\"&gt;Test listing - do not bid or buy&amp;nbsp;&lt;/p&gt;&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;p class=\"p1\"&gt;Built-in GPS.&amp;nbsp;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class=\"p1\"&gt;Water resistance to 50 meters.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class=\"p1\"&gt;&amp;nbsp;A new lightning-fast dual-core processor.&amp;nbsp;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class=\"p1\"&gt;And a display that’s two times brighter than before.&amp;nbsp;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p class=\"p1\"&gt;Full of features that help you stay active, motivated, and connected, Apple Watch Series 2 is designed for all the ways you move&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;","availableQuantity":60,"quantityLimitPerBuyer":10,"pricingSummary":{"price":{"value":"0.99","currency":"USD"}},"listingPolicies":{"eBayPlusIfEligible":false},"categoryId":"178086","merchantLocationKey":"mamad_3324_DakarStore_1","tax":{"vatPercentage":10.2,"applyTax":true,"thirdPartyTaxCategory":"Electronics"},"status":"UNPUBLISHED","listingDuration":"GTC","includeCatalogProductDetails":true,"hideBuyerDetails":false}]} 
+ </msg>
+<msg time="2025-07-31T15:19:18.076584" level="INFO">${offers_response} = &lt;Response [200]&gt;</msg>
+<var>${offers_response}</var>
+<arg>inventory</arg>
+<arg>/offer</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:17.746107" elapsed="0.330561"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-31T15:19:18.078117" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${offers_response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-31T15:19:18.076948" elapsed="0.001286"/>
+</kw>
+<kw name="Convert To Dictionary" owner="Collections">
+<msg time="2025-07-31T15:19:18.079411" level="INFO">${offers_json} = {'total': 1, 'size': 1, 'href': '/sell/inventory/v1/offer?offset=0&amp;limit=20', 'limit': 20, 'offers': [{'offerId': '9520466010', 'sku': 'apple-airpods-pro2-001', 'marketplaceId': 'EBAY_US', 'format': '...</msg>
+<var>${offers_json}</var>
+<arg>${offers_response.json()}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<status status="PASS" start="2025-07-31T15:19:18.078471" elapsed="0.000989"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-07-31T15:19:18.079875" level="INFO">${offers_list} = [{'offerId': '9520466010', 'sku': 'apple-airpods-pro2-001', 'marketplaceId': 'EBAY_US', 'format': 'FIXED_PRICE', 'listingDescription': '&lt;ul&gt;&lt;li&gt;&lt;font face="Arial"&gt;&lt;span style="font-size: 18.6667px;"&gt;&lt;...</msg>
+<var>${offers_list}</var>
+<arg>${offers_json}</arg>
+<arg>offers</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-07-31T15:19:18.079616" elapsed="0.000300"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-07-31T15:19:18.080649" level="INFO">${offer_id} = 9520466010</msg>
+<var>${offer_id}</var>
+<arg>${offer}</arg>
+<arg>offerId</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-07-31T15:19:18.080398" elapsed="0.000306"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Traitement de l'offre ID: ${offer_id} pour SKU: ${sku}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:18.080848" elapsed="0.001635"/>
+</kw>
+<kw name="Publish Offer" owner="ebay_api_keywords">
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:19.127591" level="INFO">POST Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/offer/9520466010/publish 
+ path_url=/sell/inventory/v1/offer/9520466010/publish 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:19.127721" level="INFO">POST Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/offer/9520466010/publish 
+ status=400, reason=Bad Request 
+ headers={'rlogid': 't6pitnmsgwjfiiw%28ufmadh%7B%3F%3Ctowoiudvn%60jhs.vgiggi%7F.0237g1e61%2B3mcac-1986110f6fa-0x232d', 'x-ebay-client-tls-version': 'TLSv1.3', 'content-type': 'application/json', 'content-length': '137', 'date': 'Thu, 31 Jul 2025 15:19:19 GMT', 'x-envoy-upstream-service-time': '811', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"errors":[{"errorId":25101,"domain":"API_INVENTORY","subdomain":"Selling","category":"Request","message":"Invalid &lt;ShippingPackage&gt;."}]} 
+ </msg>
+<msg time="2025-07-31T15:19:19.127978" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://api.sandbox.ebay.com/sell/inventory/v1/offer/9520466010/publish</msg>
+<arg>inventory</arg>
+<arg>/offer/${offer_id}/publish</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-07-31T15:19:18.083287" elapsed="1.047106">HTTPError: 400 Client Error: Bad Request for url: https://api.sandbox.ebay.com/sell/inventory/v1/offer/9520466010/publish</status>
+</kw>
+<arg>*Client Error*</arg>
+<arg>POST On Session</arg>
+<arg>inventory</arg>
+<arg>/offer/${offer_id}/publish</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2025-07-31T15:19:18.083087" elapsed="1.047552"/>
+</kw>
+<arg>${offer_id}</arg>
+<status status="PASS" start="2025-07-31T15:19:18.082691" elapsed="1.048141"/>
+</kw>
+<kw name="Delete Offer" owner="ebay_api_keywords">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:19.469170" level="INFO">DELETE Request : url=https://api.sandbox.ebay.com/sell/inventory/v1/offer/9520466010 
+ path_url=/sell/inventory/v1/offer/9520466010 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:19.469305" level="INFO">DELETE Response : url=https://api.sandbox.ebay.com/sell/inventory/v1/offer/9520466010 
+ status=204, reason=No Content 
+ headers={'rlogid': 't6pitnmsgwjfiiw%28ufmadh%7B%3F%3Ctowoiudvn%60jhs.vgiggi%7F.0237g1e61%2Bdkadl-1986110fb13-0x235c', 'content-language': 'en-US', 'x-ebay-client-tls-version': 'TLSv1.3', 'date': 'Thu, 31 Jul 2025 15:19:19 GMT', 'x-envoy-upstream-service-time': '104', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:19.469467" level="INFO">${delete_response} = &lt;Response [204]&gt;</msg>
+<var>${delete_response}</var>
+<arg>inventory</arg>
+<arg>/offer/${offer_id}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.131755" elapsed="0.337753"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Suppression réponse code: ${delete_response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.469732" elapsed="0.001815"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-31T15:19:19.472377" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${delete_response.status_code}</arg>
+<arg>204</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.471738" elapsed="0.000717"/>
+</kw>
+<arg>${offer_id}</arg>
+<status status="PASS" start="2025-07-31T15:19:19.131124" elapsed="0.341418"/>
+</kw>
+<var name="${offer}">{'offerId': '9520466010', 'sku': 'apple-airpods-pro2-001', 'marketplaceId': 'EBAY_US', 'format': 'FIXED_PRICE', 'listingDescription': '&lt;ul&gt;&lt;li&gt;&lt;font face="Arial"&gt;&lt;span style="font-size: 18.6667px;"&gt;&lt;p...</var>
+<status status="PASS" start="2025-07-31T15:19:18.080277" elapsed="1.392307"/>
+</iter>
+<var>${offer}</var>
+<value>@{offers_list}</value>
+<status status="PASS" start="2025-07-31T15:19:18.080012" elapsed="1.392633"/>
+</for>
+<arg>${APPLE_SKU}</arg>
+<status status="PASS" start="2025-07-31T15:19:17.744947" elapsed="1.727777"/>
+</kw>
+<tag>inventory</tag>
+<tag>offer</tag>
+<tag>positive</tag>
+<tag>publish</tag>
+<status status="PASS" start="2025-07-31T15:19:17.743579" elapsed="1.730289"/>
+</test>
+<test id="s1-t6" name="TC_1001 Get Orders - Success" line="52">
+<kw name="Get Orders Successfully" owner="ebay_api_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:19.751457" level="INFO">GET Request : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order 
+ path_url=/sell/fulfillment/v1/order 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:19.751719" level="INFO">GET Response : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order 
+ status=200, reason=OK 
+ headers={'rlogid': 't6pithqauq%60fiiw%28ufmadh%7B%3F%3Ctowiugvpd%60jhs.vgiggi%7F.01d73ece%3Ce*d7v2g-1986110fc6e-0x2356', 'x-ebay-client-tls-version': 'TLSv1.3', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'cache-control': 'no-cache, no-store, max-age=0, must-revalidate', 'pragma': 'no-cache', 'expires': '0', 'x-frame-options': 'DENY', 'content-type': 'application/json', 'content-length': '127', 'date': 'Thu, 31 Jul 2025 15:19:19 GMT', 'x-envoy-upstream-service-time': '36', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"href":"https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=50&amp;offset=0","total":0,"limit":50,"offset":0,"orders":[]} 
+ </msg>
+<msg time="2025-07-31T15:19:19.751965" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fulfillment</arg>
+<arg>/order</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.480667" elapsed="0.271353"/>
+</kw>
+<kw name="Log Response JSON" owner="ebay_api_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.754239" elapsed="0.001485"/>
+</kw>
+<arg>Log To Console</arg>
+<arg>Status Code: ${response.status_code}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.753942" elapsed="0.001910"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-31T15:19:19.757353" level="INFO">${body} = {"href":"https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=50&amp;offset=0","total":0,"limit":50,"offset":0,"orders":[]}</msg>
+<var>${body}</var>
+<arg>${response.text}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.756067" elapsed="0.001363"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-31T15:19:19.758315" level="INFO">${json} = {'href': 'https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=50&amp;offset=0', 'total': 0, 'limit': 50, 'offset': 0, 'orders': []}</msg>
+<var>${json}</var>
+<arg>json.loads(r'''${body}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.757720" elapsed="0.000669"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-31T15:19:19.759450" level="INFO">${pretty} = {
+  "href": "https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=50&amp;offset=0",
+  "total": 0,
+  "limit": 50,
+  "offset": 0,
+  "orders": []
+}</msg>
+<var>${pretty}</var>
+<arg>json.dumps(${json}, indent=2)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.758677" elapsed="0.000852"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Réponse JSON :\n${pretty}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.759820" elapsed="0.004960"/>
+</kw>
+<arg>${response}</arg>
+<status status="PASS" start="2025-07-31T15:19:19.752354" elapsed="0.012549"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-31T15:19:19.765695" level="INFO">${body} = {"href":"https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=50&amp;offset=0","total":0,"limit":50,"offset":0,"orders":[]}</msg>
+<var>${body}</var>
+<arg>${response.text}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.765047" elapsed="0.000683"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-31T15:19:19.766151" level="INFO">${json} = {'href': 'https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=50&amp;offset=0', 'total': 0, 'limit': 50, 'offset': 0, 'orders': []}</msg>
+<var>${json}</var>
+<arg>json.loads("""${body}""")</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.765863" elapsed="0.000321"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-31T15:19:19.766678" level="INFO">${pretty} = {
+  "href": "https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=50&amp;offset=0",
+  "total": 0,
+  "limit": 50,
+  "offset": 0,
+  "orders": []
+}</msg>
+<var>${pretty}</var>
+<arg>json.dumps(${json}, indent=2)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.766308" elapsed="0.000405"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Réponse JSON :\n${pretty}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.766833" elapsed="0.004923"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-07-31T15:19:19.772728" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.771950" elapsed="0.000910"/>
+</kw>
+<doc>Vérifie que la récupération de toutes les commandes renvoie bien 200</doc>
+<status status="PASS" start="2025-07-31T15:19:19.480362" elapsed="0.292659"/>
+</kw>
+<tag>api</tag>
+<tag>getorders</tag>
+<tag>positive</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-07-31T15:19:19.479198" elapsed="0.294489"/>
+</test>
+<test id="s1-t7" name="TC_1002 Get Order - Fail (Invalid ID)" line="56">
+<kw name="Get Order With Invalid ID" owner="ebay_api_keywords">
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:20.050228" level="INFO">GET Request : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order/000000 
+ path_url=/sell/fulfillment/v1/order/000000 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'} 
+ body=None 
+ </msg>
+<msg time="2025-07-31T15:19:20.050466" level="INFO">GET Response : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order/000000 
+ status=400, reason=Bad Request 
+ headers={'rlogid': 't6pithqauq%60fiiw%28ufmadh%7B%3F%3Ctowiugvpd%60jhs.vgiggi%7F.01d73ece%3Ce*ri%7Ecw-1986110fd99-0x233a', 'x-ebay-client-tls-version': 'TLSv1.3', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'cache-control': 'no-cache, no-store, max-age=0, must-revalidate', 'pragma': 'no-cache', 'expires': '0', 'x-frame-options': 'DENY', 'content-type': 'application/json', 'content-length': '168', 'date': 'Thu, 31 Jul 2025 15:19:20 GMT', 'x-envoy-upstream-service-time': '37', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"errors":[{"errorId":32100,"domain":"API_FULFILLMENT","category":"REQUEST","message":"Invalid Order Id: '000000'","parameters":[{"name":"orderId","value":"000000"}]}]} 
+ </msg>
+<msg time="2025-07-31T15:19:20.050624" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://api.sandbox.ebay.com/sell/fulfillment/v1/order/000000</msg>
+<arg>fulfillment</arg>
+<arg>/order/${INVALID_ORDER_ID}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-07-31T15:19:19.778558" elapsed="0.273240">HTTPError: 400 Client Error: Bad Request for url: https://api.sandbox.ebay.com/sell/fulfillment/v1/order/000000</status>
+</kw>
+<arg>*Client Error*</arg>
+<arg>GET On Session</arg>
+<arg>fulfillment</arg>
+<arg>/order/${INVALID_ORDER_ID}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2025-07-31T15:19:19.778389" elapsed="0.273534"/>
+</kw>
+<doc>Envoie une commande avec ID invalide et attend une erreur</doc>
+<status status="PASS" start="2025-07-31T15:19:19.778061" elapsed="0.273943"/>
+</kw>
+<tag>api</tag>
+<tag>getorder</tag>
+<tag>negative</tag>
+<tag>regression</tag>
+<status status="PASS" start="2025-07-31T15:19:19.776976" elapsed="0.275742"/>
+</test>
+<test id="s1-t8" name="TC_1003 Issue Refund - Success" line="64">
+<kw name="Issue Refund Successfully" owner="ebay_api_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-31T15:19:20.059303" level="INFO">${payload} = {"refundReason": "BUYER_CANCEL", "comments": "Client a annulé"}</msg>
+<var>${payload}</var>
+<arg>{"refundReason": "BUYER_CANCEL", "comments": "Client a annulé"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-31T15:19:20.059025" elapsed="0.000353"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:20.301810" level="INFO">POST Request : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order/123456/refund 
+ path_url=/sell/fulfillment/v1/order/123456/refund 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^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', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '78'} 
+ body=b'"{\\"refundReason\\": \\"BUYER_CANCEL\\", \\"comments\\": \\"Client a annul\\u00e9\\"}"' 
+ </msg>
+<msg time="2025-07-31T15:19:20.302077" level="INFO">POST Response : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order/123456/refund 
+ status=404, reason=Not Found 
+ headers={'rlogid': 't6pithqauq%60fiiw%28ufmadh%7B%3F%3Ctowiugvpd%60jhs.vgiggi%7F.01d73ece%3Ce*gu4j4-1986110feb1-0x2330', 'x-ebay-client-tls-version': 'TLSv1.3', 'content-length': '245', 'date': 'Thu, 31 Jul 2025 15:19:20 GMT', 'x-envoy-upstream-service-time': '5', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"errors":[{"errorId":2002,"domain":"ACCESS","category":"REQUEST","message":"Resource not found","longMessage":"A resource (URI) associated with the request could not be resolved.","parameters":[{"name":"reason","value":"HTTP 404 Not Found"}]}]} 
+ </msg>
+<msg time="2025-07-31T15:19:20.302205" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://api.sandbox.ebay.com/sell/fulfillment/v1/order/123456/refund</msg>
+<arg>fulfillment</arg>
+<arg>/order/${VALID_ORDER_ID}/refund</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-07-31T15:19:20.059844" elapsed="0.243513">HTTPError: 404 Client Error: Not Found for url: https://api.sandbox.ebay.com/sell/fulfillment/v1/order/123456/refund</status>
+</kw>
+<arg>*Client Error*</arg>
+<arg>POST On Session</arg>
+<arg>fulfillment</arg>
+<arg>/order/${VALID_ORDER_ID}/refund</arg>
+<arg>json=${payload}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2025-07-31T15:19:20.059632" elapsed="0.243849"/>
+</kw>
+<doc>Envoie une demande de remboursement pour une commande valide</doc>
+<status status="PASS" start="2025-07-31T15:19:20.058552" elapsed="0.245012"/>
+</kw>
+<tag>api</tag>
+<tag>critical</tag>
+<tag>issuerefund</tag>
+<tag>positive</tag>
+<status status="PASS" start="2025-07-31T15:19:20.057548" elapsed="0.246669"/>
+</test>
+<test id="s1-t9" name="TC_1003 Issue Refund - Fail (Invalid Payload)" line="68">
+<kw name="Issue Refund With Invalid Payload" owner="ebay_api_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-31T15:19:20.309765" level="INFO">${payload} = {"motif": "Invalide"}</msg>
+<var>${payload}</var>
+<arg>{"motif": "Invalide"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-31T15:19:20.309435" elapsed="0.000421"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-31T15:19:20.554086" level="INFO">POST Request : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order/000000/refund 
+ path_url=/sell/fulfillment/v1/order/000000/refund 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer v^1.1#i^1#r^0#I^3#f^0#p^3#t^H4sIAAAAAAAA/+VZf2gb1x23bCfDuG7/SGiyUZimdqOte9KdTtLpjtqNbMmxZsuSLLl1Qofy7u6d/OzT3fXeO1tyGHM9mlC6jXWDDW+0cUvrLRTGoDD6V1uKyWB/lHSM1tuaDbZlG/2RfwZJw2i3d5LtyB51LCkQwfSPuHffX5/vr3ff99ilgz0Pnhk9c63P84XO1SV2qdPj4XrZnoMH+u/s6vzSgQ62jsCzunTfUvdy1z8fxqCkW9IkxJZpYOgtl3QDS9XFAZ9jG5IJMMKSAUoQS0SRcrHUuBT0s5Jlm8RUTN3nTcYHfHwkJEcUnhNDbCSqhUW6amzJzJsDPllRRFVQgkEWChFZ1eh7jB2YNDABBhnwBdlgmGEFhufyHC+FWYkT/UGOP+nzPgptjEyDkvhZ32DVXKnKa9fZurepAGNoEyrEN5iMjeTSsWQ8MZF/OFAna3DTDzkCiIN3Pg2bKvQ+CnQH7q0GV6mlnKMoEGNfYLCmYadQKbZlTBPmV12tyjILQkAMcVFNCAPhlrhyxLRLgOxth7uCVEarkkrQIIhUbuZR6g15Fipk82mCikjGve5f1gE60hC0B3yJodiJqVxi0ufNZTK2OY9UqLpIOT4U4kLBKDWWQExdCO2CioCumwUdEBPpcFNjTeymv3epHDYNFbnew94JkwxBaj7c7aRQnZMoUdpI2zGNuKbV04W3nMlGT7rRrYXTITOGG2BYoh7xVh9vHoqt3LiRDbcqO6CqiSAoCBEeyJrMBreyw631VjJk0A1SLJMJuLZAGVSYErDnILF0oEBGoe51StBGqsSHtSAf1SCjRkSNCYmaxshhNcJwGoQshLKsiNH/y0QhxEayQ+B2sux+UUU74MsppgUzpo6Uim83SbULbaZGGQ/4ZgixpEBgYWHBv8D7TbsYCLIsF5hOjeeUGVgCvm1adHNiBlUTRIGUCyOJVCxqTZnmIFVuFH2DvK1mgE0qQ06FPuegrtO/rTzeYeHg7tXPgTqsI+qHPFXUXkhHTUyg2hI0Fc4jBRaQehuQubW+BzqGawmZbhaRkYJkxrwd2PbA5XaGZLwlbLSRAtJeqOoaCxvZbECsyNIliWVbAhuzrGSp5BAg6zDZZrEMhTmB51uCZznObam+PVCVeXGWFPVFu9Ba33T3XwkBTSKmW+tz0Gi/HjqZGJlM5EYL+fRYYqIltJNQsyGeyZsUZ7vlaSwbG4nRXyqN8rHp7PDUIgiJ44HpxWzCljOjI6al96fsSAYdT5AQGZ09HlkYEzJkfmrRtIoLqq2NV4JlQRcz2YGBlpyUg4oN26x1Tc8nxxaH5yYm52afGBVhqR+ZGYfVs2kQKQbmQ8XxqZJ43DKiQrnYGvhqarRfCdi1xC0Q17wCfWoJZKLo1nrb9bQIGxGCPGA5McqCqKJFuZAS1QDQ6A+It2CLajO8KVACqukMMVmQp7NGoszkhqaZaBBAAfBQY3hZFTQFhFvcu9otzLdq68LudNNe0Fx+TAUAC/ndndWvmKWACegk7y4VqhZ790MUkJ0K1a9C229DmiSGXtk/X9Gh2VTjdpncWr85I6ZDmL82iFMoDWrdydwADzLm6dhm2pVmFG4zN8ADFMV0DNKMuk3WBjg0R9eQrrsTejMK69gbMdMAeoUgBTcfw+pJDHUvRsUZ0qgculaCNuVXAAF0wmsigfGMaVluFirA3if0ar1oGq0X4CjVU6/GjEVq7RSyWbDb/LRLIL1lKdaMacAmpLi1vlMSUFX65dB0ELfluMeFLQupnWs3VQvIcPsuboDFApVq5akIW+6u0UBjIbDkV22gNVJ3LlMD5DakRoH9Z+oupmZDYZgEaUipycCOjBUbWU3Uy+fKaSa4mDbxhkJbY2jWB/PQNls724EqsqFCCo6Nbt8HCK31xB6flYUhUzYL8SSz6zOTAYtwQW8Jv+vYdjy2y8RyucfSk60d3MXhfLsNCoIGhUgwGKUTAQi5FyE8I3KcwghKNCSExIisiGJLmNvuqJITwrwYEaNcZL+4di3UXY38z/VYYOdF9WBH9ccte37DLnsudHo8bJxluH72gYNdU91dd/gwbe1+DAxVNst+BDQ//S4y6EZmQ/8crFgA2Z2HOn73wfdzJ94Ze+1Hry8+8aT/kQsdPXX35avfYI9u35j3dHG9ddfn7D033hzg7jrSFwyzAs9xfJgOwifZe2+87ebu7j58JPK3ta9dPPXQAyvkHD701HNHZ8rvsn3bRB7PgY7uZU/H6vmJ4KmvfprfePzsO/9JL5994bf+O66ffrHHeqTz8vNPH7v746sfH36+/8nT4JVvv7s2f8Jc7fvjiaV/fQWvHIuPqZd6r6Ve+tPCs4fstR+OzH4ivv9R5QcX2Kzd9+bL/7jIvLV2OR6/8sz7vfeHN64ce3N1ffGen7xx5cevfvjNv383LX7vs3t7xXN/SV3zDr/an3p96ldz/Z950u9Nv/zcS7/fqJz9w4vpI8mV82+tn7r84MYb6/c511e63348darjhfNvv/bsl7viQ5ce+9anfz20vv4QunTmpz+7ujEk+vHKK/d/sPb02L/1fPDqXR+e1r/4c+bO0NGRPx8+dz18/ZeJ7u6u8td/obzX89HwxV8/9Z1nshc/qcX0v/U34/vJIAAA', 'Content-Type': 'application/json', 'Content-Language': 'en-US', 'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US', 'Content-Length': '27'} 
+ body=b'"{\\"motif\\": \\"Invalide\\"}"' 
+ </msg>
+<msg time="2025-07-31T15:19:20.554381" level="INFO">POST Response : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order/000000/refund 
+ status=404, reason=Not Found 
+ headers={'rlogid': 't6pithqauq%60fiiw%28ufmadh%7B%3F%3Ctowiugvpd%60jhs.vgiggi%7F.01d73ece%3Ce*d7v2g-1986110ffae-0x233b', 'x-ebay-client-tls-version': 'TLSv1.3', 'content-length': '245', 'date': 'Thu, 31 Jul 2025 15:19:20 GMT', 'x-envoy-upstream-service-time': '9', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"errors":[{"errorId":2002,"domain":"ACCESS","category":"REQUEST","message":"Resource not found","longMessage":"A resource (URI) associated with the request could not be resolved.","parameters":[{"name":"reason","value":"HTTP 404 Not Found"}]}]} 
+ </msg>
+<msg time="2025-07-31T15:19:20.554536" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://api.sandbox.ebay.com/sell/fulfillment/v1/order/000000/refund</msg>
+<arg>fulfillment</arg>
+<arg>/order/${INVALID_ORDER_ID}/refund</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-07-31T15:19:20.310414" elapsed="0.245281">HTTPError: 404 Client Error: Not Found for url: https://api.sandbox.ebay.com/sell/fulfillment/v1/order/000000/refund</status>
+</kw>
+<arg>*Client Error*</arg>
+<arg>POST On Session</arg>
+<arg>fulfillment</arg>
+<arg>/order/${INVALID_ORDER_ID}/refund</arg>
+<arg>json=${payload}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2025-07-31T15:19:20.310100" elapsed="0.245722"/>
+</kw>
+<doc>Tente un remboursement avec données invalides</doc>
+<status status="PASS" start="2025-07-31T15:19:20.308731" elapsed="0.247179"/>
+</kw>
+<tag>api</tag>
+<tag>issuerefund</tag>
+<tag>negative</tag>
+<tag>regression</tag>
+<status status="PASS" start="2025-07-31T15:19:20.307473" elapsed="0.249225"/>
+</test>
+<status status="PASS" start="2025-07-31T15:19:11.155546" elapsed="9.406114"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">api</stat>
+<stat pass="2" fail="0" skip="0">create</stat>
+<stat pass="1" fail="0" skip="0">critical</stat>
+<stat pass="1" fail="0" skip="0">getorder</stat>
+<stat pass="1" fail="0" skip="0">getorders</stat>
+<stat pass="5" fail="0" skip="0">inventory</stat>
+<stat pass="2" fail="0" skip="0">issuerefund</stat>
+<stat pass="1" fail="0" skip="0">location</stat>
+<stat pass="3" fail="0" skip="0">negative</stat>
+<stat pass="2" fail="0" skip="0">offer</stat>
+<stat pass="6" fail="0" skip="0">positive</stat>
+<stat pass="1" fail="0" skip="0">publish</stat>
+<stat pass="3" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="TC 1001 ebay api tests" id="s1" pass="9" fail="0" skip="0">TC 1001 ebay api tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

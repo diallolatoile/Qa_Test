@@ -1,3 +1,5 @@
+#testcases/mobile.robot
+
 *** Settings ***
 Library           AppiumLibrary
 

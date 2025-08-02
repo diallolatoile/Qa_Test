@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-07-30T15:07:41.248977" rpa="false" schemaversion="5">
+<suite id="s1" name="TC 1001 crud products" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\Projet-Examen-ISI-Qa_test-2025\Lab1_MongoDB_QA_Examen_ISI_2025\testcases\TC_1001_crud_products.robot">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Initialize MongoDB Connection" owner="crud_operations_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Connexion établie avec ${MONGODB_CONFIG['connection']}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:41.542529" elapsed="0.001173"/>
+</kw>
+<doc>Établit la connexion à MongoDB</doc>
+<status status="PASS" start="2025-07-30T15:07:41.542259" elapsed="0.001579"/>
+</kw>
+<kw name="Clean Test Data" owner="crud_operations_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:07:41.546458" level="INFO">${filter} = {'title': 'Samsung Galaxy S21'}</msg>
+<var>${filter}</var>
+<arg>title=${VALID_PRODUCT['title']}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:07:41.545091" elapsed="0.001447"/>
+</kw>
+<kw name="Find" owner="RobotMongoDBLibrary.Find">
+<msg time="2025-07-30T15:07:43.921831" level="INFO">${results} = []</msg>
+<var>${results}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${filter}</arg>
+<status status="PASS" start="2025-07-30T15:07:41.546858" elapsed="2.375073"/>
+</kw>
+<kw name="Convert To List" owner="Collections">
+<msg time="2025-07-30T15:07:43.922632" level="INFO">${results_list} = []</msg>
+<var>${results_list}</var>
+<arg>${results}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<status status="PASS" start="2025-07-30T15:07:43.922261" elapsed="0.000439"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${doc_dict}</var>
+<arg>ast.literal_eval("""${doc}""")</arg>
+<arg>ast</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-07-30T15:07:43.923368" elapsed="0.000046"/>
+</kw>
+<kw name="Delete One By ID" owner="RobotMongoDBLibrary.Delete">
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${doc_dict['_id']}</arg>
+<status status="NOT RUN" start="2025-07-30T15:07:43.923632" elapsed="0.000043"/>
+</kw>
+<var name="${doc}"/>
+<status status="NOT RUN" start="2025-07-30T15:07:43.923163" elapsed="0.000588"/>
+</iter>
+<var>${doc}</var>
+<value>@{results_list}</value>
+<status status="NOT RUN" start="2025-07-30T15:07:43.922853" elapsed="0.000973"/>
+</for>
+<status status="PASS" start="2025-07-30T15:07:41.544369" elapsed="2.379625"/>
+</kw>
+<arg>Initialize MongoDB Connection</arg>
+<arg>AND</arg>
+<arg>Clean Test Data</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-07-30T15:07:41.541820" elapsed="2.382276"/>
+</kw>
+<test id="s1-t1" name="Create Product - Valid" line="9">
+<kw name="Insert One" owner="RobotMongoDBLibrary.Insert">
+<msg time="2025-07-30T15:07:45.800489" level="INFO">${msg} = INSERTED SUCCESS</msg>
+<var>${msg}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${VALID_PRODUCT}</arg>
+<status status="PASS" start="2025-07-30T15:07:43.925348" elapsed="1.875195"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>PRODUCT: ${VALID_PRODUCT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:45.801645" elapsed="0.001634"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>INSERT RESULT: ${msg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:45.804023" elapsed="0.001128"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>INSERTED SUCCESS</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:07:45.805866" elapsed="0.000397"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:07:43.924281" elapsed="1.882630"/>
+</test>
+<test id="s1-t2" name="Create Product - Missing Title" line="15">
+<kw name="Insert One" owner="RobotMongoDBLibrary.Insert">
+<msg time="2025-07-30T15:07:47.684055" level="INFO">${msg} = INSERTED ERROR</msg>
+<var>${msg}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${MISSING_TITLE}</arg>
+<status status="PASS" start="2025-07-30T15:07:45.810433" elapsed="1.873710"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>PRODUCT: ${MISSING_TITLE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:47.685037" elapsed="0.001372"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>INSERT RESULT (Missing Title): ${msg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:47.687246" elapsed="0.001103"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>INSERTED SUCCESS</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-07-30T15:07:47.688939" elapsed="0.000318"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>INSERTED ERROR</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:07:47.689875" elapsed="0.000328"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:07:45.809817" elapsed="1.881214"/>
+</test>
+<test id="s1-t3" name="Create Product - Invalid Price" line="22">
+<kw name="Insert One" owner="RobotMongoDBLibrary.Insert">
+<msg time="2025-07-30T15:07:49.595832" level="INFO">${msg} = INSERTED ERROR</msg>
+<var>${msg}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${INVALID_PRICE}</arg>
+<status status="PASS" start="2025-07-30T15:07:47.695258" elapsed="1.900653"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>INSERT RESULT (Invalid Price): ${msg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:49.596658" elapsed="0.001044"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>INSERTED SUCCESS</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-07-30T15:07:49.598541" elapsed="0.000353"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>INSERTED ERROR</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:07:49.599621" elapsed="0.000326"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:07:47.694236" elapsed="1.906345"/>
+</test>
+<test id="s1-t4" name="Read Product - Existing" line="29">
+<kw name="Get Product By Title" owner="crud_operations_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:07:49.605401" level="INFO">${filter} = {'title': 'Samsung Galaxy S21'}</msg>
+<var>${filter}</var>
+<arg>title=${title}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:07:49.605140" elapsed="0.000297"/>
+</kw>
+<kw name="Find" owner="RobotMongoDBLibrary.Find">
+<msg time="2025-07-30T15:07:51.422580" level="INFO">${results} = [{'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 799.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jp...</msg>
+<var>${results}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${filter}</arg>
+<status status="PASS" start="2025-07-30T15:07:49.605581" elapsed="1.817095"/>
+</kw>
+<kw name="Convert To List" owner="Collections">
+<msg time="2025-07-30T15:07:51.423347" level="INFO">${results_list} = [{'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 799.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jp...</msg>
+<var>${results_list}</var>
+<arg>${results}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<status status="PASS" start="2025-07-30T15:07:51.422976" elapsed="0.000447"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-30T15:07:51.424584" level="INFO">${is_empty} = False</msg>
+<var>${is_empty}</var>
+<arg>len(${results_list}) == 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-30T15:07:51.423910" elapsed="0.000738"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_empty}</arg>
+<arg>Return From Keyword</arg>
+<arg>${None}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-30T15:07:51.424910" elapsed="0.000230"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-30T15:07:51.426772" level="INFO">${product} = {'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 799.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jpg...</msg>
+<var>${product}</var>
+<arg>ast.literal_eval("""${results_list[0]}""")</arg>
+<arg>ast</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-30T15:07:51.425382" elapsed="0.001456"/>
+</kw>
+<return>
+<value>${product}</value>
+<status status="PASS" start="2025-07-30T15:07:51.426927" elapsed="0.000062"/>
+</return>
+<msg time="2025-07-30T15:07:51.427218" level="INFO">${product} = {'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 799.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jpg...</msg>
+<var>${product}</var>
+<arg>${VALID_PRODUCT['title']}</arg>
+<status status="PASS" start="2025-07-30T15:07:49.604244" elapsed="1.823007"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>PRODUCT FETCHED: ${product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:51.427943" elapsed="0.000877"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<msg time="2025-07-30T15:07:51.429558" level="INFO">Argument types are:
+&lt;class 'dict'&gt;
+&lt;class 'NoneType'&gt;</msg>
+<arg>${product}</arg>
+<arg>${None}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-07-30T15:07:51.429366" elapsed="0.000251"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${product['title']}</arg>
+<arg>${VALID_PRODUCT['title']}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:07:51.430049" elapsed="0.001258"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:07:49.603271" elapsed="1.828597"/>
+</test>
+<test id="s1-t5" name="Read Product - Nonexistent Title" line="35">
+<kw name="Get Product By Title" owner="crud_operations_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:07:51.435991" level="INFO">${filter} = {'title': 'Nonexistent Product XYZ'}</msg>
+<var>${filter}</var>
+<arg>title=${title}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:07:51.435564" elapsed="0.000493"/>
+</kw>
+<kw name="Find" owner="RobotMongoDBLibrary.Find">
+<msg time="2025-07-30T15:07:53.263591" level="INFO">${results} = []</msg>
+<var>${results}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${filter}</arg>
+<status status="PASS" start="2025-07-30T15:07:51.436296" elapsed="1.827352"/>
+</kw>
+<kw name="Convert To List" owner="Collections">
+<msg time="2025-07-30T15:07:53.264127" level="INFO">${results_list} = []</msg>
+<var>${results_list}</var>
+<arg>${results}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<status status="PASS" start="2025-07-30T15:07:53.263889" elapsed="0.000271"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-30T15:07:53.264605" level="INFO">${is_empty} = True</msg>
+<var>${is_empty}</var>
+<arg>len(${results_list}) == 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-30T15:07:53.264292" elapsed="0.000345"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-07-30T15:07:53.265092" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${None}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-07-30T15:07:53.264976" elapsed="0.000211"/>
+</kw>
+<arg>${is_empty}</arg>
+<arg>Return From Keyword</arg>
+<arg>${None}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-30T15:07:53.264770" elapsed="0.000480"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${product}</var>
+<arg>ast.literal_eval("""${results_list[0]}""")</arg>
+<arg>ast</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-07-30T15:07:53.265379" elapsed="0.000025"/>
+</kw>
+<return>
+<value>${product}</value>
+<status status="NOT RUN" start="2025-07-30T15:07:53.265464" elapsed="0.000024"/>
+</return>
+<msg time="2025-07-30T15:07:53.265636" level="INFO">${product} = None</msg>
+<var>${product}</var>
+<arg>Nonexistent Product XYZ</arg>
+<status status="PASS" start="2025-07-30T15:07:51.435244" elapsed="1.830419"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>NONEXISTENT PRODUCT RESULT: ${product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:53.266399" elapsed="0.000823"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${product}</arg>
+<arg>${None}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:07:53.267776" elapsed="0.000228"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:07:51.434544" elapsed="1.833954"/>
+</test>
+<test id="s1-t6" name="Read Product - Empty Title" line="40">
+<kw name="Get Product By Title" owner="crud_operations_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:07:53.275112" level="INFO">${filter} = {'title': ''}</msg>
+<var>${filter}</var>
+<arg>title=${title}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:07:53.274682" elapsed="0.000489"/>
+</kw>
+<kw name="Find" owner="RobotMongoDBLibrary.Find">
+<msg time="2025-07-30T15:07:55.070866" level="INFO">${results} = []</msg>
+<var>${results}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${filter}</arg>
+<status status="PASS" start="2025-07-30T15:07:53.275391" elapsed="1.795537"/>
+</kw>
+<kw name="Convert To List" owner="Collections">
+<msg time="2025-07-30T15:07:55.071448" level="INFO">${results_list} = []</msg>
+<var>${results_list}</var>
+<arg>${results}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<status status="PASS" start="2025-07-30T15:07:55.071172" elapsed="0.000316"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-30T15:07:55.072095" level="INFO">${is_empty} = True</msg>
+<var>${is_empty}</var>
+<arg>len(${results_list}) == 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-30T15:07:55.071651" elapsed="0.000481"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-07-30T15:07:55.072687" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${None}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-07-30T15:07:55.072602" elapsed="0.000187"/>
+</kw>
+<arg>${is_empty}</arg>
+<arg>Return From Keyword</arg>
+<arg>${None}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-30T15:07:55.072324" elapsed="0.000544"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${product}</var>
+<arg>ast.literal_eval("""${results_list[0]}""")</arg>
+<arg>ast</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-07-30T15:07:55.073022" elapsed="0.000026"/>
+</kw>
+<return>
+<value>${product}</value>
+<status status="NOT RUN" start="2025-07-30T15:07:55.073253" elapsed="0.000027"/>
+</return>
+<msg time="2025-07-30T15:07:55.073433" level="INFO">${product} = None</msg>
+<var>${product}</var>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2025-07-30T15:07:53.273518" elapsed="1.799943"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>EMPTY TITLE RESULT: ${product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:55.074032" elapsed="0.000787"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${product}</arg>
+<arg>${None}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:07:55.075329" elapsed="0.000291"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:07:53.272355" elapsed="1.803750"/>
+</test>
+<test id="s1-t7" name="Update Product - Valid" line="46">
+<kw name="Get Product By Title" owner="crud_operations_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:07:55.080838" level="INFO">${filter} = {'title': 'Samsung Galaxy S21'}</msg>
+<var>${filter}</var>
+<arg>title=${title}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:07:55.080472" elapsed="0.000408"/>
+</kw>
+<kw name="Find" owner="RobotMongoDBLibrary.Find">
+<msg time="2025-07-30T15:07:56.947621" level="INFO">${results} = [{'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 799.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jp...</msg>
+<var>${results}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${filter}</arg>
+<status status="PASS" start="2025-07-30T15:07:55.081032" elapsed="1.866643"/>
+</kw>
+<kw name="Convert To List" owner="Collections">
+<msg time="2025-07-30T15:07:56.948101" level="INFO">${results_list} = [{'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 799.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jp...</msg>
+<var>${results_list}</var>
+<arg>${results}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<status status="PASS" start="2025-07-30T15:07:56.947868" elapsed="0.000270"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-30T15:07:56.948692" level="INFO">${is_empty} = False</msg>
+<var>${is_empty}</var>
+<arg>len(${results_list}) == 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-30T15:07:56.948284" elapsed="0.000448"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_empty}</arg>
+<arg>Return From Keyword</arg>
+<arg>${None}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-30T15:07:56.948902" elapsed="0.000141"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-30T15:07:56.950048" level="INFO">${product} = {'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 799.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jpg...</msg>
+<var>${product}</var>
+<arg>ast.literal_eval("""${results_list[0]}""")</arg>
+<arg>ast</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-30T15:07:56.949195" elapsed="0.000890"/>
+</kw>
+<return>
+<value>${product}</value>
+<status status="PASS" start="2025-07-30T15:07:56.950151" elapsed="0.000042"/>
+</return>
+<msg time="2025-07-30T15:07:56.950346" level="INFO">${product} = {'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 799.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jpg...</msg>
+<var>${product}</var>
+<arg>${VALID_PRODUCT['title']}</arg>
+<status status="PASS" start="2025-07-30T15:07:55.079504" elapsed="1.870873"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>PRODUCT TO UPDATE: ${product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:56.951187" elapsed="0.001306"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<msg time="2025-07-30T15:07:56.953449" level="INFO">Argument types are:
+&lt;class 'dict'&gt;
+&lt;class 'NoneType'&gt;</msg>
+<arg>${product}</arg>
+<arg>${None}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-07-30T15:07:56.953089" elapsed="0.000494"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-30T15:07:56.955507" level="INFO">${product_id} = 688a3540481444d2b6deb653</msg>
+<var>${product_id}</var>
+<arg>${product['_id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-30T15:07:56.954356" elapsed="0.001219"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:07:56.957473" level="INFO">&amp;{update_data} = { price=899.99 }</msg>
+<var>&amp;{update_data}</var>
+<arg>price=${899.99}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:07:56.956252" elapsed="0.001291"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>UPDATE DATA: ${update_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:56.958490" elapsed="0.001454"/>
+</kw>
+<kw name="Safe Update Product" owner="crud_operations_keywords">
+<kw name="Update" owner="RobotMongoDBLibrary.Update">
+<msg time="2025-07-30T15:07:58.774399" level="INFO">${result} = UPDATED SUCCESS</msg>
+<var>${result}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${product_id}</arg>
+<arg>${update_data}</arg>
+<status status="PASS" start="2025-07-30T15:07:56.961479" elapsed="1.812976"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-07-30T15:07:58.775022" level="INFO">${status} = PASS</msg>
+<var>${status}</var>
+<arg>"${result}" == "UPDATED SUCCESS"</arg>
+<arg>PASS</arg>
+<arg>"${result}" == "DATA NOT FOUND"</arg>
+<arg>FAIL</arg>
+<arg>FAIL</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-07-30T15:07:58.774670" elapsed="0.000412"/>
+</kw>
+<return>
+<value>${result}</value>
+<value>${status}</value>
+<status status="PASS" start="2025-07-30T15:07:58.775179" elapsed="0.000048"/>
+</return>
+<msg time="2025-07-30T15:07:58.775456" level="INFO">${result} = UPDATED SUCCESS</msg>
+<msg time="2025-07-30T15:07:58.775514" level="INFO">${status} = PASS</msg>
+<var>${result}</var>
+<var>${status}</var>
+<arg>${product_id}</arg>
+<arg>${update_data}</arg>
+<status status="PASS" start="2025-07-30T15:07:56.960864" elapsed="1.814680"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>UPDATE RESULT: ${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:58.776290" elapsed="0.000908"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>UPDATE STATUS: ${status}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:58.778101" elapsed="0.001027"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>PASS</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:07:58.780638" elapsed="0.000353"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>UPDATED SUCCESS</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:07:58.781618" elapsed="0.000344"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:07:55.078764" elapsed="3.703780"/>
+</test>
+<test id="s1-t8" name="Update Product - Wrong ID" line="59">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-30T15:07:58.786105" level="INFO">${invalid_id} = 000000000000000000000000</msg>
+<var>${invalid_id}</var>
+<arg>000000000000000000000000</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-30T15:07:58.785905" elapsed="0.000241"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:07:58.787441" level="INFO">&amp;{update_data} = { price=10.0 }</msg>
+<var>&amp;{update_data}</var>
+<arg>price=${10.00}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:07:58.786779" elapsed="0.000700"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>UPDATE DATA (Wrong ID): ${update_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:07:58.788082" elapsed="0.000938"/>
+</kw>
+<kw name="Safe Update Product" owner="crud_operations_keywords">
+<kw name="Update" owner="RobotMongoDBLibrary.Update">
+<msg time="2025-07-30T15:08:00.626274" level="INFO">${result} = DATA NOT FOUND</msg>
+<var>${result}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${product_id}</arg>
+<arg>${update_data}</arg>
+<status status="PASS" start="2025-07-30T15:07:58.790061" elapsed="1.836268"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-07-30T15:08:00.626872" level="INFO">${status} = FAIL</msg>
+<var>${status}</var>
+<arg>"${result}" == "UPDATED SUCCESS"</arg>
+<arg>PASS</arg>
+<arg>"${result}" == "DATA NOT FOUND"</arg>
+<arg>FAIL</arg>
+<arg>FAIL</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-07-30T15:08:00.626527" elapsed="0.000379"/>
+</kw>
+<return>
+<value>${result}</value>
+<value>${status}</value>
+<status status="PASS" start="2025-07-30T15:08:00.626999" elapsed="0.000045"/>
+</return>
+<msg time="2025-07-30T15:08:00.627223" level="INFO">${result} = DATA NOT FOUND</msg>
+<msg time="2025-07-30T15:08:00.627268" level="INFO">${status} = FAIL</msg>
+<var>${result}</var>
+<var>${status}</var>
+<arg>${invalid_id}</arg>
+<arg>${update_data}</arg>
+<status status="PASS" start="2025-07-30T15:07:58.789594" elapsed="1.837699"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>UPDATE RESULT (Wrong ID): ${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:00.628104" elapsed="0.000929"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>UPDATE STATUS (Wrong ID): ${status}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:00.629659" elapsed="0.000852"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>DATA NOT FOUND</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:08:00.631107" elapsed="0.000303"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>FAIL</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:08:00.632021" elapsed="0.000305"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:07:58.785161" elapsed="1.847928"/>
+</test>
+<test id="s1-t9" name="Update Product - Empty Data" line="69">
+<kw name="Get Product By Title" owner="crud_operations_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:08:00.639291" level="INFO">${filter} = {'title': 'Samsung Galaxy S21'}</msg>
+<var>${filter}</var>
+<arg>title=${title}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:08:00.639059" elapsed="0.000268"/>
+</kw>
+<kw name="Find" owner="RobotMongoDBLibrary.Find">
+<msg time="2025-07-30T15:08:02.452490" level="INFO">${results} = [{'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 899.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jp...</msg>
+<var>${results}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${filter}</arg>
+<status status="PASS" start="2025-07-30T15:08:00.639445" elapsed="1.813119"/>
+</kw>
+<kw name="Convert To List" owner="Collections">
+<msg time="2025-07-30T15:08:02.453168" level="INFO">${results_list} = [{'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 899.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jp...</msg>
+<var>${results_list}</var>
+<arg>${results}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<status status="PASS" start="2025-07-30T15:08:02.452811" elapsed="0.000407"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-30T15:08:02.453987" level="INFO">${is_empty} = False</msg>
+<var>${is_empty}</var>
+<arg>len(${results_list}) == 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-30T15:08:02.453427" elapsed="0.000611"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_empty}</arg>
+<arg>Return From Keyword</arg>
+<arg>${None}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-30T15:08:02.454265" elapsed="0.000197"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-30T15:08:02.456157" level="INFO">${product} = {'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 899.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jpg...</msg>
+<var>${product}</var>
+<arg>ast.literal_eval("""${results_list[0]}""")</arg>
+<arg>ast</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-30T15:08:02.454668" elapsed="0.001550"/>
+</kw>
+<return>
+<value>${product}</value>
+<status status="PASS" start="2025-07-30T15:08:02.456330" elapsed="0.000058"/>
+</return>
+<msg time="2025-07-30T15:08:02.456636" level="INFO">${product} = {'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 899.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jpg...</msg>
+<var>${product}</var>
+<arg>${VALID_PRODUCT['title']}</arg>
+<status status="PASS" start="2025-07-30T15:08:00.638414" elapsed="1.818268"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>PRODUCT TO UPDATE (Empty Data): ${product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:02.457262" elapsed="0.001925"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-30T15:08:02.460796" level="INFO">${product_id} = 688a3540481444d2b6deb653</msg>
+<var>${product_id}</var>
+<arg>${product['_id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-30T15:08:02.459794" elapsed="0.001054"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:08:02.461791" level="INFO">&amp;{update_data} = { }</msg>
+<var>&amp;{update_data}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:08:02.461474" elapsed="0.000366"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>UPDATE DATA (Empty): ${update_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:02.462398" elapsed="0.001440"/>
+</kw>
+<kw name="Safe Update Product" owner="crud_operations_keywords">
+<kw name="Update" owner="RobotMongoDBLibrary.Update">
+<msg time="2025-07-30T15:08:04.239366" level="INFO">${result} = DATA NOT FOUND</msg>
+<var>${result}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${product_id}</arg>
+<arg>${update_data}</arg>
+<status status="PASS" start="2025-07-30T15:08:02.465128" elapsed="1.774320"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-07-30T15:08:04.240303" level="INFO">${status} = FAIL</msg>
+<var>${status}</var>
+<arg>"${result}" == "UPDATED SUCCESS"</arg>
+<arg>PASS</arg>
+<arg>"${result}" == "DATA NOT FOUND"</arg>
+<arg>FAIL</arg>
+<arg>FAIL</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-07-30T15:08:04.239787" elapsed="0.000572"/>
+</kw>
+<return>
+<value>${result}</value>
+<value>${status}</value>
+<status status="PASS" start="2025-07-30T15:08:04.240694" elapsed="0.000070"/>
+</return>
+<msg time="2025-07-30T15:08:04.241095" level="INFO">${result} = DATA NOT FOUND</msg>
+<msg time="2025-07-30T15:08:04.241181" level="INFO">${status} = FAIL</msg>
+<var>${result}</var>
+<var>${status}</var>
+<arg>${product_id}</arg>
+<arg>${update_data}</arg>
+<status status="PASS" start="2025-07-30T15:08:02.464520" elapsed="1.776707"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>UPDATE RESULT (Empty): ${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:04.242013" elapsed="0.001672"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>UPDATE STATUS (Empty): ${status}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:04.244376" elapsed="0.001632"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>FAIL</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:08:04.246701" elapsed="0.000317"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:08:00.637690" elapsed="3.611017"/>
+</test>
+<test id="s1-t10" name="Delete Product - Valid" line="81">
+<kw name="Get Product By Title" owner="crud_operations_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:08:04.255616" level="INFO">${filter} = {'title': 'Samsung Galaxy S21'}</msg>
+<var>${filter}</var>
+<arg>title=${title}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:08:04.255245" elapsed="0.000422"/>
+</kw>
+<kw name="Find" owner="RobotMongoDBLibrary.Find">
+<msg time="2025-07-30T15:08:06.047909" level="INFO">${results} = [{'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 899.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jp...</msg>
+<var>${results}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${filter}</arg>
+<status status="PASS" start="2025-07-30T15:08:04.255869" elapsed="1.792149"/>
+</kw>
+<kw name="Convert To List" owner="Collections">
+<msg time="2025-07-30T15:08:06.048664" level="INFO">${results_list} = [{'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 899.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jp...</msg>
+<var>${results_list}</var>
+<arg>${results}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<status status="PASS" start="2025-07-30T15:08:06.048333" elapsed="0.000365"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-30T15:08:06.049196" level="INFO">${is_empty} = False</msg>
+<var>${is_empty}</var>
+<arg>len(${results_list}) == 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-30T15:08:06.048829" elapsed="0.000400"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_empty}</arg>
+<arg>Return From Keyword</arg>
+<arg>${None}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-30T15:08:06.049362" elapsed="0.000125"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-30T15:08:06.050298" level="INFO">${product} = {'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 899.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jpg...</msg>
+<var>${product}</var>
+<arg>ast.literal_eval("""${results_list[0]}""")</arg>
+<arg>ast</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-30T15:08:06.049609" elapsed="0.000724"/>
+</kw>
+<return>
+<value>${product}</value>
+<status status="PASS" start="2025-07-30T15:08:06.050397" elapsed="0.000039"/>
+</return>
+<msg time="2025-07-30T15:08:06.050578" level="INFO">${product} = {'_id': '688a3540481444d2b6deb653', 'title': 'Samsung Galaxy S21', 'price': 899.99, 'description': 'Latest Samsung phone', 'category': 'smartphones', 'image': 'https://fakestoreapi.com/img/samsung.jpg...</msg>
+<var>${product}</var>
+<arg>${VALID_PRODUCT['title']}</arg>
+<status status="PASS" start="2025-07-30T15:08:04.254112" elapsed="1.796496"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>PRODUCT TO DELETE: ${product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:06.051718" elapsed="0.003176"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<msg time="2025-07-30T15:08:06.056377" level="INFO">Argument types are:
+&lt;class 'dict'&gt;
+&lt;class 'NoneType'&gt;</msg>
+<arg>${product}</arg>
+<arg>${None}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-07-30T15:08:06.055972" elapsed="0.000523"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-30T15:08:06.058118" level="INFO">${product_id} = 688a3540481444d2b6deb653</msg>
+<var>${product_id}</var>
+<arg>${product['_id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-30T15:08:06.057167" elapsed="0.001033"/>
+</kw>
+<kw name="Safe Delete Product" owner="crud_operations_keywords">
+<kw name="Delete One By ID" owner="RobotMongoDBLibrary.Delete">
+<msg time="2025-07-30T15:08:07.876255" level="INFO">${result} = DELETED SUCCESS</msg>
+<var>${result}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${product_id}</arg>
+<status status="PASS" start="2025-07-30T15:08:06.059817" elapsed="1.816516"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-07-30T15:08:07.876817" level="INFO">${status} = PASS</msg>
+<var>${status}</var>
+<arg>"${result}" == "DELETED SUCCESS"</arg>
+<arg>PASS</arg>
+<arg>"${result}" == "DATA NOT FOUND"</arg>
+<arg>FAIL</arg>
+<arg>FAIL</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-07-30T15:08:07.876545" elapsed="0.000305"/>
+</kw>
+<return>
+<value>${result}</value>
+<value>${status}</value>
+<status status="PASS" start="2025-07-30T15:08:07.876920" elapsed="0.000043"/>
+</return>
+<msg time="2025-07-30T15:08:07.877137" level="INFO">${result} = DELETED SUCCESS</msg>
+<msg time="2025-07-30T15:08:07.877180" level="INFO">${status} = PASS</msg>
+<var>${result}</var>
+<var>${status}</var>
+<arg>${product_id}</arg>
+<status status="PASS" start="2025-07-30T15:08:06.059124" elapsed="1.818082"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>DELETE RESULT: ${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:07.878292" elapsed="0.001988"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>DELETE STATUS: ${status}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:07.880970" elapsed="0.001702"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>PASS</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:08:07.883464" elapsed="0.000237"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>DELETED SUCCESS</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:08:07.884437" elapsed="0.000215"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:08:04.253009" elapsed="3.633872"/>
+</test>
+<test id="s1-t11" name="Delete Product - Already Deleted" line="92">
+<kw name="Get Product By Title" owner="crud_operations_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:08:07.892470" level="INFO">${filter} = {'title': 'Samsung Galaxy S21'}</msg>
+<var>${filter}</var>
+<arg>title=${title}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:08:07.892225" elapsed="0.000281"/>
+</kw>
+<kw name="Find" owner="RobotMongoDBLibrary.Find">
+<msg time="2025-07-30T15:08:09.690108" level="INFO">${results} = []</msg>
+<var>${results}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${filter}</arg>
+<status status="PASS" start="2025-07-30T15:08:07.892739" elapsed="1.797519"/>
+</kw>
+<kw name="Convert To List" owner="Collections">
+<msg time="2025-07-30T15:08:09.690987" level="INFO">${results_list} = []</msg>
+<var>${results_list}</var>
+<arg>${results}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<status status="PASS" start="2025-07-30T15:08:09.690588" elapsed="0.000469"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-30T15:08:09.691986" level="INFO">${is_empty} = True</msg>
+<var>${is_empty}</var>
+<arg>len(${results_list}) == 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-30T15:08:09.691353" elapsed="0.000703"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-07-30T15:08:09.692913" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${None}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-07-30T15:08:09.692769" elapsed="0.000250"/>
+</kw>
+<arg>${is_empty}</arg>
+<arg>Return From Keyword</arg>
+<arg>${None}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-30T15:08:09.692369" elapsed="0.000744"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${product}</var>
+<arg>ast.literal_eval("""${results_list[0]}""")</arg>
+<arg>ast</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-07-30T15:08:09.693345" elapsed="0.000039"/>
+</kw>
+<return>
+<value>${product}</value>
+<status status="NOT RUN" start="2025-07-30T15:08:09.693484" elapsed="0.000035"/>
+</return>
+<msg time="2025-07-30T15:08:09.693761" level="INFO">${product} = None</msg>
+<var>${product}</var>
+<arg>${VALID_PRODUCT['title']}</arg>
+<status status="PASS" start="2025-07-30T15:08:07.891552" elapsed="1.802257"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>PRODUCT ALREADY DELETED: ${product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:09.694631" elapsed="0.001995"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${product}</arg>
+<arg>${None}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:08:09.697299" elapsed="0.000363"/>
+</kw>
+<kw name="Safe Delete Product" owner="crud_operations_keywords">
+<kw name="Delete One By ID" owner="RobotMongoDBLibrary.Delete">
+<msg time="2025-07-30T15:08:11.516450" level="INFO">${result} = DATA NOT FOUND</msg>
+<var>${result}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${product_id}</arg>
+<status status="PASS" start="2025-07-30T15:08:09.699060" elapsed="1.817493"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-07-30T15:08:11.517668" level="INFO">${status} = FAIL</msg>
+<var>${status}</var>
+<arg>"${result}" == "DELETED SUCCESS"</arg>
+<arg>PASS</arg>
+<arg>"${result}" == "DATA NOT FOUND"</arg>
+<arg>FAIL</arg>
+<arg>FAIL</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-07-30T15:08:11.516954" elapsed="0.000793"/>
+</kw>
+<return>
+<value>${result}</value>
+<value>${status}</value>
+<status status="PASS" start="2025-07-30T15:08:11.517929" elapsed="0.000087"/>
+</return>
+<msg time="2025-07-30T15:08:11.518500" level="INFO">${result} = DATA NOT FOUND</msg>
+<msg time="2025-07-30T15:08:11.518628" level="INFO">${status} = FAIL</msg>
+<var>${result}</var>
+<var>${status}</var>
+<arg>invalid_id_123</arg>
+<status status="PASS" start="2025-07-30T15:08:09.698529" elapsed="1.820168"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>DELETE RESULT (Already Deleted): ${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:11.519720" elapsed="0.002550"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>DELETE STATUS (Already Deleted): ${status}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:11.523253" elapsed="0.002163"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>FAIL</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:08:11.526312" elapsed="0.000393"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:08:07.890930" elapsed="3.636520"/>
+</test>
+<test id="s1-t12" name="Delete Product - Invalid ID" line="101">
+<kw name="Safe Delete Product" owner="crud_operations_keywords">
+<kw name="Delete One By ID" owner="RobotMongoDBLibrary.Delete">
+<msg time="2025-07-30T15:08:13.364201" level="INFO">${result} = DATA NOT FOUND</msg>
+<var>${result}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${product_id}</arg>
+<status status="PASS" start="2025-07-30T15:08:11.534536" elapsed="1.829725"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-07-30T15:08:13.364834" level="INFO">${status} = FAIL</msg>
+<var>${status}</var>
+<arg>"${result}" == "DELETED SUCCESS"</arg>
+<arg>PASS</arg>
+<arg>"${result}" == "DATA NOT FOUND"</arg>
+<arg>FAIL</arg>
+<arg>FAIL</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-07-30T15:08:13.364468" elapsed="0.000404"/>
+</kw>
+<return>
+<value>${result}</value>
+<value>${status}</value>
+<status status="PASS" start="2025-07-30T15:08:13.364957" elapsed="0.000049"/>
+</return>
+<msg time="2025-07-30T15:08:13.365207" level="INFO">${result} = DATA NOT FOUND</msg>
+<msg time="2025-07-30T15:08:13.365260" level="INFO">${status} = FAIL</msg>
+<var>${result}</var>
+<var>${status}</var>
+<arg>invalid_object_id</arg>
+<status status="PASS" start="2025-07-30T15:08:11.534221" elapsed="1.831069"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>DELETE RESULT (Invalid ID): ${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:13.366508" elapsed="0.002432"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>DELETE STATUS (Invalid ID): ${status}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-30T15:08:13.370207" elapsed="0.002239"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>FAIL</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-30T15:08:13.373405" elapsed="0.000465"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:08:11.533356" elapsed="1.841510"/>
+</test>
+<kw name="Clean Test Data" owner="crud_operations_keywords" type="TEARDOWN">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-30T15:08:13.381217" level="INFO">${filter} = {'title': 'Samsung Galaxy S21'}</msg>
+<var>${filter}</var>
+<arg>title=${VALID_PRODUCT['title']}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-30T15:08:13.380664" elapsed="0.000588"/>
+</kw>
+<kw name="Find" owner="RobotMongoDBLibrary.Find">
+<msg time="2025-07-30T15:08:15.195067" level="INFO">${results} = []</msg>
+<var>${results}</var>
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${filter}</arg>
+<status status="PASS" start="2025-07-30T15:08:13.381373" elapsed="1.813798"/>
+</kw>
+<kw name="Convert To List" owner="Collections">
+<msg time="2025-07-30T15:08:15.195865" level="INFO">${results_list} = []</msg>
+<var>${results_list}</var>
+<arg>${results}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<status status="PASS" start="2025-07-30T15:08:15.195479" elapsed="0.000443"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${doc_dict}</var>
+<arg>ast.literal_eval("""${doc}""")</arg>
+<arg>ast</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-07-30T15:08:15.196545" elapsed="0.000056"/>
+</kw>
+<kw name="Delete One By ID" owner="RobotMongoDBLibrary.Delete">
+<arg>${MONGODB_CONFIG}</arg>
+<arg>${doc_dict['_id']}</arg>
+<status status="NOT RUN" start="2025-07-30T15:08:15.197223" elapsed="0.000056"/>
+</kw>
+<var name="${doc}"/>
+<status status="NOT RUN" start="2025-07-30T15:08:15.196330" elapsed="0.001026"/>
+</iter>
+<var>${doc}</var>
+<value>@{results_list}</value>
+<status status="NOT RUN" start="2025-07-30T15:08:15.196062" elapsed="0.001372"/>
+</for>
+<status status="PASS" start="2025-07-30T15:08:13.380435" elapsed="1.817142"/>
+</kw>
+<status status="PASS" start="2025-07-30T15:07:41.252032" elapsed="33.945609"/>
+</suite>
+<statistics>
+<total>
+<stat pass="12" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC 1001 crud products" id="s1" pass="12" fail="0" skip="0">TC 1001 crud products</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

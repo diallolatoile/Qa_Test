@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-07-23T12:53:55.194620" rpa="false" schemaversion="5">
+<suite id="s1" name="Testcases" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\Projets _Examen_Qa_Test _ISI_2025\testcases">
+<suite id="s1-s1" name="Connexion" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\Projets _Examen_Qa_Test _ISI_2025\testcases\connexion.robot">
+<test id="s1-s1-t1" name="Test Connexion MongoDB" line="7">
+<kw name="Connect To MongoDB" owner="mongo_setup">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-23T12:53:56.025504" level="INFO">${client} = MongoClient(host=['ac-mu6dbtp-shard-00-01.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-00.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-02.ztajrf2.mongodb.net:27017'], document_class=dict, tz_a...</msg>
+<var>${client}</var>
+<arg>pymongo.MongoClient(r"""${MONGO_URI}""", server_api=__import__('pymongo').server_api.ServerApi('1'))</arg>
+<arg>modules=none</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-23T12:53:55.596600" elapsed="0.428998"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-07-23T12:53:56.026397" level="INFO">${client} = MongoClient(host=['ac-mu6dbtp-shard-00-01.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-00.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-02.ztajrf2.mongodb.net:27017'], document_class=dict, tz_a...</msg>
+<arg>${client}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-07-23T12:53:56.026045" elapsed="0.000422"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-23T12:53:56.028739" level="FAIL">Evaluating expression 'client.get_database(r"""fakestore_db""")' failed: ModuleNotFoundError: No module named "client=MongoClient(host=['ac-mu6dbtp-shard-00-01"</msg>
+<var>${db}</var>
+<arg>client.get_database(r"""${DATABASE_NAME}""")</arg>
+<arg>client=${client}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="FAIL" start="2025-07-23T12:53:56.026785" elapsed="0.002363">Evaluating expression 'client.get_database(r"""fakestore_db""")' failed: ModuleNotFoundError: No module named "client=MongoClient(host=['ac-mu6dbtp-shard-00-01"</status>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${db}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-07-23T12:53:56.029491" elapsed="0.000059"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${result}</var>
+<arg>Evaluate</arg>
+<arg>client.admin.command("ping")</arg>
+<arg>client=${client}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2025-07-23T12:53:56.029850" elapsed="0.000048"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${result[0]}' == 'PASS'</arg>
+<arg>Log</arg>
+<arg>✅ Connexion MongoDB réussie : ${result[1]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-07-23T12:53:56.030187" elapsed="0.000071"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${result[0]}' != 'PASS'</arg>
+<arg>Fail</arg>
+<arg>❌ Échec de connexion MongoDB : ${result[1]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-07-23T12:53:56.030639" elapsed="0.000067"/>
+</kw>
+<doc>Connexion sécurisée MongoDB Atlas avec ServerApi via pymongo</doc>
+<status status="FAIL" start="2025-07-23T12:53:55.594981" elapsed="0.436089">Evaluating expression 'client.get_database(r"""fakestore_db""")' failed: ModuleNotFoundError: No module named "client=MongoClient(host=['ac-mu6dbtp-shard-00-01"</status>
+</kw>
+<kw name="Disconnect From MongoDB" owner="mongo_setup">
+<doc>Ferme proprement la connexion MongoDB</doc>
+<status status="NOT RUN" start="2025-07-23T12:53:56.032047" elapsed="0.000061"/>
+</kw>
+<tag>Positive</tag>
+<tag>Test Connexion</tag>
+<status status="FAIL" start="2025-07-23T12:53:55.593043" elapsed="0.439801">Evaluating expression 'client.get_database(r"""fakestore_db""")' failed: ModuleNotFoundError: No module named "client=MongoClient(host=['ac-mu6dbtp-shard-00-01"</status>
+</test>
+<status status="FAIL" start="2025-07-23T12:53:55.268062" elapsed="0.768802"/>
+</suite>
+<status status="FAIL" start="2025-07-23T12:53:55.197915" elapsed="0.842554"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Positive</stat>
+<stat pass="0" fail="1" skip="0">Test Connexion</stat>
+</tag>
+<suite>
+<stat name="Testcases" id="s1" pass="0" fail="1" skip="0">Testcases</stat>
+<stat name="Connexion" id="s1-s1" pass="0" fail="1" skip="0">Testcases.Connexion</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

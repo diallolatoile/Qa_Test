@@ -1,0 +1,4 @@
+Username = diallolatoile - Password = UfO3F8ClZD5zumu2
+
+
+python -m pip install "pymongo[srv]"

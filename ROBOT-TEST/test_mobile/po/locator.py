@@ -1,3 +1,5 @@
+#po/locator.py
+
 USERNAME            =   "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]"
 PASSWORD            =   "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]"
 LOGIN               =   "//android.widget.Button[@content-desc=\"Se connecter\"]"

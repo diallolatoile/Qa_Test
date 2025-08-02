@@ -1,3 +1,5 @@
+#resources/common.robot
+
 *** Settings ***
 Library           AppiumLibrary
 

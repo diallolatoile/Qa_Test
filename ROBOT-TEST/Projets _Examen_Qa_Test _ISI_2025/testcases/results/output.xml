@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-07-23T12:34:33.541918" rpa="false" schemaversion="5">
+<suite id="s1" name="Products" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\Projets _Examen_Qa_Test _ISI_2025\testcases\products">
+<suite id="s1-s1" name="TC01 create product" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\Projets _Examen_Qa_Test _ISI_2025\testcases\products\TC01_create_product.robot">
+<kw name="Connect To MongoDB" owner="mongo_setup" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-23T12:34:34.260855" level="INFO">${client} = MongoClient(host=['ac-mu6dbtp-shard-00-01.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-00.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-02.ztajrf2.mongodb.net:27017'], document_class=dict, tz_a...</msg>
+<var>${client}</var>
+<arg>pymongo.MongoClient($MONGO_URI, server_api=pymongo.server_api.ServerApi('1'))</arg>
+<arg>pymongo</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-23T12:34:33.666747" elapsed="0.594199"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-07-23T12:34:34.261777" level="FAIL">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</msg>
+<var>${db}</var>
+<arg>${client}</arg>
+<arg>${DATABASE_NAME}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-07-23T12:34:34.261289" elapsed="0.000830">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${db}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.262415" elapsed="0.000036"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${ping_result}</var>
+<arg>${client}.admin.command('ping')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.262710" elapsed="0.000046"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Connexion MongoDB réussie : ${ping_result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.262986" elapsed="0.000071"/>
+</kw>
+<status status="NOT RUN" start="2025-07-23T12:34:34.262585" elapsed="0.000591"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Échec de connexion à MongoDB</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.263565" elapsed="0.000048"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<arg>Connexion impossible à la base de données MongoDB</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.263876" elapsed="0.000040"/>
+</kw>
+<status status="NOT RUN" start="2025-07-23T12:34:34.263317" elapsed="0.000668"/>
+</branch>
+<status status="NOT RUN" start="2025-07-23T12:34:34.262528" elapsed="0.001532"/>
+</try>
+<doc>Connexion à MongoDB Atlas avec pymongo + ServerApi v1</doc>
+<status status="FAIL" start="2025-07-23T12:34:33.666026" elapsed="0.598247">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</kw>
+<test id="s1-s1-t1" name="Create Product - Valid Data" line="9">
+<tag>Create</tag>
+<tag>Positive</tag>
+<status status="FAIL" start="2025-07-23T12:34:34.264422" elapsed="0.001419">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<test id="s1-s1-t2" name="Create Product - Missing Title" line="14">
+<tag>Create</tag>
+<tag>Negative</tag>
+<status status="FAIL" start="2025-07-23T12:34:34.271405" elapsed="0.001019">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<test id="s1-s1-t3" name="Create Product - Negative Price" line="18">
+<tag>Create</tag>
+<tag>Negative</tag>
+<status status="FAIL" start="2025-07-23T12:34:34.276583" elapsed="0.000835">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<kw name="Disconnect From MongoDB" owner="mongo_setup" type="TEARDOWN">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${client}' != 'None'</arg>
+<arg>Evaluate</arg>
+<arg>${client}.close()</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-23T12:34:34.282274" elapsed="0.000427"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-23T12:34:34.283161" level="INFO">🔌 Connexion MongoDB fermée</msg>
+<arg>🔌 Connexion MongoDB fermée</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-23T12:34:34.282952" elapsed="0.000357"/>
+</kw>
+<doc>Ferme proprement la connexion MongoDB</doc>
+<status status="PASS" start="2025-07-23T12:34:34.281809" elapsed="0.001630"/>
+</kw>
+<status status="FAIL" start="2025-07-23T12:34:33.595658" elapsed="0.687853">Suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</suite>
+<suite id="s1-s2" name="TC02 read product" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\Projets _Examen_Qa_Test _ISI_2025\testcases\products\TC02_read_product.robot">
+<kw name="Connect To MongoDB" owner="mongo_setup" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-23T12:34:34.551045" level="INFO">${client} = MongoClient(host=['ac-mu6dbtp-shard-00-01.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-00.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-02.ztajrf2.mongodb.net:27017'], document_class=dict, tz_a...</msg>
+<var>${client}</var>
+<arg>pymongo.MongoClient($MONGO_URI, server_api=pymongo.server_api.ServerApi('1'))</arg>
+<arg>pymongo</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-23T12:34:34.303221" elapsed="0.247893"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-07-23T12:34:34.551632" level="FAIL">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</msg>
+<var>${db}</var>
+<arg>${client}</arg>
+<arg>${DATABASE_NAME}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-07-23T12:34:34.551299" elapsed="0.000480">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${db}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.551984" elapsed="0.000033"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${ping_result}</var>
+<arg>${client}.admin.command('ping')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.552243" elapsed="0.000024"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Connexion MongoDB réussie : ${ping_result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.552388" elapsed="0.000021"/>
+</kw>
+<status status="NOT RUN" start="2025-07-23T12:34:34.552132" elapsed="0.000313"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Échec de connexion à MongoDB</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.552575" elapsed="0.000020"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<arg>Connexion impossible à la base de données MongoDB</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.552708" elapsed="0.000022"/>
+</kw>
+<status status="NOT RUN" start="2025-07-23T12:34:34.552489" elapsed="0.000595"/>
+</branch>
+<status status="NOT RUN" start="2025-07-23T12:34:34.552085" elapsed="0.001067"/>
+</try>
+<doc>Connexion à MongoDB Atlas avec pymongo + ServerApi v1</doc>
+<status status="FAIL" start="2025-07-23T12:34:34.302929" elapsed="0.250371">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</kw>
+<test id="s1-s2-t1" name="Read Product - Valid ID" line="9">
+<tag>Positive</tag>
+<tag>Read</tag>
+<status status="FAIL" start="2025-07-23T12:34:34.553410" elapsed="0.001270">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<test id="s1-s2-t2" name="Read Product - Non-existent ID" line="15">
+<tag>Negative</tag>
+<tag>Read</tag>
+<status status="FAIL" start="2025-07-23T12:34:34.562503" elapsed="0.000547">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<test id="s1-s2-t3" name="Read Product - Invalid ID Format" line="19">
+<tag>Negative</tag>
+<tag>Read</tag>
+<status status="FAIL" start="2025-07-23T12:34:34.566624" elapsed="0.000527">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<kw name="Disconnect From MongoDB" owner="mongo_setup" type="TEARDOWN">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${client}' != 'None'</arg>
+<arg>Evaluate</arg>
+<arg>${client}.close()</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-23T12:34:34.571621" elapsed="0.000225"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-23T12:34:34.572098" level="INFO">🔌 Connexion MongoDB fermée</msg>
+<arg>🔌 Connexion MongoDB fermée</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-23T12:34:34.571985" elapsed="0.000166"/>
+</kw>
+<doc>Ferme proprement la connexion MongoDB</doc>
+<status status="PASS" start="2025-07-23T12:34:34.571364" elapsed="0.000856"/>
+</kw>
+<status status="FAIL" start="2025-07-23T12:34:34.292131" elapsed="0.280125">Suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</suite>
+<suite id="s1-s3" name="TC03 update product" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\Projets _Examen_Qa_Test _ISI_2025\testcases\products\TC03_update_product.robot">
+<kw name="Connect To MongoDB" owner="mongo_setup" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-23T12:34:34.827300" level="INFO">${client} = MongoClient(host=['ac-mu6dbtp-shard-00-01.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-00.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-02.ztajrf2.mongodb.net:27017'], document_class=dict, tz_a...</msg>
+<var>${client}</var>
+<arg>pymongo.MongoClient($MONGO_URI, server_api=pymongo.server_api.ServerApi('1'))</arg>
+<arg>pymongo</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-23T12:34:34.590063" elapsed="0.237355"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-07-23T12:34:34.828267" level="FAIL">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</msg>
+<var>${db}</var>
+<arg>${client}</arg>
+<arg>${DATABASE_NAME}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-07-23T12:34:34.827761" elapsed="0.000652">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${db}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.828573" elapsed="0.000043"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${ping_result}</var>
+<arg>${client}.admin.command('ping')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.828813" elapsed="0.000023"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Connexion MongoDB réussie : ${ping_result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.828952" elapsed="0.000023"/>
+</kw>
+<status status="NOT RUN" start="2025-07-23T12:34:34.828717" elapsed="0.000308"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Échec de connexion à MongoDB</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.829156" elapsed="0.000020"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<arg>Connexion impossible à la base de données MongoDB</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:34.829284" elapsed="0.000021"/>
+</kw>
+<status status="NOT RUN" start="2025-07-23T12:34:34.829070" elapsed="0.000269"/>
+</branch>
+<status status="NOT RUN" start="2025-07-23T12:34:34.828678" elapsed="0.000694"/>
+</try>
+<doc>Connexion à MongoDB Atlas avec pymongo + ServerApi v1</doc>
+<status status="FAIL" start="2025-07-23T12:34:34.589650" elapsed="0.239821">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</kw>
+<test id="s1-s3-t1" name="Update Product - Valid Data" line="9">
+<tag>Positive</tag>
+<tag>Update</tag>
+<status status="FAIL" start="2025-07-23T12:34:34.829546" elapsed="0.000983">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<test id="s1-s3-t2" name="Update Product - Invalid Price" line="15">
+<tag>Negative</tag>
+<tag>Update</tag>
+<status status="FAIL" start="2025-07-23T12:34:34.837211" elapsed="0.000654">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<test id="s1-s3-t3" name="Update Product - Non-existent ID" line="21">
+<tag>Negative</tag>
+<tag>Update</tag>
+<status status="FAIL" start="2025-07-23T12:34:34.842219" elapsed="0.000788">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<kw name="Disconnect From MongoDB" owner="mongo_setup" type="TEARDOWN">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${client}' != 'None'</arg>
+<arg>Evaluate</arg>
+<arg>${client}.close()</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-23T12:34:34.847058" elapsed="0.000214"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-23T12:34:34.847511" level="INFO">🔌 Connexion MongoDB fermée</msg>
+<arg>🔌 Connexion MongoDB fermée</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-23T12:34:34.847404" elapsed="0.000161"/>
+</kw>
+<doc>Ferme proprement la connexion MongoDB</doc>
+<status status="PASS" start="2025-07-23T12:34:34.846811" elapsed="0.000818"/>
+</kw>
+<status status="FAIL" start="2025-07-23T12:34:34.579447" elapsed="0.268216">Suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</suite>
+<suite id="s1-s4" name="TC04 delete product" source="C:\Files\ISI-Dakar\Semestre_2\Qa_test\Qa_Test\ROBOT-TEST\Projets _Examen_Qa_Test _ISI_2025\testcases\products\TC04_delete_product.robot">
+<kw name="Connect To MongoDB" owner="mongo_setup" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-23T12:34:35.119966" level="INFO">${client} = MongoClient(host=['ac-mu6dbtp-shard-00-01.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-00.ztajrf2.mongodb.net:27017', 'ac-mu6dbtp-shard-00-02.ztajrf2.mongodb.net:27017'], document_class=dict, tz_a...</msg>
+<var>${client}</var>
+<arg>pymongo.MongoClient($MONGO_URI, server_api=pymongo.server_api.ServerApi('1'))</arg>
+<arg>pymongo</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-23T12:34:34.864036" elapsed="0.255993"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-07-23T12:34:35.120687" level="FAIL">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</msg>
+<var>${db}</var>
+<arg>${client}</arg>
+<arg>${DATABASE_NAME}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-07-23T12:34:35.120415" elapsed="0.000405">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${db}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:35.120970" elapsed="0.000025"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${ping_result}</var>
+<arg>${client}.admin.command('ping')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:35.121177" elapsed="0.000022"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Connexion MongoDB réussie : ${ping_result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:35.121299" elapsed="0.000020"/>
+</kw>
+<status status="NOT RUN" start="2025-07-23T12:34:35.121089" elapsed="0.000267"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Échec de connexion à MongoDB</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:35.121479" elapsed="0.000020"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<arg>Connexion impossible à la base de données MongoDB</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-07-23T12:34:35.121589" elapsed="0.000020"/>
+</kw>
+<status status="NOT RUN" start="2025-07-23T12:34:35.121398" elapsed="0.000246"/>
+</branch>
+<status status="NOT RUN" start="2025-07-23T12:34:35.121051" elapsed="0.000624"/>
+</try>
+<doc>Connexion à MongoDB Atlas avec pymongo + ServerApi v1</doc>
+<status status="FAIL" start="2025-07-23T12:34:34.863790" elapsed="0.257981">Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</kw>
+<test id="s1-s4-t1" name="Delete Product - Valid ID" line="9">
+<tag>Delete</tag>
+<tag>Positive</tag>
+<status status="FAIL" start="2025-07-23T12:34:35.121845" elapsed="0.000972">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<test id="s1-s4-t2" name="Delete Product - Already Deleted" line="14">
+<tag>Delete</tag>
+<tag>Negative</tag>
+<status status="FAIL" start="2025-07-23T12:34:35.129613" elapsed="0.000536">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<test id="s1-s4-t3" name="Delete Product - Invalid ID Format" line="20">
+<tag>Delete</tag>
+<tag>Negative</tag>
+<status status="FAIL" start="2025-07-23T12:34:35.133867" elapsed="0.000728">Parent suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</test>
+<kw name="Disconnect From MongoDB" owner="mongo_setup" type="TEARDOWN">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${client}' != 'None'</arg>
+<arg>Evaluate</arg>
+<arg>${client}.close()</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-23T12:34:35.139189" elapsed="0.000420"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-23T12:34:35.140181" level="INFO">🔌 Connexion MongoDB fermée</msg>
+<arg>🔌 Connexion MongoDB fermée</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-23T12:34:35.139948" elapsed="0.000353"/>
+</kw>
+<doc>Ferme proprement la connexion MongoDB</doc>
+<status status="PASS" start="2025-07-23T12:34:35.138722" elapsed="0.001733"/>
+</kw>
+<status status="FAIL" start="2025-07-23T12:34:34.851931" elapsed="0.288611">Suite setup failed:
+Calling method 'fakestore_db' failed: TypeError: 'Database' object is not callable</status>
+</suite>
+<status status="FAIL" start="2025-07-23T12:34:33.545040" elapsed="1.602834"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="12" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="3" skip="0">Create</stat>
+<stat pass="0" fail="3" skip="0">Delete</stat>
+<stat pass="0" fail="8" skip="0">Negative</stat>
+<stat pass="0" fail="4" skip="0">Positive</stat>
+<stat pass="0" fail="3" skip="0">Read</stat>
+<stat pass="0" fail="3" skip="0">Update</stat>
+</tag>
+<suite>
+<stat name="Products" id="s1" pass="0" fail="12" skip="0">Products</stat>
+<stat name="TC01 create product" id="s1-s1" pass="0" fail="3" skip="0">Products.TC01 create product</stat>
+<stat name="TC02 read product" id="s1-s2" pass="0" fail="3" skip="0">Products.TC02 read product</stat>
+<stat name="TC03 update product" id="s1-s3" pass="0" fail="3" skip="0">Products.TC03 update product</stat>
+<stat name="TC04 delete product" id="s1-s4" pass="0" fail="3" skip="0">Products.TC04 delete product</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

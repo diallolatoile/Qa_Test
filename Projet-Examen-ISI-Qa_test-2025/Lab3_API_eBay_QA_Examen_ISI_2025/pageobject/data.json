@@ -1,0 +1,126 @@
+[
+    {
+        "sku" : "apple-airpods-pro2-001"
+    },
+
+    {
+        "product": {
+            "title": "Apple AirPods Pro (2nd generation) with MagSafe Charging Case",
+            "aspects": {
+            "Brand": ["Apple"],
+            "Model": ["AirPods Pro (2nd generation)"],
+            "Connectivity": ["Bluetooth"],
+            "Type": ["Earbud (In Ear)"]
+            },
+            "description": "Apple AirPods Pro (2nd generation) with MagSafe Charging Case – Active Noise Cancellation, Transparency mode, Personalized Spatial Audio, and up to 6 hours of listening time.",
+            "upc": ["194253397387"],
+            "imageUrls": [
+            "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MQD83?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1660803972365"
+            ]
+        },
+        "condition": "NEW",
+        "packageWeightAndSize": {
+            "dimensions": {
+            "height": 1.8,
+            "length": 2.4,
+            "width": 0.9,
+            "unit": "INCH"
+            },
+            "packageType": "MAILING_BOX",
+            "weight": {
+            "value": 0.45,
+            "unit": "POUND"
+            }
+        },
+        "availability": {
+            "shipToLocationAvailability": {
+            "quantity": 15
+            }
+        }
+    },
+
+
+    {
+        "sku" : "samsung-s23-ultra-blk-256gb"
+    },
+
+    {
+        "product": {
+            "title": "Samsung Galaxy S23 Ultra 5G Smartphone 256GB – Phantom Black",
+            "aspects": {
+            "Brand": ["Samsung"],
+            "Model": ["Galaxy S23 Ultra"],
+            "Storage Capacity": ["256GB"],
+            "Color": ["Phantom Black"]
+            },
+            "description": "Samsung Galaxy S23 Ultra 5G smartphone with 256GB of internal memory, 200MP camera, long battery life, and built-in S Pen.",
+            "upc": ["887276715502"],
+            "imageUrls": [
+            "https://images.samsung.com/is/image/samsung/p6pim/un/2302/gallery/un-galaxy-s23-ultra-s918-sm-s918bzkgmea-thumb-534203152"
+            ]
+        },
+        "condition": "NEW",
+        "packageWeightAndSize": {
+            "dimensions": {
+            "height": 3,
+            "length": 7,
+            "width": 0.4,
+            "unit": "INCH"
+            },
+            "packageType": "MAILING_BOX",
+            "weight": {
+            "value": 1.2,
+            "unit": "POUND"
+            }
+        },
+        "availability": {
+            "shipToLocationAvailability": {
+            "quantity": 8
+            }
+        }
+    },
+
+
+    {
+        "sku" : "logi-mx3s-graphite-001"
+    },
+
+    {
+        "product": {
+            "title": "Logitech MX Master 3S Advanced Wireless Mouse – Graphite",
+            "aspects": {
+            "Brand": ["Logitech"],
+            "Model": ["MX Master 3S"],
+            "Connectivity": ["Bluetooth", "USB Receiver"],
+            "Color": ["Graphite"]
+            },
+            "description": "Logitech MX Master 3S – Quiet Clicks, 8K DPI sensor, MagSpeed scrolling, ergonomic design, multi-device support via Flow.",
+            "upc": ["097855173409"],
+            "imageUrls": [
+            "https://resource.logitech.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-gallery-graphite-top.png"
+            ]
+        },
+        "condition": "NEW",
+        "packageWeightAndSize": {
+            "dimensions": {
+            "height": 2,
+            "length": 5,
+            "width": 3.3,
+            "unit": "INCH"
+            },
+            "packageType": "MAILING_BOX",
+            "weight": {
+            "value": 0.8,
+            "unit": "POUND"
+            }
+        },
+        "availability": {
+            "shipToLocationAvailability": {
+            "quantity": 25
+            }
+        }
+    }
+
+
+
+]
